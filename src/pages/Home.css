@@ -102,20 +102,59 @@
 }
 
 .service-card {
-  padding: 30px 26px;
+  padding: 0 0 26px;
+  overflow: hidden;
+}
+
+.service-card-art {
+  background: linear-gradient(160deg, rgba(20, 32, 66, 0.04), rgba(201, 162, 74, 0.08));
+  padding: 18px 22px 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-card:hover .service-art svg {
+  transform: scale(1.04);
+}
+
+.service-card h3,
+.service-card p {
+  padding-left: 26px;
+  padding-right: 26px;
 }
 
 .service-icon {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: linear-gradient(150deg, var(--navy), var(--navy-soft));
   color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin: 18px 26px 14px;
   box-shadow: 0 10px 22px -10px rgba(20, 32, 66, 0.55), inset 0 0 0 3px rgba(201, 162, 74, 0.25);
+}
+
+/* --- Hero entrance animation --- */
+.hero-inner > * {
+  animation: heroFadeUp 0.75s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero-inner > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-inner > *:nth-child(3) { animation-delay: 0.28s; }
+.hero-inner > *:nth-child(4) { animation-delay: 0.4s; }
+.hero-inner > *:nth-child(5) { animation-delay: 0.52s; }
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .service-card h3 {

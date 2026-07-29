@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import Reveal from '../components/Reveal.jsx'
 import './About.css'
 
 const values = [
@@ -31,6 +32,7 @@ export default function About() {
       </section>
 
       <section className="section about-story">
+        <Reveal>
         <div className="container about-story-inner">
           <div className="about-story-copy">
             <span className="eyebrow">Our Story</span>
@@ -57,6 +59,7 @@ export default function About() {
             <p className="about-visual-tag">Insight Before Spend</p>
           </div>
         </div>
+        </Reveal>
       </section>
 
       <section className="section values-section">
@@ -69,11 +72,13 @@ export default function About() {
           </div>
           <div className="values-grid">
             {values.map((v, i) => (
-              <div key={v.title} className="card value-card">
-                <span className="value-number">0{i + 1}</span>
-                <h3>{v.title}</h3>
-                <p>{v.text}</p>
-              </div>
+              <Reveal key={v.title} delay={i * 100}>
+                <div className="card value-card">
+                  <span className="value-number">0{i + 1}</span>
+                  <h3>{v.title}</h3>
+                  <p>{v.text}</p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import * as Icons from 'lucide-react'
 import { services } from '../data/services.js'
 import { testimonials } from '../data/testimonials.js'
+import ServiceArt from '../components/ServiceArt.jsx'
+import Reveal from '../components/Reveal.jsx'
 import './Home.css'
 
 const stats = [
@@ -61,14 +63,19 @@ export default function Home() {
           </div>
 
           <div className="services-grid">
-            {services.map((s) => {
+            {services.map((s, i) => {
               const Icon = Icons[s.icon]
               return (
-                <div key={s.slug} className="card service-card">
-                  <div className="service-icon">{Icon && <Icon size={22} strokeWidth={1.8} />}</div>
-                  <h3>{s.title}</h3>
-                  <p>{s.short}</p>
-                </div>
+                <Reveal key={s.slug} delay={i * 80}>
+                  <div className="card service-card">
+                    <div className="service-card-art">
+                      <ServiceArt slug={s.slug} />
+                    </div>
+                    <div className="service-icon">{Icon && <Icon size={20} strokeWidth={1.8} />}</div>
+                    <h3>{s.title}</h3>
+                    <p>{s.short}</p>
+                  </div>
+                </Reveal>
               )
             })}
           </div>
@@ -83,6 +90,7 @@ export default function Home() {
 
       {/* WHY US */}
       <section className="section why-us">
+        <Reveal>
         <div className="container why-inner">
           <div className="why-copy">
             <span className="eyebrow">Why Marketing Insight Pro</span>
@@ -110,6 +118,7 @@ export default function Home() {
             </p>
           </div>
         </div>
+        </Reveal>
       </section>
 
       {/* TESTIMONIALS */}
@@ -124,8 +133,9 @@ export default function Home() {
           </div>
 
           <div className="testimonials-grid">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card testimonial-card">
+            {testimonials.map((t, i) => (
+              <Reveal key={t.name} delay={i * 90}>
+                <div className="card testimonial-card">
                 <div className="testimonial-stars" aria-label="5 out of 5 stars">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Icons.Star key={i} size={16} fill="currentColor" strokeWidth={0} />
@@ -139,7 +149,8 @@ export default function Home() {
                     <span>{t.role}</span>
                   </div>
                 </div>
-              </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

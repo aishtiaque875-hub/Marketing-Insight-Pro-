@@ -34,7 +34,7 @@
 }
 
 .navbar-brand img {
-  height: 64px;
+  height: 48px;
   width: auto;
 }
 
@@ -125,6 +125,6 @@
 
 @media (max-width: 420px) {
   .navbar-brand img {
-    height: 52px;
+    height: 38px;
   }
 }

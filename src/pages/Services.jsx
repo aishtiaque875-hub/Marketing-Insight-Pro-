@@ -1,5 +1,7 @@
 import * as Icons from 'lucide-react'
 import { services } from '../data/services.js'
+import ServiceArt from '../components/ServiceArt.jsx'
+import Reveal from '../components/Reveal.jsx'
 import './Services.css'
 
 export default function Services() {
@@ -20,22 +22,27 @@ export default function Services() {
 
       <section className="section services-detail">
         <div className="container">
-          <div className="services-detail-list">
+          <div className="services-detail-grid">
             {services.map((s, i) => {
               const Icon = Icons[s.icon]
               return (
-                <div key={s.slug} className={`service-row ${i % 2 === 1 ? 'is-reverse' : ''}`}>
-                  <div className="service-row-visual">
-                    <div className="service-row-icon">
-                      {Icon && <Icon size={34} strokeWidth={1.6} />}
+                <Reveal key={s.slug} delay={(i % 2) * 100}>
+                  <div className="card service-detail-card">
+                    <div className="service-detail-art">
+                      <ServiceArt slug={s.slug} />
+                    </div>
+                    <div className="service-detail-body">
+                      <div className="service-detail-head">
+                        <span className="service-row-number">0{i + 1}</span>
+                        <div className="service-detail-icon">
+                          {Icon && <Icon size={18} strokeWidth={1.8} />}
+                        </div>
+                      </div>
+                      <h2>{s.title}</h2>
+                      <p>{s.detail}</p>
                     </div>
                   </div>
-                  <div className="service-row-copy">
-                    <span className="service-row-number">0{i + 1}</span>
-                    <h2>{s.title}</h2>
-                    <p>{s.detail}</p>
-                  </div>
-                </div>
+                </Reveal>
               )
             })}
           </div>

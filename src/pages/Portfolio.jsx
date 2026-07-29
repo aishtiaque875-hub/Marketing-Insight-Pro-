@@ -1,13 +1,14 @@
-import * as Icons from 'lucide-react'
+import ServiceArt from '../components/ServiceArt.jsx'
+import Reveal from '../components/Reveal.jsx'
 import './Portfolio.css'
 
 const categories = [
-  { icon: 'Target', label: 'Meta Ads Campaign', tag: 'Paid Ads' },
-  { icon: 'TrendingUp', label: 'Local SEO Growth', tag: 'SEO' },
-  { icon: 'Clapperboard', label: 'Reels & Short-Form Edit', tag: 'Video' },
-  { icon: 'MessagesSquare', label: 'Monthly Social Calendar', tag: 'Social Media' },
-  { icon: 'PenTool', label: 'Landing Page Redesign', tag: 'UI/UX' },
-  { icon: 'PenLine', label: 'Website Copy & Blog', tag: 'Content' },
+  { slug: 'meta-ads', label: 'Meta Ads Campaign', tag: 'Paid Ads' },
+  { slug: 'seo', label: 'Local SEO Growth', tag: 'SEO' },
+  { slug: 'video-editing', label: 'Reels & Short-Form Edit', tag: 'Video' },
+  { slug: 'social-media-managing', label: 'Monthly Social Calendar', tag: 'Social Media' },
+  { slug: 'ui-ux-designing', label: 'Landing Page Redesign', tag: 'UI/UX' },
+  { slug: 'content-writing', label: 'Website Copy & Blog', tag: 'Content' },
 ]
 
 export default function Portfolio() {
@@ -29,23 +30,14 @@ export default function Portfolio() {
       <section className="section">
         <div className="container">
           <div className="portfolio-grid">
-            {categories.map((c) => {
-              const Icon = Icons[c.icon]
-              return (
-                <div key={c.label} className="card portfolio-card">
+            {categories.map((c, i) => (
+              <Reveal key={c.label} delay={(i % 3) * 90}>
+                <div className="card portfolio-card">
                   <div className="portfolio-thumb">
                     <div className="portfolio-thumb-dots">
                       <span /><span /><span />
                     </div>
-                    <div className="portfolio-thumb-icon">
-                      {Icon && <Icon size={30} strokeWidth={1.6} />}
-                    </div>
-                    <div className="portfolio-thumb-bars">
-                      <span style={{ height: '38%' }} />
-                      <span style={{ height: '68%' }} />
-                      <span style={{ height: '50%' }} />
-                      <span style={{ height: '82%' }} />
-                    </div>
+                    <ServiceArt slug={c.slug} className="portfolio-art" />
                   </div>
                   <div className="portfolio-card-body">
                     <span className="portfolio-tag">{c.tag}</span>
@@ -53,8 +45,8 @@ export default function Portfolio() {
                     <p>Replace this with a real screenshot and result summary once available.</p>
                   </div>
                 </div>
-              )
-            })}
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
