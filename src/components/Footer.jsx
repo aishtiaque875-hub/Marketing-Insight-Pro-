@@ -8,7 +8,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <img src={logo} alt="Marketing Insight Pro" />
+          <div className="footer-logo-plate">
+            <img src={logo} alt="Marketing Insight Pro" />
+          </div>
           <p>
             Data-driven marketing for brands that want to be seen, trusted, and chosen.
           </p>
@@ -20,6 +22,7 @@ export default function Footer() {
           <Link to="/services">Services</Link>
           <Link to="/portfolio">Portfolio</Link>
           <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         <div className="footer-col">

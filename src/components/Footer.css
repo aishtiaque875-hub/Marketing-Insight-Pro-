@@ -12,11 +12,17 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-logo-plate {
+  display: inline-flex;
+  align-items: center;
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 18px;
+}
+
 .footer-brand img {
-  height: 44px;
-  filter: brightness(0) invert(1);
-  opacity: 0.92;
-  margin-bottom: 16px;
+  height: 52px;
 }
 
 .footer-brand p {

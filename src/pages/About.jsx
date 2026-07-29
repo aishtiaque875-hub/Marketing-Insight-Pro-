@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+import logo from '../assets/logo.png'
 import './About.css'
 
 const values = [
@@ -30,7 +32,7 @@ export default function About() {
 
       <section className="section about-story">
         <div className="container about-story-inner">
-          <div>
+          <div className="about-story-copy">
             <span className="eyebrow">Our Story</span>
             <h2>Marketing Should Be Measured, Not Guessed At</h2>
             <p>
@@ -45,10 +47,14 @@ export default function About() {
               yours.
             </p>
           </div>
-          <div className="signature-divider" style={{ maxWidth: 260, margin: '0 auto' }}>
-            <span className="line" />
-            <span className="diamond" />
-            <span className="line" />
+          <div className="about-visual">
+            <img src={logo} alt="Marketing Insight Pro" />
+            <div className="signature-divider" style={{ maxWidth: 200, margin: '22px auto 0' }}>
+              <span className="line" />
+              <span className="diamond" />
+              <span className="line" />
+            </div>
+            <p className="about-visual-tag">Insight Before Spend</p>
           </div>
         </div>
       </section>
@@ -76,15 +82,20 @@ export default function About() {
       <section className="cta-banner">
         <div className="container cta-banner-inner">
           <h2>Let's Talk About Your Brand</h2>
-          <p>Message us directly — no forms, no waiting on hold.</p>
-          <a
-            href="https://wa.me/923266739989"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            Chat on WhatsApp
-          </a>
+          <p>Message us on WhatsApp, or send details through our contact form.</p>
+          <div className="cta-banner-actions">
+            <a
+              href="https://wa.me/923266739989"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Chat on WhatsApp
+            </a>
+            <Link to="/contact" className="btn btn-secondary">
+              Contact Form
+            </Link>
+          </div>
         </div>
       </section>
     </>

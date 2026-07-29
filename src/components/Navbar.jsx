@@ -8,6 +8,7 @@ const links = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Portfolio' },
   { to: '/about', label: 'About' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -39,14 +40,9 @@ export default function Navbar() {
               {l.label}
             </NavLink>
           ))}
-          <a
-            href="https://wa.me/923266739989"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary navbar-cta"
-          >
+          <NavLink to="/contact" className="btn btn-primary navbar-cta" onClick={() => setOpen(false)}>
             Let's Talk
-          </a>
+          </NavLink>
         </nav>
 
         <button

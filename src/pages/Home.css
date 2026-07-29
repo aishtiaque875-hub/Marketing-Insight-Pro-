@@ -106,15 +106,16 @@
 }
 
 .service-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, rgba(201, 162, 74, 0.16), rgba(20, 32, 66, 0.06));
-  color: var(--gold-deep);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--navy), var(--navy-soft));
+  color: var(--gold-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 22px -10px rgba(20, 32, 66, 0.55), inset 0 0 0 3px rgba(201, 162, 74, 0.25);
 }
 
 .service-card h3 {
@@ -191,6 +192,13 @@
   padding: 30px;
 }
 
+.testimonial-stars {
+  display: flex;
+  gap: 3px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
 .testimonial-quote {
   font-size: 15px;
   color: var(--ink);
@@ -254,6 +262,16 @@
 .cta-banner p {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 28px;
+}
+
+.cta-banner .btn-secondary {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-banner .btn-secondary:hover {
+  border-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 @media (max-width: 900px) {

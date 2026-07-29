@@ -126,6 +126,11 @@ export default function Home() {
           <div className="testimonials-grid">
             {testimonials.map((t) => (
               <div key={t.name} className="card testimonial-card">
+                <div className="testimonial-stars" aria-label="5 out of 5 stars">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Icons.Star key={i} size={16} fill="currentColor" strokeWidth={0} />
+                  ))}
+                </div>
                 <p className="testimonial-quote">&ldquo;{t.quote}&rdquo;</p>
                 <div className="testimonial-person">
                   <span className="testimonial-avatar">{t.initials}</span>

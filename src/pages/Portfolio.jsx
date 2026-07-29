@@ -34,12 +34,23 @@ export default function Portfolio() {
               return (
                 <div key={c.label} className="card portfolio-card">
                   <div className="portfolio-thumb">
-                    {Icon && <Icon size={40} strokeWidth={1.4} />}
+                    <div className="portfolio-thumb-dots">
+                      <span /><span /><span />
+                    </div>
+                    <div className="portfolio-thumb-icon">
+                      {Icon && <Icon size={30} strokeWidth={1.6} />}
+                    </div>
+                    <div className="portfolio-thumb-bars">
+                      <span style={{ height: '38%' }} />
+                      <span style={{ height: '68%' }} />
+                      <span style={{ height: '50%' }} />
+                      <span style={{ height: '82%' }} />
+                    </div>
                   </div>
                   <div className="portfolio-card-body">
                     <span className="portfolio-tag">{c.tag}</span>
                     <h3>{c.label}</h3>
-                    <p>Add a short result summary here, e.g. specific metrics or outcomes.</p>
+                    <p>Replace this with a real screenshot and result summary once available.</p>
                   </div>
                 </div>
               )

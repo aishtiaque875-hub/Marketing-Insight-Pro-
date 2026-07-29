@@ -26,6 +26,15 @@ Output goes to the `dist/` folder.
 - `src/data/` — services.js and testimonials.js (edit these to change copy)
 - `src/assets/logo.png` — your logo
 
+## Contact form — one-time activation
+
+The Contact page sends messages to marketinginsight11@gmail.com using a free service
+called FormSubmit (no backend/server needed). The **very first time** someone submits
+the form after the site goes live, FormSubmit sends an activation email to
+marketinginsight11@gmail.com — open it and click "Activate" (check Spam/Promotions if
+you don't see it). After that one-time click, every future submission is delivered
+straight to the inbox automatically.
+
 ## Things to personalize before going live
 
 - Replace placeholder testimonials in `src/data/testimonials.js` with real client reviews
