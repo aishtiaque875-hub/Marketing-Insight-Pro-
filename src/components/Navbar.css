@@ -18,8 +18,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .navbar-cta {
@@ -34,7 +34,7 @@
 }
 
 .navbar-brand img {
-  height: 48px;
+  height: 52px;
   width: auto;
 }
 
