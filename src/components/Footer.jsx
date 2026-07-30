@@ -8,6 +8,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
+          <div className="footer-logo-plate">
+            <img src={logo} alt="Marketing Insight Pro" />
+          </div>
           <p className="footer-brand-tagline">
             Data-driven marketing for brands that want to be seen, trusted, and chosen.
           </p>
@@ -35,10 +38,6 @@ export default function Footer() {
         <div className="container">
           <p>&copy; {year} Marketing Insight Pro. All rights reserved.</p>
         </div>
-      </div>
-
-      <div className="footer-logo-strip">
-        <img src={logo} alt="Marketing Insight Pro" />
       </div>
     </footer>
   )
