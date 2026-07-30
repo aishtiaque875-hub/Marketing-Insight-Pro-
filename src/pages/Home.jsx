@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import * as Icons from 'lucide-react'
 import { services } from '../data/services.js'
 import { testimonials } from '../data/testimonials.js'
-import ServiceArt from '../components/ServiceArt.jsx'
+import { serviceImages } from '../data/serviceImages.js'
 import Reveal from '../components/Reveal.jsx'
 import './Home.css'
 
@@ -69,7 +69,8 @@ export default function Home() {
                 <Reveal key={s.slug} delay={i * 80}>
                   <div className="card service-card">
                     <div className="service-card-art">
-                      <ServiceArt slug={s.slug} />
+                      <img src={serviceImages[s.slug]} alt={s.title} loading="lazy" />
+                      <span className="service-card-art-overlay" />
                     </div>
                     <div className="service-icon">{Icon && <Icon size={20} strokeWidth={1.8} />}</div>
                     <h3>{s.title}</h3>

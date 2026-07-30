@@ -15,15 +15,22 @@
 .footer-logo-plate {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   background: var(--paper);
+  border: none;
   border-radius: 10px;
   padding: 10px 16px;
   margin-bottom: 16px;
+  cursor: pointer;
+  line-height: 0;
+  overflow: visible;
 }
 
 .footer-logo-plate img {
   height: 38px;
   width: auto;
+  max-width: none;
+  display: block;
 }
 
 .footer-brand-tagline {
@@ -61,5 +68,18 @@
 @media (max-width: 760px) {
   .footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding-top: 48px;
+  }
+
+  .footer-logo-plate {
+    margin-top: 4px;
+    margin-bottom: 18px;
+  }
+
+  .footer-logo-plate img {
+    height: 32px;
   }
 }

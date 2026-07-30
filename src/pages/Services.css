@@ -9,12 +9,27 @@
 }
 
 .service-detail-art {
-  background: linear-gradient(160deg, var(--navy), var(--navy-soft));
-  padding: 24px 26px 10px;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
 }
 
-.service-detail-card:hover .service-art svg {
-  transform: scale(1.05) translateY(-2px);
+.service-detail-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.service-detail-art-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(12, 21, 48, 0.68), rgba(20, 32, 66, 0.45) 55%, rgba(20, 32, 66, 0.28));
+}
+
+.service-detail-card:hover .service-detail-art img {
+  transform: scale(1.05);
 }
 
 .service-detail-body {

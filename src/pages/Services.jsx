@@ -1,6 +1,6 @@
 import * as Icons from 'lucide-react'
 import { services } from '../data/services.js'
-import ServiceArt from '../components/ServiceArt.jsx'
+import { serviceImages } from '../data/serviceImages.js'
 import Reveal from '../components/Reveal.jsx'
 import './Services.css'
 
@@ -29,7 +29,8 @@ export default function Services() {
                 <Reveal key={s.slug} delay={(i % 2) * 100}>
                   <div className="card service-detail-card">
                     <div className="service-detail-art">
-                      <ServiceArt slug={s.slug} />
+                      <img src={serviceImages[s.slug]} alt={s.title} loading="lazy" />
+                      <span className="service-detail-art-overlay" />
                     </div>
                     <div className="service-detail-body">
                       <div className="service-detail-head">

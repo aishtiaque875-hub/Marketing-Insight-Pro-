@@ -8,9 +8,14 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <div className="footer-logo-plate">
+          <button
+            type="button"
+            className="footer-logo-plate"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            aria-label="Scroll to top"
+          >
             <img src={logo} alt="Marketing Insight Pro" />
-          </div>
+          </button>
           <p className="footer-brand-tagline">
             Data-driven marketing for brands that want to be seen, trusted, and chosen.
           </p>
