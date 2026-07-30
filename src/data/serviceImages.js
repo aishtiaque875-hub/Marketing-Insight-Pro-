@@ -1,9 +1,9 @@
-import metaAds from '../assets/services/meta-ads.png'
-import seo from '../assets/services/seo.png'
-import videoEditing from '../assets/services/video-editing.png'
-import socialMedia from '../assets/services/social-media-managing.png'
-import uiUx from '../assets/services/ui-ux-designing.png'
-import contentWriting from '../assets/services/content-writing.png'
+import metaAds from '../assets/services/meta-ads.jpg'
+import seo from '../assets/services/seo.jpg'
+import videoEditing from '../assets/services/video-editing.jpg'
+import socialMedia from '../assets/services/social-media-managing.jpg'
+import uiUx from '../assets/services/ui-ux-designing.jpg'
+import contentWriting from '../assets/services/content-writing.jpg'
 
 export const serviceImages = {
   'meta-ads': metaAds,

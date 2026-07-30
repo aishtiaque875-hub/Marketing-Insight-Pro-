@@ -73,9 +73,9 @@
   color: var(--gold-deep);
 }
 
-.navbar-cta {
-  padding: 7px 14px;
-  font-size: 12.5px;
+.btn.navbar-cta {
+  padding: 6px 14px;
+  font-size: 12px;
 }
 
 .navbar-toggle {
