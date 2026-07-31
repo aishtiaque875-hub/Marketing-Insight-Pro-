@@ -5,6 +5,7 @@
   background: rgba(251, 250, 247, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid transparent;
+  overflow: visible;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -18,8 +19,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .navbar-cta {
@@ -31,11 +32,15 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
+  min-width: max-content;
+  overflow: visible;
 }
 
 .navbar-brand img {
-  height: 52px;
+  height: 48px;
   width: auto;
+  max-width: none;
+  display: block;
 }
 
 .navbar-links {

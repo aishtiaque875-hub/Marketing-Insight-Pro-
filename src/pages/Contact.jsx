@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Clock, Gift, ShieldCheck, Headphones } from 'lucide-react'
 import './Contact.css'
 
 const initialForm = { name: '', phone: '', email: '', message: '' }
@@ -46,6 +47,27 @@ export default function Contact() {
           </span>
           <h1>Let's Talk About Your Brand</h1>
           <p>Send your details and we'll get back to you — usually within a day.</p>
+        </div>
+      </section>
+
+      <section className="trust-badges">
+        <div className="container trust-badges-inner">
+          <div className="trust-badge">
+            <Clock size={20} />
+            <span>Response within 24 Hours</span>
+          </div>
+          <div className="trust-badge">
+            <Gift size={20} />
+            <span>Free Consultation</span>
+          </div>
+          <div className="trust-badge">
+            <ShieldCheck size={20} />
+            <span>No Hidden Charges</span>
+          </div>
+          <div className="trust-badge">
+            <Headphones size={20} />
+            <span>Professional Support</span>
+          </div>
         </div>
       </section>
 

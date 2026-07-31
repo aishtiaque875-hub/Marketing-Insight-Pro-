@@ -4,12 +4,56 @@ import { services } from '../data/services.js'
 import { testimonials } from '../data/testimonials.js'
 import { serviceImages } from '../data/serviceImages.js'
 import Reveal from '../components/Reveal.jsx'
+import CountUp from '../components/CountUp.jsx'
+import FaqItem from '../components/FaqItem.jsx'
 import './Home.css'
 
 const stats = [
-  { value: '40+', label: 'Brands Served' },
-  { value: '6', label: 'Core Services' },
-  { value: '24h', label: 'Avg. Reply Time' },
+  { value: 40, suffix: '+', label: 'Brands Served' },
+  { value: 6, suffix: '', label: 'Core Services' },
+  { value: 24, suffix: 'h', label: 'Avg. Reply Time' },
+]
+
+const processSteps = [
+  {
+    step: '01',
+    title: 'Discovery Call',
+    text: 'We learn about your business, customers, and what "success" actually looks like for you.',
+  },
+  {
+    step: '02',
+    title: 'Strategy & Plan',
+    text: "We map out which services fit, set clear goals, and agree on how we'll measure results.",
+  },
+  {
+    step: '03',
+    title: 'Execution',
+    text: 'Campaigns, content, and design go live — built and managed by one accountable team.',
+  },
+  {
+    step: '04',
+    title: 'Report & Improve',
+    text: 'You get plain-language updates on what worked, and we keep optimizing from there.',
+  },
+]
+
+const faqs = [
+  {
+    q: 'How soon will I see results?',
+    a: "It depends on the service — paid ads can show early signals within the first couple of weeks, while SEO and content typically build momentum over 2-3 months. We'll be upfront about realistic timelines for your situation.",
+  },
+  {
+    q: 'Do I have to commit to all six services?',
+    a: 'No — start with whichever service fits your immediate need. Many clients begin with one service and add others once they see it working.',
+  },
+  {
+    q: 'How do you report on progress?',
+    a: "You'll get regular, plain-language updates — not just dashboards full of jargon — so you always know what's working and what we're changing.",
+  },
+  {
+    q: 'Is the first consultation really free?',
+    a: 'Yes. Message us on WhatsApp or use the contact form, and we\'ll go over your goals before you commit to anything.',
+  },
 ]
 
 export default function Home() {
@@ -43,7 +87,9 @@ export default function Home() {
           <div className="hero-stats">
             {stats.map((s) => (
               <div key={s.label} className="hero-stat">
-                <strong>{s.value}</strong>
+                <strong>
+                  <CountUp value={s.value} suffix={s.suffix} />
+                </strong>
                 <span>{s.label}</span>
               </div>
             ))}
@@ -85,6 +131,30 @@ export default function Home() {
             <Link to="/services" className="btn btn-secondary">
               See Full Service Details
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="section process-section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>
+              How We Work
+            </span>
+            <h2>Our Process</h2>
+            <p>A simple, transparent path from first message to measurable results.</p>
+          </div>
+          <div className="process-grid">
+            {processSteps.map((p, i) => (
+              <Reveal key={p.step} delay={i * 90}>
+                <div className="process-step">
+                  <span className="process-step-number">{p.step}</span>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -152,6 +222,23 @@ export default function Home() {
                 </div>
                 </div>
               </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section faq-section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>
+              Questions
+            </span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div className="faq-list">
+            {faqs.map((f, i) => (
+              <FaqItem key={f.q} q={f.q} a={f.a} />
             ))}
           </div>
         </div>

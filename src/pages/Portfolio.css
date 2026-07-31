@@ -6,6 +6,13 @@
 
 .portfolio-card {
   overflow: hidden;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: #fff;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
 }
 
 .portfolio-thumb {
@@ -53,6 +60,132 @@
 .portfolio-card-body p {
   font-size: 14px;
   color: var(--slate);
+  margin-bottom: 12px;
+}
+
+.portfolio-view-link {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.portfolio-card:hover .portfolio-view-link {
+  color: var(--gold-deep);
+}
+
+/* --- Case study modal --- */
+.case-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 21, 48, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.case-modal {
+  background: #fff;
+  border-radius: 18px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.4);
+}
+
+.case-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.case-modal-image {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(150deg, var(--navy), var(--navy-soft));
+  overflow: hidden;
+}
+
+.case-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.case-modal-body {
+  padding: 28px 30px 34px;
+}
+
+.case-modal-body h2 {
+  font-size: clamp(20px, 3vw, 26px);
+  margin: 8px 0 20px;
+}
+
+.case-modal-block {
+  margin-bottom: 18px;
+}
+
+.case-modal-block h4 {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-deep);
+  margin-bottom: 6px;
+}
+
+.case-modal-block p {
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+.case-modal-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.case-modal-tool {
+  font-size: 12.5px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--border);
+  color: var(--navy);
+}
+
+.case-modal-result {
+  background: linear-gradient(160deg, rgba(201, 162, 74, 0.1), rgba(201, 162, 74, 0.04));
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.case-modal-body .btn {
+  margin-top: 6px;
 }
 
 @media (max-width: 900px) {
@@ -64,5 +197,13 @@
 @media (max-width: 560px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-modal {
+    max-height: 92vh;
+  }
+
+  .case-modal-body {
+    padding: 24px 20px 28px;
   }
 }
