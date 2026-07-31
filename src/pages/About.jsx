@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.webp'
 import Reveal from '../components/Reveal.jsx'
 import './About.css'
 

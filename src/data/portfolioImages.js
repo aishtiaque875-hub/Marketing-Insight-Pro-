@@ -1,9 +1,9 @@
-import metaAds from '../assets/portfolio/meta-ads.jpg'
-import seo from '../assets/portfolio/seo.jpg'
-import videoEditing from '../assets/portfolio/video-editing.jpg'
-import socialMedia from '../assets/portfolio/social-media-managing.jpg'
-import uiUx from '../assets/portfolio/ui-ux-designing.jpg'
-import contentWriting from '../assets/portfolio/content-writing.jpg'
+import metaAds from '../assets/portfolio/meta-ads.webp'
+import seo from '../assets/portfolio/seo.webp'
+import videoEditing from '../assets/portfolio/video-editing.webp'
+import socialMedia from '../assets/portfolio/social-media-managing.webp'
+import uiUx from '../assets/portfolio/ui-ux-designing.webp'
+import contentWriting from '../assets/portfolio/content-writing.webp'
 
 export const portfolioImages = {
   'meta-ads': metaAds,
