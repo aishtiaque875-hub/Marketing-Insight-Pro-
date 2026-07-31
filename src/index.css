@@ -205,8 +205,8 @@ button {
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  border-color: rgba(201, 162, 74, 0.4);
+  box-shadow: var(--shadow), 0 0 0 1.5px var(--navy);
+  border-color: var(--navy);
 }
 
 @media (max-width: 640px) {

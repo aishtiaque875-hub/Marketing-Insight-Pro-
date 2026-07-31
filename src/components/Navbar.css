@@ -19,8 +19,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  min-height: 104px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
 .navbar-cta {

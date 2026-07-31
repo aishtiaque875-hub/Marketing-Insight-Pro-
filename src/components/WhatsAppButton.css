@@ -15,6 +15,26 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.whatsapp-fab::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.55);
+  animation: whatsappPulse 2.6s ease-out infinite;
+}
+
+@keyframes whatsappPulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-fab::before {
+    animation: none;
+  }
+}
+
 .whatsapp-fab:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 18px 34px -8px rgba(37, 211, 102, 0.65);

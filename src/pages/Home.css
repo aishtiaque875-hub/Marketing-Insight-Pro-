@@ -86,7 +86,7 @@
 
 .hero-stat strong {
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: clamp(38px, 4.5vw, 48px);
   color: var(--gold-light);
 }
 
