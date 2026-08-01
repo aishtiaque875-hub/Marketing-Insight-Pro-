@@ -83,3 +83,22 @@
     height: 32px;
   }
 }
+
+.footer-bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 13px;
+}
+
+.footer-legal-links a:hover {
+  color: var(--gold-light);
+}

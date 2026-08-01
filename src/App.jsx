@@ -8,6 +8,9 @@ import Services from './pages/Services.jsx'
 import Portfolio from './pages/Portfolio.jsx'
 import About from './pages/About.jsx'
 import Contact from './pages/Contact.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
+import TermsConditions from './pages/TermsConditions.jsx'
+import CookiePolicy from './pages/CookiePolicy.jsx'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -29,6 +32,9 @@ export default function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
       </main>
       <Footer />

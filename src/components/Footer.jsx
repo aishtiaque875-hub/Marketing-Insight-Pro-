@@ -40,8 +40,13 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <div className="container">
+        <div className="container footer-bottom-inner">
           <p>&copy; {year} Marketing Insight Pro. All rights reserved.</p>
+          <div className="footer-legal-links">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
+            <Link to="/cookie-policy">Cookie Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

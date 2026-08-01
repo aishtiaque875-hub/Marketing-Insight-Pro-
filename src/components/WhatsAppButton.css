@@ -6,13 +6,18 @@
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: #25d366;
+  background: #fff;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 14px 30px -8px rgba(37, 211, 102, 0.55);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-fab img {
+  width: 42px;
+  height: 42px;
 }
 
 .whatsapp-fab::before {
@@ -46,5 +51,10 @@
     bottom: 16px;
     width: 52px;
     height: 52px;
+  }
+
+  .whatsapp-fab img {
+    width: 36px;
+    height: 36px;
   }
 }
