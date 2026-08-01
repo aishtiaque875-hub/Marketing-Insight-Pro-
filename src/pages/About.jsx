@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/logo-wide.png'
 import Reveal from '../components/Reveal.jsx'
+import CountUp from '../components/CountUp.jsx'
 import './About.css'
+
+const aboutStats = [
+  { value: 40, suffix: '+', label: 'Projects Delivered' },
+  { value: 25, suffix: '+', label: 'Happy Clients' },
+  { value: 3, suffix: '+', label: 'Years Experience' },
+  { value: 95, suffix: '%', label: 'Client Satisfaction' },
+]
 
 const values = [
   {
@@ -35,28 +42,36 @@ export default function About() {
         <Reveal>
         <div className="container about-story-inner">
           <div className="about-story-copy">
-            <span className="eyebrow">Our Story</span>
-            <h2>Marketing Should Be Measured, Not Guessed At</h2>
+            <h2>Who We Are</h2>
             <p>
-              Marketing Insight Pro was started to fix a common problem: businesses spending on
-              ads, content, and design without a clear view of what's actually working. We bring
-              Meta Ads, SEO, video, social media, design, and content writing under one roof, so
-              your brand's message stays consistent everywhere — and every rupee spent is
-              something we can explain and defend.
+              Marketing Insight Pro is a digital marketing team built around one idea: insight
+              before spend. We bring Meta Ads, SEO, video, social media, design, and content
+              writing under one roof, so your brand's message stays consistent everywhere.
             </p>
             <p>
-              Add your own founding story, timeline, and photos here to make this page fully
-              yours.
+              Add your own founding story here — when the business started, and what led you to
+              start it.
+            </p>
+
+            <h2>Our Approach</h2>
+            <p>
+              We don't believe in one-size-fits-all. Every project starts with understanding
+              your customers, your goals, and what "success" actually looks like for your
+              business — then we build a plan around that.
             </p>
           </div>
-          <div className="about-visual">
-            <img src={logo} alt="Marketing Insight Pro" />
-            <div className="signature-divider" style={{ maxWidth: 200, margin: '22px auto 0' }}>
-              <span className="line" />
-              <span className="diamond" />
-              <span className="line" />
-            </div>
-            <p className="about-visual-tag">Insight Before Spend</p>
+
+          <div className="about-stats-grid">
+            {aboutStats.map((s, i) => (
+              <Reveal key={s.label} delay={i * 90}>
+                <div className="card about-stat-card">
+                  <strong>
+                    <CountUp value={s.value} suffix={s.suffix} />
+                  </strong>
+                  <span>{s.label}</span>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
         </Reveal>

@@ -86,7 +86,7 @@
 
 .hero-stat strong {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 58px !important;
   line-height: 1;
   color: var(--gold-light);
 }
