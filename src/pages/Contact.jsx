@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Clock, Gift, ShieldCheck, Headphones } from 'lucide-react'
+import Reveal from '../components/Reveal.jsx'
 import './Contact.css'
 
 const initialForm = { name: '', phone: '', email: '', message: '' }
@@ -72,6 +73,7 @@ export default function Contact() {
       </section>
 
       <section className="section contact-section">
+        <Reveal>
         <div className="container contact-inner">
           <div className="contact-info">
             <span className="eyebrow">Get in Touch</span>
@@ -163,6 +165,7 @@ export default function Contact() {
             )}
           </form>
         </div>
+        </Reveal>
       </section>
     </>
   )
