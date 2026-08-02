@@ -217,7 +217,6 @@ export default function Home() {
                   <span className="testimonial-avatar">{t.initials}</span>
                   <div>
                     <strong>{t.name}</strong>
-                    <span>{t.role}</span>
                   </div>
                 </div>
                 </div>

@@ -27,8 +27,10 @@ const whyChooseUs = [
 ]
 
 const founders = [
-  { name: 'Founder Name', role: 'Co-Founder', initials: 'FN' },
-  { name: 'Founder Name', role: 'Co-Founder', initials: 'FN' },
+  { name: 'Hyder Shaikh', role: 'CEO & Founder', initials: 'HS' },
+  { name: 'Ayesha Malik', role: 'Co-Founder', initials: 'AM' },
+  { name: 'Bilal Ahmed', role: 'Co-Founder', initials: 'BA' },
+  { name: 'Sara Khan', role: 'Co-Founder', initials: 'SK' },
 ]
 
 const processSteps = [
@@ -38,11 +40,6 @@ const processSteps = [
   { step: '04', title: 'Execution', text: 'Campaigns, content, and design go live, managed by one team.' },
   { step: '05', title: 'Monitoring & Optimization', text: 'We track what\'s working and adjust in real time.' },
   { step: '06', title: 'Reporting & Growth', text: 'You get plain-language updates and a plan for what\'s next.' },
-]
-
-const tools = [
-  'Meta Ads Manager', 'Google Analytics', 'Google Search Console', 'SEMrush',
-  'Canva', 'Figma', 'Adobe Premiere Pro', 'Meta Business Suite',
 ]
 
 export default function About() {
@@ -168,21 +165,6 @@ export default function About() {
                   <p>{p.text}</p>
                 </div>
               </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TOOLS */}
-      <section className="section tools-section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>Our Stack</span>
-            <h2>Tools We Use</h2>
-          </div>
-          <div className="tools-grid">
-            {tools.map((tool) => (
-              <span key={tool} className="tool-badge">{tool}</span>
             ))}
           </div>
         </div>
