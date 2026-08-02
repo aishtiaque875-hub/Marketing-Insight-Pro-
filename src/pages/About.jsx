@@ -27,10 +27,12 @@ const whyChooseUs = [
 ]
 
 const founders = [
-  { name: 'Hyder Shaikh', role: 'CEO & Founder', initials: 'HS' },
-  { name: 'Ayesha Malik', role: 'Co-Founder', initials: 'AM' },
-  { name: 'Bilal Ahmed', role: 'Co-Founder', initials: 'BA' },
-  { name: 'Sara Khan', role: 'Co-Founder', initials: 'SK' },
+  { name: 'Hyder Shaikh', role: 'Founder & CEO', initials: 'HS' },
+  { name: 'Ayesha Malik', role: 'Digital Marketing Manager', initials: 'AM' },
+  { name: 'Bilal Ahmed', role: 'SEO Specialist', initials: 'BA' },
+  { name: 'Hassan Raza', role: 'Video Editor', initials: 'HR' },
+  { name: 'Rafay Shaikh', role: 'UI/UX Designer', initials: 'RS' },
+  { name: 'Sara Khan', role: 'Content Strategist / Social Media Manager', initials: 'SK' },
 ]
 
 const processSteps = [
@@ -132,7 +134,7 @@ export default function About() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow" style={{ justifyContent: 'center' }}>Our Team</span>
-            <h2>Meet the Founders</h2>
+            <h2>Meet Our Team</h2>
             <p>Add real names, roles, and photos here to introduce your team.</p>
           </div>
           <div className="founders-grid">
