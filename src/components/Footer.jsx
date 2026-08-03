@@ -22,12 +22,22 @@ export default function Footer() {
         </div>
 
         <div className="footer-col">
-          <h4>Navigate</h4>
+          <h4>Quick Links</h4>
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/portfolio">Portfolio</Link>
           <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
+        </div>
+
+        <div className="footer-col">
+          <h4>Services</h4>
+          <Link to="/services">Meta Ads</Link>
+          <Link to="/services">SEO</Link>
+          <Link to="/services">Video Editing</Link>
+          <Link to="/services">Social Media Managing</Link>
+          <Link to="/services">UI/UX Designing</Link>
+          <Link to="/services">Content Writing</Link>
         </div>
 
         <div className="footer-col">

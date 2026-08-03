@@ -6,8 +6,8 @@
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 32px;
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -63,6 +63,12 @@
   padding: 22px 0;
   font-size: 13px;
   color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 760px) {

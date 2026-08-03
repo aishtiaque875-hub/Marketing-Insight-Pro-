@@ -62,26 +62,40 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="container hero-inner">
-          <span className="eyebrow">Marketing Insight Pro</span>
-          <h1 className="hero-title">
-            Marketing That Turns <span className="gold-text">Attention</span> Into Revenue
-          </h1>
-          <p className="hero-sub">
-            Meta Ads, SEO, video, social media, design, and content — run by one team that
-            actually reports back in numbers you understand.
-          </p>
-          <div className="hero-actions">
-            <Link to="/services" className="btn btn-primary">
-              Explore Services
-            </Link>
-            <a
-              href="https://wa.me/923266739989"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-            >
-              Get in Touch
-            </a>
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <span className="eyebrow">Marketing Insight Pro</span>
+              <h1 className="hero-title">
+                Turn <span className="gold-text">Attention</span> Into Revenue —
+                On Autopilot
+              </h1>
+              <p className="hero-sub">
+                Meta Ads, SEO, video, social media, design, and content — run by one team that
+                actually reports back in numbers you understand.
+              </p>
+              <div className="hero-actions">
+                <Link to="/services" className="btn btn-primary btn-glow">
+                  Explore Services
+                </Link>
+                <a
+                  href="https://wa.me/923266739989"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  Get in Touch
+                </a>
+              </div>
+            </div>
+
+            <Reveal direction="right" className="hero-visual">
+              <div className="hero-mockup">
+                <div className="hero-mockup-dots">
+                  <span /><span /><span />
+                </div>
+                <img src={serviceImages['meta-ads']} alt="Campaign performance dashboard" loading="lazy" />
+              </div>
+            </Reveal>
           </div>
 
           <div className="hero-stats">
@@ -161,8 +175,8 @@ export default function Home() {
 
       {/* WHY US */}
       <section className="section why-us">
-        <Reveal>
         <div className="container why-inner">
+          <Reveal direction="left">
           <div className="why-copy">
             <span className="eyebrow">Why Marketing Insight Pro</span>
             <h2>We Treat Your Budget Like It's Ours</h2>
@@ -177,6 +191,8 @@ export default function Home() {
               <li>Direct WhatsApp access to your account manager</li>
             </ul>
           </div>
+          </Reveal>
+          <Reveal direction="right">
           <div className="why-visual" aria-hidden="true">
             <div className="signature-divider" style={{ maxWidth: 'none', marginBottom: 24 }}>
               <span className="line" />
@@ -188,8 +204,8 @@ export default function Home() {
               not our media plan."
             </p>
           </div>
+          </Reveal>
         </div>
-        </Reveal>
       </section>
 
       {/* TESTIMONIALS */}
