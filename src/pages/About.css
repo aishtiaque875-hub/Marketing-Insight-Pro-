@@ -1,29 +1,10 @@
-/* --- HERO with animated gradient --- */
+/* --- HERO: flat solid navy per brand guide --- */
 .about-hero {
   position: relative;
   overflow: hidden;
   padding: 90px 0 70px;
   text-align: center;
   background: var(--navy-deep);
-}
-
-.about-hero-bg {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 20% 20%, rgba(201, 162, 74, 0.16), transparent 45%),
-    radial-gradient(circle at 80% 80%, rgba(201, 162, 74, 0.1), transparent 45%);
-  background-size: 200% 200%;
-  animation: gradientDrift 16s ease infinite;
-}
-
-@keyframes gradientDrift {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 0%; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .about-hero-bg { animation: none; }
 }
 
 .about-hero-inner {

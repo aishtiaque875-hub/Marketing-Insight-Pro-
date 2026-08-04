@@ -49,7 +49,6 @@ export default function About() {
     <>
       {/* HERO */}
       <section className="about-hero">
-        <div className="about-hero-bg" aria-hidden="true" />
         <div className="container about-hero-inner">
           <span className="eyebrow" style={{ justifyContent: 'center' }}>About Us</span>
           <h1>Marketing Insight Pro</h1>

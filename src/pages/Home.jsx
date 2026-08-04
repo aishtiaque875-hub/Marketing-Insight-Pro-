@@ -3,6 +3,7 @@ import * as Icons from 'lucide-react'
 import { services } from '../data/services.js'
 import { testimonials } from '../data/testimonials.js'
 import { serviceImages } from '../data/serviceImages.js'
+import heroDashboard from '../assets/hero-dashboard.webp'
 import Reveal from '../components/Reveal.jsx'
 import CountUp from '../components/CountUp.jsx'
 import FaqItem from '../components/FaqItem.jsx'
@@ -93,7 +94,7 @@ export default function Home() {
                 <div className="hero-mockup-dots">
                   <span /><span /><span />
                 </div>
-                <img src={serviceImages['meta-ads']} alt="Campaign performance dashboard" loading="lazy" />
+                <img src={heroDashboard} alt="Digital marketing performance dashboard" loading="lazy" />
               </div>
             </Reveal>
           </div>
