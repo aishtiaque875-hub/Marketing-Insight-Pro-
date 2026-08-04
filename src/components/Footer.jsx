@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Instagram, Facebook } from 'lucide-react'
 import logo from '../assets/logo-wide.png'
 import './Footer.css'
 
@@ -19,6 +20,24 @@ export default function Footer() {
           <p className="footer-brand-tagline">
             Data-driven marketing for brands that want to be seen, trusted, and chosen.
           </p>
+          <div className="footer-social">
+            <a
+              href="https://www.instagram.com/marketinginsightpro/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://www.facebook.com/MarketingInsightPro"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <Facebook size={18} />
+            </a>
+          </div>
         </div>
 
         <div className="footer-col">
