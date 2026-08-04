@@ -1,6 +1,6 @@
 .footer {
   background: var(--navy-deep);
-  color: rgba(255, 255, 255, 0.75);
+  color: #cbd5e1;
   padding-top: 64px;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .footer-col a:hover {
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 .footer-bottom {
@@ -106,7 +106,7 @@
 }
 
 .footer-legal-links a:hover {
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
 .footer-social {

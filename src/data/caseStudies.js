@@ -3,7 +3,7 @@ import { portfolioImages } from './portfolioImages.js'
 export const caseStudies = [
   {
     slug: 'meta-ads',
-    title: 'Seasonal Sale Ad Campaign',
+    title: 'Meta Ads Campaign',
     category: 'Meta Ads',
     image: portfolioImages['meta-ads'],
     goal: 'Increase online sales for an e-commerce store during a seasonal sale period.',
@@ -14,7 +14,7 @@ export const caseStudies = [
   },
   {
     slug: 'seo',
-    title: 'Local Search Visibility Project',
+    title: 'Local SEO Growth',
     category: 'SEO',
     image: portfolioImages['seo'],
     goal: 'Improve visibility on Google Maps and local search for a service-based business.',
@@ -25,7 +25,7 @@ export const caseStudies = [
   },
   {
     slug: 'video-editing',
-    title: 'Short-Form Reels Series',
+    title: 'Reels & Short-Form Edit',
     category: 'Video Editing',
     image: portfolioImages['video-editing'],
     goal: 'Increase engagement on Instagram Reels and TikTok for a lifestyle brand.',
@@ -36,7 +36,7 @@ export const caseStudies = [
   },
   {
     slug: 'social-media-managing',
-    title: 'Monthly Content Calendar',
+    title: 'Monthly Social Calendar',
     category: 'Social Media Managing',
     image: portfolioImages['social-media-managing'],
     goal: 'Build consistent posting and stronger audience engagement across platforms.',
@@ -47,7 +47,7 @@ export const caseStudies = [
   },
   {
     slug: 'ui-ux-designing',
-    title: 'Homepage Conversion Redesign',
+    title: 'Landing Page Redesign',
     category: 'UI/UX Design',
     image: portfolioImages['ui-ux-designing'],
     goal: 'Improve conversion rate on a growth-focused agency homepage.',
@@ -58,7 +58,7 @@ export const caseStudies = [
   },
   {
     slug: 'content-writing',
-    title: 'SEO Blog Content Program',
+    title: 'Website Copy & Blog',
     category: 'Content Writing',
     image: portfolioImages['content-writing'],
     goal: 'Build organic authority and traffic through consistent blog content.',

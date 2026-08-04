@@ -1,22 +1,23 @@
 :root {
-  /* --- Marketing Insight Pro design tokens (from logo) --- */
-  --navy: #142042;
-  --navy-deep: #0c1530;
-  --navy-soft: #2a3a63;
-  --gold: #c9a24a;
-  --gold-light: #e6cd8a;
-  --gold-deep: #9c7a2e;
-  --paper: #fbfaf7;
-  --ink: #171a22;
-  --slate: #5c6373;
+  /* --- Marketing Insight Pro brand tokens (official brand guide) --- */
+  --navy: #0b2348;
+  --navy-deep: #081b36;
+  --navy-soft: #153b73;
+  --gold: #c9a227;
+  --gold-light: #e0b84d;
+  --gold-deep: #b88d16;
+  --paper: #f8fafc;
+  --heading: #0f172a;
+  --ink: #0f172a;
+  --slate: #64748b;
   --slate-light: #8890a0;
-  --border: rgba(20, 32, 66, 0.1);
-  --shadow: 0 20px 50px -20px rgba(12, 21, 48, 0.25);
+  --border: #e5e7eb;
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --radius: 14px;
+  --radius: 16px;
   --container: 1240px;
 }
 
@@ -50,7 +51,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  color: var(--navy);
+  color: var(--heading);
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -157,11 +158,11 @@ button {
   justify-content: center;
   gap: 8px;
   padding: 14px 30px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   font-size: 15px;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .btn:hover {
@@ -169,31 +170,36 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, var(--gold-deep));
-  color: var(--navy-deep);
+  background: var(--gold);
+  color: #fff;
   font-weight: 700;
-  box-shadow: 0 14px 32px -10px rgba(201, 162, 74, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 24px -8px rgba(201, 162, 39, 0.5);
 }
 
 .btn-primary:hover {
-  box-shadow: 0 18px 38px -10px rgba(201, 162, 74, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  background: var(--gold-deep);
+  box-shadow: 0 14px 30px -8px rgba(184, 141, 22, 0.55);
+}
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--navy);
-  border-color: var(--border);
+  border: 1.5px solid var(--navy);
 }
 
 .btn-secondary:hover {
   border-color: var(--gold);
+  background: rgba(11, 35, 72, 0.05);
+  color: var(--navy);
 }
 
 .card {
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .cta-banner-actions {
@@ -204,9 +210,9 @@ button {
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow), 0 0 0 1.5px var(--navy);
-  border-color: var(--navy);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  border-color: var(--gold);
 }
 
 @media (max-width: 640px) {

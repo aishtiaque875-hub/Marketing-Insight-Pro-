@@ -70,7 +70,11 @@
 }
 
 .nav-link.is-active {
-  color: var(--gold-deep);
+  color: var(--gold);
+}
+
+.nav-link:hover {
+  color: var(--navy-soft);
 }
 
 .navbar-cta {
