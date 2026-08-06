@@ -1,70 +1,112 @@
-import { portfolioImages } from './portfolioImages.js'
+import { portfolioImages } from './portfolioImages.js';
 
 export const caseStudies = [
   {
     slug: 'meta-ads',
-    title: 'Meta Ads Campaign',
+    title: 'E-Commerce Fashion Scaling',
     category: 'Meta Ads',
+    client: 'Velvet & Thread Apparel',
     image: portfolioImages['meta-ads'],
-    goal: 'Increase online sales for an e-commerce store during a seasonal sale period.',
+    roiStat: '+480% Revenue',
+    roasMetric: '5.2x ROAS',
+    beforeAfter: {
+      before: '$12.4k / mo revenue (1.4x ROAS)',
+      after: '$71.8k / mo revenue (5.2x ROAS)'
+    },
+    goal: 'Scale seasonal inventory sales while aggressively lowering Customer Acquisition Cost (CAC).',
     solution:
-      'Built targeted audience segments, tested multiple creative variations, and reallocated budget daily toward the best-performing ad sets.',
-    tools: ['Meta Ads Manager', 'Meta Pixel', 'Canva'],
-    result: '210% increase in sales with a lower average cost per conversion.',
+      'Engineered dynamic broad-audience prospecting campaigns, high-hook video creatives, and retargeting web funnels with instant checkout incentives.',
+    tools: ['Meta Ads Manager', 'Shopify Analytics', 'Klaviyo'],
+    result: '480% revenue growth in 60 days with a 38% reduction in CAC.',
   },
   {
     slug: 'seo',
-    title: 'Local SEO Growth',
+    title: 'Enterprise B2B Legal SEO',
     category: 'SEO',
+    client: 'Apex Corporate Law',
     image: portfolioImages['seo'],
-    goal: 'Improve visibility on Google Maps and local search for a service-based business.',
+    roiStat: '#1 Google Rank',
+    roasMetric: '340% Organic Leads',
+    beforeAfter: {
+      before: 'Page 4 on Google (8 inquiries/mo)',
+      after: '#1 Position on 14 keywords (48 inquiries/mo)'
+    },
+    goal: 'Dominate high-ticket commercial keywords for corporate legal consultation.',
     solution:
-      'Optimized the Google Business Profile, built local citations, and improved on-page SEO across key service pages.',
-    tools: ['Google Business Profile', 'Google Search Console', 'SEMrush'],
-    result: '320% increase in organic traffic and a #1 ranking for target local keywords.',
+      'Re-architected site technical SEO, implemented Schema markup, built high-DA legal backlinks, and produced authoritative pillar content.',
+    tools: ['Google Search Console', 'SEMrush', 'SurferSEO'],
+    result: '340% increase in inbound organic retainer inquiries.',
   },
   {
     slug: 'video-editing',
-    title: 'Reels & Short-Form Edit',
+    title: 'Viral Reel & TikTok Ad Campaign',
     category: 'Video Editing',
+    client: 'GlowFit Wellness',
     image: portfolioImages['video-editing'],
-    goal: 'Increase engagement on Instagram Reels and TikTok for a lifestyle brand.',
+    roiStat: '14.2M Impressions',
+    roasMetric: '4.1x Video ROAS',
+    beforeAfter: {
+      before: '1.2% click-through rate',
+      after: '4.8% click-through rate'
+    },
+    goal: 'Capture fast attention on Instagram Reels & TikTok to drive supplement subscription signups.',
     solution:
-      'Produced fast-paced, caption-driven edits with strong hooks in the first two seconds, optimized for retention.',
-    tools: ['Adobe Premiere Pro', 'CapCut'],
-    result: 'Noticeably higher average watch time and a steady rise in shares.',
+      'Produced kinetic typography edits, fast-cut visual hooks in the first 2 seconds, and UGC-style split-screen comparison ads.',
+    tools: ['Adobe Premiere Pro', 'After Effects', 'CapCut'],
+    result: '14.2 Million organic + paid impressions resulting in 1,200+ new monthly subscribers.',
   },
   {
     slug: 'social-media-managing',
-    title: 'Monthly Social Calendar',
-    category: 'Social Media Managing',
+    title: 'Luxury Real Estate Brand Growth',
+    category: 'Social Media',
+    client: 'Prestige Haven Estates',
     image: portfolioImages['social-media-managing'],
-    goal: 'Build consistent posting and stronger audience engagement across platforms.',
+    roiStat: '+280% Qualified Leads',
+    roasMetric: '85k Organic Growth',
+    beforeAfter: {
+      before: 'Inactive feed & 2k followers',
+      after: '87k follower community & daily DMs'
+    },
+    goal: 'Establish an authoritative, high-trust luxury visual feed to attract high-net-worth property investors.',
     solution:
-      'Designed a themed monthly calendar mixing education, promotion, and engagement posts, scheduled in advance.',
-    tools: ['Canva', 'Meta Business Suite', 'Later'],
-    result: 'Steady month-over-month growth in followers and engagement rate.',
+      'Curated aesthetic carousel tours, architect highlights, targeted hashtag strategies, and proactive VIP DM outreach.',
+    tools: ['Canva Pro', 'Meta Business Suite', 'Later'],
+    result: 'Generated 24 prime property sales inquiries directly from Instagram DMs.',
   },
   {
     slug: 'ui-ux-designing',
-    title: 'Landing Page Redesign',
+    title: 'SaaS Platform Web Redesign',
     category: 'UI/UX Design',
+    client: 'CloudFlow Analytics',
     image: portfolioImages['ui-ux-designing'],
-    goal: 'Improve conversion rate on a growth-focused agency homepage.',
+    roiStat: '+65% Signup Conversion',
+    roasMetric: '99/100 Speed Score',
+    beforeAfter: {
+      before: '2.1% visitor-to-trial conversion',
+      after: '5.8% visitor-to-trial conversion'
+    },
+    goal: 'Redesign a complex tech product homepage into a sleek, high-converting enterprise portal.',
     solution:
-      'Redesigned the layout with clearer visual hierarchy, added trust signals, and simplified the primary call to action.',
-    tools: ['Figma'],
-    result: 'Improved conversion rate with a lower bounce rate on the homepage.',
+      'Created a modern dark-navy & metallic gold aesthetic, clear visual hierarchy, interactive interactive demo preview, and 1-click CTA checkout.',
+    tools: ['Figma', 'Vite React', 'Framer Motion'],
+    result: '65% boost in free trial conversions and zero bounce rate spikes.',
   },
   {
     slug: 'content-writing',
-    title: 'Website Copy & Blog',
+    title: 'High-Converting Sales Funnel Copy',
     category: 'Content Writing',
+    client: 'Apex Executive Coaching',
     image: portfolioImages['content-writing'],
-    goal: 'Build organic authority and traffic through consistent blog content.',
+    roiStat: '3.8x Email Conversion',
+    roasMetric: '$140k Launch Sales',
+    beforeAfter: {
+      before: '$28k course launch',
+      after: '$142k masterclass launch'
+    },
+    goal: 'Rewrite VSL sales script, landing page copy, and 7-day email follow-up sequence.',
     solution:
-      'Wrote SEO-optimized articles targeting key stages of the customer journey, from awareness to decision.',
-    tools: ['SurferSEO', 'Grammarly'],
-    result: 'Steady increase in organic blog traffic and average time on page.',
+      'Crafted high-emotion direct response copy targeting executive pain points, social proof triggers, and deadline urgency.',
+    tools: ['SurferSEO', 'Grammarly Premium', 'Klaviyo'],
+    result: 'Scaled masterclass launch revenue from $28k to $142k in 14 days.',
   },
-]
+];

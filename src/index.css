@@ -1,32 +1,55 @@
 :root {
-  /* --- Marketing Insight Pro brand tokens (official brand guide) --- */
-  --navy: #0b2348;
-  --navy-deep: #081b36;
-  --navy-soft: #153b73;
-  --gold: #daad47;
-  --gold-light: #e8c574;
-  --gold-deep: #b8892f;
-  --paper: #f8fafc;
-  --heading: #0f172a;
-  --ink: #0f172a;
-  --slate: #64748b;
-  --slate-light: #8890a0;
-  --border: #e5e7eb;
-  --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  /* --- Luxury Navy & Metallic Gold Tokens (Extracted directly from Brand Logo) --- */
+  --navy-deep: #04142C;      /* Primary luxury dark background */
+  --navy-surface: #071F42;   /* Card & container dark surface */
+  --navy-card: #0A2650;      /* Elevated glass card background */
+  --navy-soft: #103468;      /* Interactive navy hover state */
+  --navy-light: #164380;     /* Border glow navy */
 
+  /* Luxury Gold System */
+  --gold-primary: #D4AF37;   /* Signature metallic gold */
+  --gold-light: #F5D77F;     /* Highlights & shiny borders */
+  --gold-mid: #C5A059;       /* Logo metallic gold shade */
+  --gold-deep: #997529;      /* Dark gold shadow & borders */
+  --gold-gradient: linear-gradient(135deg, #F5D77F 0%, #D4AF37 45%, #C5A059 70%, #997529 100%);
+  --gold-text-gradient: linear-gradient(135deg, #FFF0BD 0%, #D4AF37 50%, #B8892F 100%);
+  --gold-glow: rgba(212, 175, 55, 0.25);
+  --gold-glow-strong: rgba(212, 175, 55, 0.45);
+
+  /* Light Theme Surface (for high readability sections) */
+  --paper: #FFFFFF;
+  --paper-soft: #F8FAFC;
+  --paper-card: #F1F5F9;
+  --border-light: #E2E8F0;
+  --heading: #04142C;
+  --ink: #1E293B;
+  --slate: #64748B;
+  --slate-light: #94A3B8;
+
+  /* Fonts */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: 'Poppins', sans-serif;
 
-  --radius: 16px;
-  --container: 1240px;
+  /* Layout & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --container: 1280px;
+  --shadow-gold: 0 12px 36px -10px rgba(212, 175, 55, 0.35);
+  --shadow-navy: 0 20px 50px rgba(4, 20, 44, 0.15);
+  --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.08);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -41,251 +64,291 @@ html {
 }
 
 body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background-color: var(--navy-deep);
+  color: #F8FAFC;
   font-family: var(--font-body);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  color: var(--heading);
-  margin: 0;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 p {
-  margin: 0;
+  line-height: 1.7;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
+  transition: all 0.25s ease;
 }
 
 button {
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold-deep);
-  outline-offset: 3px;
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 4px;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--navy-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gold-primary), var(--gold-deep));
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
+}
+
+/* Common Container */
 .container {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 24px;
 }
 
+/* Section Styling */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-dark {
+  background-color: var(--navy-deep);
+  color: #FFFFFF;
+}
+
+.section-surface {
+  background-color: var(--navy-surface);
+  color: #FFFFFF;
+}
+
+.section-light {
+  background-color: var(--paper-soft);
+  color: var(--ink);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.section-head h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  margin-bottom: 16px;
+}
+
+.section-head p {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.section-light .section-head p {
+  color: var(--slate);
+}
+
+/* Eyebrow Tag */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-deep);
-  margin-bottom: 14px;
+  color: var(--gold-primary);
+  margin-bottom: 16px;
 }
 
 .eyebrow::before {
   content: '';
-  width: 20px;
-  height: 1.5px;
-  background: var(--gold);
+  width: 24px;
+  height: 2px;
+  background: var(--gold-gradient);
 }
 
-/* --- Signature divider: line / diamond / line, echoes the logo's wordmark rule --- */
+/* Metallic Gold Text Gradient Utility */
+.gold-gradient-text {
+  background: var(--gold-text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Signature Gold Divider (echoes logo wordmark) */
 .signature-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  margin: 0 auto;
+  gap: 16px;
+  margin: 20px auto;
   width: 100%;
-  max-width: 220px;
+  max-width: 260px;
 }
 
 .signature-divider .line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
 }
 
 .signature-divider .diamond {
-  width: 7px;
-  height: 7px;
-  background: var(--gold);
+  width: 8px;
+  height: 8px;
+  background: var(--gold-primary);
   transform: rotate(45deg);
-  flex-shrink: 0;
+  box-shadow: 0 0 8px var(--gold-primary);
 }
 
-.section {
-  padding: 96px 0;
-}
-
-.section-head {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 56px;
-}
-
-.section-head h2 {
-  font-size: clamp(28px, 4vw, 40px);
-  margin-bottom: 14px;
-}
-
-.section-head p {
-  color: var(--slate);
-  font-size: 17px;
-}
-
+/* Buttons System */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 30px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: 15px;
-  border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: #fff;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 12px;
   font-weight: 700;
-  box-shadow: 0 10px 24px -8px rgba(201, 162, 39, 0.5);
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.btn-primary:hover {
-  background: var(--gold-deep);
-  box-shadow: 0 14px 30px -8px rgba(184, 141, 22, 0.55);
-}
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--navy);
+.btn-gold {
+  background: var(--gold-gradient);
+  color: var(--navy-deep);
+  box-shadow: var(--shadow-gold);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.btn-secondary:hover {
-  border-color: var(--gold);
-  background: rgba(11, 35, 72, 0.05);
-  color: var(--navy);
+.btn-gold:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 40px -6px rgba(212, 175, 55, 0.55);
 }
 
-.card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+  transform: rotate(30deg) translateY(-100%);
+  transition: transform 0.8s ease;
+  z-index: 2;
 }
 
-.cta-banner-actions {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
+.btn-gold:hover::after {
+  transform: rotate(30deg) translateY(100%);
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-  border-color: var(--gold);
+.btn-outline-gold {
+  background: rgba(4, 20, 44, 0.4);
+  color: #FFFFFF;
+  border: 1.5px solid var(--gold-primary);
+  backdrop-filter: blur(10px);
 }
 
-@media (max-width: 640px) {
-  .section {
-    padding: 64px 0;
-  }
+.btn-outline-gold:hover {
+  background: var(--gold-primary);
+  color: var(--navy-deep);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
 }
 
-/* --- Shared inner-page header (Services / Portfolio / About) --- */
-.page-header {
-  background: linear-gradient(180deg, var(--navy-deep), var(--navy) 120%);
-  color: #fff;
-  padding: 76px 0 68px;
-  text-align: center;
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(10, 38, 80, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: var(--radius-lg);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.page-header-inner {
-  max-width: 640px;
-  margin: 0 auto;
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3), 0 0 25px rgba(212, 175, 55, 0.15);
+  transform: translateY(-6px);
 }
 
-.page-header h1 {
-  color: #fff;
-  font-size: clamp(30px, 4.6vw, 44px);
-  margin: 6px 0 16px;
-}
-
-.page-header p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16.5px;
-}
-
-/* --- Scroll-reveal animation --- */
+/* Scroll Reveal Base */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
-  transition: opacity 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal-left {
-  transform: translateX(-32px);
-}
-
-.reveal-right {
-  transform: translateX(32px);
-}
-
-.reveal-scale {
-  transform: scale(0.94);
-}
-
-.reveal-visible.reveal-left,
-.reveal-visible.reveal-right {
-  transform: translateX(0);
-}
-
-.reveal-visible.reveal-scale {
-  transform: scale(1);
-}
-
-.reveal-visible {
+.reveal.reveal-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.service-art {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Page Header Banner */
+.page-header {
+  background: radial-gradient(circle at 50% 20%, #0A2B5C 0%, var(--navy-deep) 80%);
+  padding: 120px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
-.service-art svg {
-  transition: transform 0.4s ease;
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.page-header h1 {
+  font-size: clamp(34px, 5vw, 54px);
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+  .btn {
+    padding: 14px 28px;
+    font-size: 14px;
+  }
 }

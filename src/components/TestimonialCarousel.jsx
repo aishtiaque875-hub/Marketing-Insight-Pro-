@@ -1,53 +1,75 @@
-import { useEffect, useRef, useState } from 'react'
-import { Star } from 'lucide-react'
+import React, { useState, useEffect } from 'react';
+import { testimonials } from '../data/testimonials';
+import { Star, ChevronLeft, ChevronRight, CheckCircle, Quote } from 'lucide-react';
+import './TestimonialCarousel.css';
 
-export default function TestimonialCarousel({ items }) {
-  const [index, setIndex] = useState(0)
-  const [paused, setPaused] = useState(false)
+export default function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced || paused) return
-    const id = setInterval(() => {
-      setIndex((i) => (i + 1) % items.length)
-    }, 4500)
-    return () => clearInterval(id)
-  }, [paused, items.length])
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
-  const t = items[index]
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const item = testimonials[current];
 
   return (
-    <div
-      className="carousel"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      <div className="carousel-track" key={index}>
-        <div className="testimonial-stars" aria-label="5 out of 5 stars">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <Star key={i} size={16} fill="currentColor" strokeWidth={0} />
-          ))}
+    <div className="testimonials-wrap">
+      <div className="testimonial-card glass-card">
+        <div className="card-top">
+          <div className="stars-wrap">
+            {[...Array(item.rating)].map((_, i) => (
+              <Star key={i} size={18} fill="#D4AF37" color="#D4AF37" />
+            ))}
+          </div>
+          <div className="result-badge">
+            {item.result}
+          </div>
         </div>
-        <p className="carousel-quote">&ldquo;{t.quote}&rdquo;</p>
-        <div className="testimonial-person">
-          <span className="testimonial-avatar">{t.initials}</span>
-          <div>
-            <strong>{t.name}</strong>
+
+        <div className="quote-icon-wrap">
+          <Quote size={32} className="gold-quote-icon" />
+        </div>
+
+        <p className="quote-text">"{item.quote}"</p>
+
+        <div className="client-footer">
+          <div className="client-info">
+            <img src={item.avatar} alt={item.name} className="client-avatar" />
+            <div>
+              <div className="client-name">
+                {item.name}
+                {item.verified && (
+                  <span className="verified-badge" title="Verified Client">
+                    <CheckCircle size={14} fill="#D4AF37" color="#04142C" /> Verified Partner
+                  </span>
+                )}
+              </div>
+              <div className="client-role">{item.role} &bull; <span className="gold-company">{item.company}</span></div>
+            </div>
+          </div>
+
+          <div className="carousel-controls">
+            <button className="carousel-btn" onClick={prevSlide} aria-label="Previous Testimonial">
+              <ChevronLeft size={20} />
+            </button>
+            <span className="carousel-counter">{current + 1} / {testimonials.length}</span>
+            <button className="carousel-btn" onClick={nextSlide} aria-label="Next Testimonial">
+              <ChevronRight size={20} />
+            </button>
           </div>
         </div>
       </div>
-
-      <div className="carousel-dots">
-        {items.map((item, i) => (
-          <button
-            key={item.name}
-            type="button"
-            className={`carousel-dot ${i === index ? 'is-active' : ''}`}
-            aria-label={`Show testimonial ${i + 1}`}
-            onClick={() => setIndex(i)}
-          />
-        ))}
-      </div>
     </div>
-  )
+  );
 }

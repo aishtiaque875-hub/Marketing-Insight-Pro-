@@ -1,83 +1,130 @@
-import { Link } from 'react-router-dom'
-import { Instagram, Facebook } from 'lucide-react'
-import logo from '../assets/logo-wide.png'
-import './Footer.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowUp, Mail, Phone, MapPin, Send, CheckCircle2, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
+import logoWide from '../assets/logo-wide.png';
+import './Footer.css';
 
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setEmail('');
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="footer">
-      <div className="container footer-inner">
-        <div className="footer-brand">
-          <button
-            type="button"
-            className="footer-logo-plate"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            aria-label="Scroll to top"
-          >
-            <img src={logo} alt="Marketing Insight Pro" />
+    <footer className="footer-wrap">
+      <div className="container">
+        {/* Top Newsletter CTA Section */}
+        <div className="footer-newsletter glass-card">
+          <div className="newsletter-text">
+            <span className="eyebrow">Enterprise Growth Digest</span>
+            <h3>Join 5,000+ Founders & CMOs Receiving Our <span className="gold-gradient-text">ROAS Playbooks</span></h3>
+            <p>Get exclusive case studies, Meta ad breakdowns, and high-rank SEO strategies delivered every Tuesday.</p>
+          </div>
+          <form className="newsletter-form" onSubmit={handleSubscribe}>
+            {!subscribed ? (
+              <>
+                <input
+                  type="email"
+                  placeholder="Enter your work email..."
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button type="submit" className="btn btn-gold">
+                  Subscribe <Send size={16} />
+                </button>
+              </>
+            ) : (
+              <div className="subscribe-success">
+                <CheckCircle2 size={20} className="gold-icon" /> Subscribed successfully! Check your inbox.
+              </div>
+            )}
+          </form>
+        </div>
+
+        {/* Main Footer Columns */}
+        <div className="footer-grid">
+          <div className="footer-brand-col">
+            <Link to="/">
+              <img src={logoWide} alt="Marketing Insight Pro Logo" className="footer-logo" />
+            </Link>
+            <p className="brand-desc">
+              Marketing Insight Pro is an enterprise digital growth agency specializing in high-ROAS Meta Ads, Technical SEO, High-Converting Video Editing, UI/UX Design, and Copywriting.
+            </p>
+            <div className="social-links">
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={18} /></a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"><Instagram size={18} /></a>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook size={18} /></a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><Twitter size={18} /></a>
+            </div>
+          </div>
+
+          <div className="footer-col">
+            <h4>Growth Services</h4>
+            <ul>
+              <li><Link to="/services">Meta Ads & Performance</Link></li>
+              <li><Link to="/services">High-Rank SEO Optimization</Link></li>
+              <li><Link to="/services">Video Editing & Content</Link></li>
+              <li><Link to="/services">Social Media Management</Link></li>
+              <li><Link to="/services">UI/UX Website Redesign</Link></li>
+              <li><Link to="/services">Direct Response Copywriting</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col">
+            <h4>Agency</h4>
+            <ul>
+              <li><Link to="/about">About Our Vision</Link></li>
+              <li><Link to="/portfolio">Case Studies & ROI</Link></li>
+              <li><Link to="/contact">Book Strategy Session</Link></li>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
+              <li><Link to="/cookie-policy">Cookie Policy</Link></li>
+            </ul>
+          </div>
+
+          <div className="footer-col contact-col">
+            <h4>Global Office</h4>
+            <div className="contact-item">
+              <Mail size={16} className="gold-icon" />
+              <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>
+            </div>
+            <div className="contact-item">
+              <Phone size={16} className="gold-icon" />
+              <a href="tel:+923266739989">+92 326 6739989</a>
+            </div>
+            <div className="contact-item">
+              <MapPin size={16} className="gold-icon" />
+              <span>Global Remote & Agency HQ</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Signature Divider & Bottom Bar */}
+        <div className="signature-divider">
+          <div className="line"></div>
+          <div className="diamond"></div>
+          <div className="line"></div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>&copy; {new Date().getFullYear()} Marketing Insight Pro. All Rights Reserved. Crafted for High-Growth Brands.</p>
+
+          <button className="back-to-top" onClick={scrollToTop} aria-label="Back to top">
+            Back to top <ArrowUp size={16} />
           </button>
-          <p className="footer-brand-tagline">
-            Data-driven marketing for brands that want to be seen, trusted, and chosen.
-          </p>
-          <div className="footer-social">
-            <a
-              href="https://www.instagram.com/marketinginsightpro/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <Instagram size={18} />
-            </a>
-            <a
-              href="https://www.facebook.com/MarketingInsightPro"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <Facebook size={18} />
-            </a>
-          </div>
-        </div>
-
-        <div className="footer-col">
-          <h4>Quick Links</h4>
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/portfolio">Portfolio</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
-        </div>
-
-        <div className="footer-col">
-          <h4>Services</h4>
-          <Link to="/services">Meta Ads</Link>
-          <Link to="/services">SEO</Link>
-          <Link to="/services">Video Editing</Link>
-          <Link to="/services">Social Media Managing</Link>
-          <Link to="/services">UI/UX Designing</Link>
-          <Link to="/services">Content Writing</Link>
-        </div>
-
-        <div className="footer-col">
-          <h4>Get in Touch</h4>
-          <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>
-          <a href="https://wa.me/923266739989" target="_blank" rel="noopener noreferrer">
-            WhatsApp: +92 326 6739989
-          </a>
-        </div>
-      </div>
-
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
-          <p>&copy; {year} Marketing Insight Pro. All rights reserved.</p>
-          <div className="footer-legal-links">
-            <Link to="/privacy-policy">Privacy Policy</Link>
-            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
-            <Link to="/cookie-policy">Cookie Policy</Link>
-          </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

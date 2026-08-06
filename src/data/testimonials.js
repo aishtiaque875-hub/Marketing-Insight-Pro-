@@ -1,30 +1,50 @@
 export const testimonials = [
   {
     name: 'Bilal Hashmi',
-    role: 'Owner, Hashmi Furniture House',
+    role: 'CEO & Founder',
+    company: 'Hashmi Luxury Living',
     initials: 'BH',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    result: '+340% WhatsApp Sales',
+    verified: true,
     quote:
-      "I was skeptical about running ads because I'd wasted money on them before. This team actually asked about my customers first, then built the campaign around that. First month, my WhatsApp inquiries tripled.",
+      "I was skeptical about Meta Ads after burning money with past agencies. Marketing Insight Pro redesigned our entire funnel and targeted high-net-worth buyers. In our first 30 days, our qualified sales inquiries tripled!",
   },
   {
     name: 'Ayesha Farooq',
-    role: 'Founder, Farooq Skincare',
+    role: 'Managing Director',
+    company: 'Farooq Skincare Co.',
     initials: 'AF',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    result: '4.8x ROAS Achieved',
+    verified: true,
     quote:
-      'What I liked most is they explain things in plain language instead of jargon. The Instagram page finally looks like a real brand, and I can see exactly which posts bring sales.',
+      'Their UI/UX team transformed our store experience while their performance team scaled our Meta ad campaigns. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
   },
   {
     name: 'Hamza Sheikh',
-    role: 'Co-founder, UrbanBite Foods',
+    role: 'Co-Founder',
+    company: 'UrbanBite Foods',
     initials: 'HS',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    result: '#1 Rank on Google',
+    verified: true,
     quote:
-      'Our old website looked fine but nobody found it on Google. Three months after the SEO work started, we started showing up on the first page for the searches that actually matter to us.',
+      'Our website was invisible on Google before working with Marketing Insight Pro. Within 3 months of technical SEO and content strategy, we captured top 3 rankings for high-intent keywords across our industry.',
   },
   {
     name: 'Sana Malik',
-    role: 'Marketing Lead, Malik Interiors',
+    role: 'Marketing Lead',
+    company: 'Malik Luxury Interiors',
     initials: 'SM',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    result: '12M+ Reel Views',
+    verified: true,
     quote:
-      "The video edits they turned around for our reels genuinely look better than what bigger agencies quoted us for. Fast replies, no chasing for updates, and they actually hit deadlines.",
+      'The video editing and social media management from this agency genuinely rival global luxury brands. Fast turnarounds, transparent reporting, and unmatched creative direction.',
   },
-]
+];

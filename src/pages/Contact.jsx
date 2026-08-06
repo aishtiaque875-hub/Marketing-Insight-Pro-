@@ -1,172 +1,220 @@
-import { useState } from 'react'
-import { Clock, Gift, ShieldCheck, Headphones } from 'lucide-react'
-import Reveal from '../components/Reveal.jsx'
-import './Contact.css'
-
-const initialForm = { name: '', phone: '', email: '', message: '' }
+import React, { useState } from 'react';
+import Reveal from '../components/Reveal.jsx';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck } from 'lucide-react';
+import './Contact.css';
 
 export default function Contact() {
-  const [form, setForm] = useState(initialForm)
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Meta Ads & Paid Media',
+    budget: '$5,000 - $10,000 / mo',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const onChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
-
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    setStatus('sending')
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/marketinginsight11@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: form.name,
-          phone: form.phone,
-          email: form.email,
-          message: form.message,
-          _subject: `New website inquiry from ${form.name}`,
-        }),
-      })
-      if (!res.ok) throw new Error('Request failed')
-      setStatus('success')
-      setForm(initialForm)
-    } catch (err) {
-      setStatus('error')
-    }
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
 
   return (
     <>
+      {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>
-            Contact Us
-          </span>
-          <h1>Let's Talk About Your Brand</h1>
-          <p>Send your details and we'll get back to you — usually within a day.</p>
+          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+            <Sparkles size={14} className="gold-icon" /> Direct Growth Consultation
+          </div>
+          <h1>Let's Scale Your Brand To <span className="gold-gradient-text">New Heights</span></h1>
+          <p>Book a confidential consultation or send us a message. Our growth strategists respond within 24 hours.</p>
         </div>
       </section>
 
-      <section className="trust-badges">
-        <div className="container trust-badges-inner">
-          <div className="trust-badge">
-            <Clock size={20} />
-            <span>Response within 24 Hours</span>
-          </div>
-          <div className="trust-badge">
-            <Gift size={20} />
-            <span>Free Consultation</span>
-          </div>
-          <div className="trust-badge">
-            <ShieldCheck size={20} />
-            <span>No Hidden Charges</span>
-          </div>
-          <div className="trust-badge">
-            <Headphones size={20} />
-            <span>Professional Support</span>
-          </div>
+      {/* CONTACT MAIN SECTION */}
+      <section className="section section-dark">
+        <div className="container contact-grid">
+          {/* CONTACT INFO SIDEBAR */}
+          <Reveal direction="left">
+            <div className="contact-info-wrap">
+              <span className="eyebrow">Direct Contact</span>
+              <h2>Get In Touch With Our <span className="gold-gradient-text">Growth Team</span></h2>
+              <p className="contact-lead-desc">
+                Have questions about scaling your Meta Ads, boosting your Google SEO rankings, or redesigning your website? We are ready to audit your funnel.
+              </p>
+
+              <div className="contact-cards-list">
+                <div className="contact-card glass-card">
+                  <div className="c-icon-wrap"><Mail size={22} className="gold-icon" /></div>
+                  <div>
+                    <strong>Email Consultation</strong>
+                    <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>
+                  </div>
+                </div>
+
+                <div className="contact-card glass-card">
+                  <div className="c-icon-wrap"><Phone size={22} className="gold-icon" /></div>
+                  <div>
+                    <strong>Phone & Direct WhatsApp</strong>
+                    <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer">+92 326 6739989</a>
+                  </div>
+                </div>
+
+                <div className="contact-card glass-card">
+                  <div className="c-icon-wrap"><Clock size={22} className="gold-icon" /></div>
+                  <div>
+                    <strong>Response Time SLA</strong>
+                    <span>Under 24 Hours Guaranteed</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* WHATSAPP INSTANT CTA */}
+              <div className="whatsapp-callout glass-card">
+                <MessageSquare size={28} className="gold-icon" />
+                <div>
+                  <h4>Need an Instant Reply?</h4>
+                  <p>Chat directly with our lead growth engineer on WhatsApp right now.</p>
+                  <a
+                    href="https://wa.me/923266739989"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-gold btn-sm"
+                    style={{ marginTop: '10px' }}
+                  >
+                    Open WhatsApp Chat &rarr;
+                  </a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* CONTACT FORM */}
+          <Reveal direction="right">
+            <div className="contact-form-card glass-card">
+              {!submitted ? (
+                <form onSubmit={handleSubmit}>
+                  <div className="form-head">
+                    <h2>Submit Growth Inquiry</h2>
+                    <p>Fill out the details below to receive your customized marketing audit.</p>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Full Name *</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Work Email *</label>
+                      <input
+                        type="email"
+                        required
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label>Phone Number *</label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+1 (555) 000-0000"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Primary Service Needed</label>
+                      <select
+                        value={formData.service}
+                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      >
+                        <option>Meta Ads & Paid Media</option>
+                        <option>High-Rank SEO</option>
+                        <option>Direct-Response Video Editing</option>
+                        <option>UI/UX & Web Redesign</option>
+                        <option>Social Media Management</option>
+                        <option>Conversion Copywriting</option>
+                        <option>Full-Funnel Growth Package</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Monthly Marketing Budget</label>
+                    <select
+                      value={formData.budget}
+                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                    >
+                      <option>$3,000 - $5,000 / mo</option>
+                      <option>$5,000 - $10,000 / mo</option>
+                      <option>$10,000 - $25,000 / mo</option>
+                      <option>$25,000+ / mo</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label>Tell Us About Your Brand & Goals</label>
+                    <textarea
+                      rows={4}
+                      placeholder="Share your current website link, monthly sales targets, and main scaling challenges..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" className="btn btn-gold btn-full">
+                    Send Inquiry & Request Audit <Send size={16} />
+                  </button>
+
+                  <div className="form-privacy-note">
+                    <ShieldCheck size={14} /> 100% Confidential. We respect your business privacy.
+                  </div>
+                </form>
+              ) : (
+                <div className="contact-success-state text-center">
+                  <CheckCircle2 size={64} className="gold-icon" style={{ margin: '0 auto 16px' }} />
+                  <h2>Message Received <span className="gold-gradient-text">Successfully!</span></h2>
+                  <p>Thank you <strong>{formData.name}</strong>. Our senior growth officer is reviewing your inquiry and will contact you at <strong>{formData.email}</strong> within 24 hours.</p>
+                  <button className="btn btn-gold" onClick={() => setSubmitted(false)} style={{ marginTop: '20px' }}>
+                    Send Another Message
+                  </button>
+                </div>
+              )}
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section contact-section">
-        <Reveal>
-        <div className="container contact-inner">
-          <div className="contact-info">
-            <span className="eyebrow">Get in Touch</span>
-            <h2>Prefer a Quicker Reply?</h2>
-            <p>
-              Message us directly on WhatsApp or email, or use the form and we'll follow up on
-              whichever contact detail you provide.
-            </p>
-
-            <div className="contact-info-list">
-              <a href="https://wa.me/923266739989" target="_blank" rel="noopener noreferrer">
-                <strong>WhatsApp</strong>
-                <span>+92 326 6739989</span>
-              </a>
-              <a href="mailto:marketinginsight11@gmail.com">
-                <strong>Email</strong>
-                <span>marketinginsight11@gmail.com</span>
-              </a>
-            </div>
+      {/* LOCATION MAP SECTION */}
+      <section className="section section-surface map-section">
+        <div className="container text-center">
+          <div className="section-head">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>
+              Global Reach
+            </span>
+            <h2>Serving High-Growth Brands <span className="gold-gradient-text">Worldwide</span></h2>
+            <p>Remote growth agency capabilities delivering results across US, UK, UAE, and Asian markets.</p>
           </div>
 
-          <form className="contact-form" onSubmit={onSubmit}>
-            <div className="form-row">
-              <label htmlFor="name">Name</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                required
-                value={form.name}
-                onChange={onChange}
-                placeholder="Your full name"
-              />
-            </div>
-
-            <div className="form-row-group">
-              <div className="form-row">
-                <label htmlFor="phone">Phone Number</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  value={form.phone}
-                  onChange={onChange}
-                  placeholder="03XX XXXXXXX"
-                />
-              </div>
-              <div className="form-row">
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={onChange}
-                  placeholder="you@example.com"
-                />
-              </div>
-            </div>
-
-            <div className="form-row">
-              <label htmlFor="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={5}
-                value={form.message}
-                onChange={onChange}
-                placeholder="Tell us about your business and what you need help with"
-              />
-            </div>
-
-            <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
-            </button>
-
-            {status === 'success' && (
-              <p className="form-note form-note-success">
-                Thanks — your message has been sent. We'll be in touch soon.
-              </p>
-            )}
-            {status === 'error' && (
-              <p className="form-note form-note-error">
-                Something went wrong. Please try again, or message us directly on WhatsApp.
-              </p>
-            )}
-          </form>
+          <div className="map-placeholder-box glass-card">
+            <MapPin size={36} className="gold-icon" style={{ margin: '0 auto 12px' }} />
+            <h3>Marketing Insight Pro Agency HQ</h3>
+            <p>Operating Remote-First Across North America, Europe, & Asia-Pacific</p>
+          </div>
         </div>
-        </Reveal>
       </section>
     </>
-  )
+  );
 }

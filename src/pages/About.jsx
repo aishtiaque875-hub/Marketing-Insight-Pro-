@@ -1,126 +1,177 @@
-import { Link } from 'react-router-dom'
-import {
-  BarChart3, MessageCircle, Target, Zap, SlidersHorizontal, Users,
-  FolderCheck, Smile, Megaphone, Award, Clock,
-} from 'lucide-react'
-import Reveal from '../components/Reveal.jsx'
-import CountUp from '../components/CountUp.jsx'
-import TestimonialCarousel from '../components/TestimonialCarousel.jsx'
-import { testimonials } from '../data/testimonials.js'
-import './About.css'
+import React, { useState } from 'react';
+import Reveal from '../components/Reveal.jsx';
+import CalendlyModal from '../components/CalendlyModal.jsx';
+import { Target, Users, ShieldCheck, Award, Linkedin, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import './About.css';
 
-const aboutStats = [
-  { value: 150, suffix: '+', label: 'Projects Completed', icon: FolderCheck },
-  { value: 100, suffix: '+', label: 'Happy Clients', icon: Smile },
-  { value: 250, suffix: '+', label: 'Campaigns Managed', icon: Megaphone },
-  { value: 98, suffix: '%', label: 'Client Satisfaction', icon: Award },
-  { value: 24, suffix: 'hrs', label: 'Response Time', icon: Clock },
-]
+const teamMembers = [
+  {
+    name: 'Ishtiaque Ahmad',
+    role: 'Founder & Chief Growth Officer',
+    exp: '8+ Yrs Exp',
+    bio: 'Pioneered performance marketing strategies generating over $12M+ in client revenue across Meta Ads and SEO.',
+    linkedin: 'https://linkedin.com',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80'
+  },
+  {
+    name: 'David Vance',
+    role: 'Head of Paid Media & Meta Ads',
+    exp: '6+ Yrs Exp',
+    bio: 'Specialized in scaling direct-to-consumer e-commerce ad accounts from $5k/mo to $100k+/mo ad spend.',
+    linkedin: 'https://linkedin.com',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80'
+  },
+  {
+    name: 'Elena Rostova',
+    role: 'Lead UI/UX Architect',
+    exp: '7+ Yrs Exp',
+    bio: 'Crafts luxury visual systems and high-converting web interfaces for high-growth global brands.',
+    linkedin: 'https://linkedin.com',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&auto=format&fit=crop&q=80'
+  },
+];
 
-const whyChooseUs = [
-  { icon: BarChart3, title: 'Data-Driven Strategy', text: 'Every decision is backed by numbers, not guesswork.' },
-  { icon: MessageCircle, title: 'Transparent Communication', text: 'Plain-language updates — no jargon, no hiding behind dashboards.' },
-  { icon: Target, title: 'ROI Focused Marketing', text: 'We optimize for what actually grows your business, not vanity metrics.' },
-  { icon: Zap, title: 'Fast Support', text: 'Quick replies on WhatsApp — you are never left waiting.' },
-  { icon: SlidersHorizontal, title: 'Custom Marketing Plans', text: 'No templates. Every plan is built around your specific goals.' },
-  { icon: Users, title: 'Long-Term Partnership', text: "We aim to grow with your business, not just complete a project." },
-]
-
-const founders = [
-  { name: 'Hyder Shaikh', role: 'Founder & CEO', initials: 'HS' },
-  { name: 'Ayesha Malik', role: 'Digital Marketing Manager', initials: 'AM' },
-  { name: 'Bilal Ahmed', role: 'SEO Specialist', initials: 'BA' },
-  { name: 'Hassan Raza', role: 'Video Editor', initials: 'HR' },
-  { name: 'Rafay Shaikh', role: 'UI/UX Designer', initials: 'RS' },
-  { name: 'Sara Khan', role: 'Content Strategist / Social Media Manager', initials: 'SK' },
-]
-
-const processSteps = [
-  { step: '01', title: 'Discovery Call', text: 'We learn about your business, customers, and goals.' },
-  { step: '02', title: 'Research & Analysis', text: 'We study your market, competitors, and current performance.' },
-  { step: '03', title: 'Strategy & Planning', text: 'We build a plan tailored to your specific business.' },
-  { step: '04', title: 'Execution', text: 'Campaigns, content, and design go live, managed by one team.' },
-  { step: '05', title: 'Monitoring & Optimization', text: 'We track what\'s working and adjust in real time.' },
-  { step: '06', title: 'Reporting & Growth', text: 'You get plain-language updates and a plan for what\'s next.' },
-]
+const values = [
+  {
+    title: 'ROAS Over Vanity Metrics',
+    desc: 'We never celebrate impressions or clicks. We only judge success by verifiable profit and customer acquisition.',
+    icon: Target
+  },
+  {
+    title: 'Direct Executive Access',
+    desc: 'You work directly with senior growth architects who own your results — no junior intern pass-offs.',
+    icon: Users
+  },
+  {
+    title: 'Absolute Transparency',
+    desc: '100% owned ad accounts, real-time dashboards, and plain-language video updates every week.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Continuous Innovation',
+    desc: 'We constantly test new ad formats, AI bidding models, and conversion hacks before your competitors do.',
+    icon: Award
+  },
+];
 
 export default function About() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
-      {/* HERO */}
-      <section className="about-hero">
-        <div className="container about-hero-inner">
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>About Us</span>
-          <h1>Marketing Insight Pro</h1>
-          <p>A digital marketing team built around one idea: insight before spend.</p>
+      {/* PAGE HEADER */}
+      <section className="page-header">
+        <div className="container page-header-inner">
+          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+            <Sparkles size={14} className="gold-icon" /> Agency Identity
+          </div>
+          <h1>Built To Scale Brands Through <span className="gold-gradient-text">Uncompromising Data & Design</span></h1>
+          <p>We are a specialized team of performance marketers, media buyers, UX designers, and copywriters obsessed with business growth.</p>
         </div>
       </section>
 
-      {/* STORY */}
-      <section className="section about-story">
-        <div className="container about-story-grid">
-          <Reveal className="about-story-block">
-            <h3>Why We Started</h3>
-            <p>
-              We started Marketing Insight Pro to fix a common problem: businesses spending on
-              ads, content, and design without a clear view of what's actually working.
-            </p>
+      {/* MISSION STORY SECTION */}
+      <section className="section section-dark story-section">
+        <div className="container story-grid">
+          <Reveal direction="left">
+            <div className="story-copy">
+              <span className="eyebrow">Our Philosophy</span>
+              <h2>Why We Built <span className="gold-gradient-text">Marketing Insight Pro</span></h2>
+              <p>
+                The traditional digital agency model is broken. Most agencies lock clients into long-term retainers, delegate work to inexperienced junior staff, and hide behind vague brand awareness reports.
+              </p>
+              <p>
+                We founded Marketing Insight Pro to provide ambitious founders with an elite, accountable growth partner. Every campaign starts with unit economics, customer psychology, and rigorous A/B testing.
+              </p>
+              <div className="story-highlights">
+                <div className="sh-item"><CheckCircle2 size={18} className="gold-icon" /> 100% Data-Driven Decision Making</div>
+                <div className="sh-item"><CheckCircle2 size={18} className="gold-icon" /> Tailored Funnel Architectures</div>
+                <div className="sh-item"><CheckCircle2 size={18} className="gold-icon" /> Rapid Agile Creative Testing</div>
+              </div>
+            </div>
           </Reveal>
-          <Reveal delay={100} className="about-story-block">
-            <h3>Our Mission</h3>
-            <p>
-              Bring every core marketing service under one accountable team, so your brand's
-              message stays consistent everywhere — and every rupee spent is something we can
-              explain and defend.
-            </p>
-          </Reveal>
-          <Reveal delay={200} className="about-story-block">
-            <h3>Who We Serve</h3>
-            <p>
-              Small and growing businesses who want a marketing partner that reports in plain
-              language, not one more vendor to chase for updates.
-            </p>
+
+          <Reveal direction="right">
+            <div className="about-stats-card glass-card">
+              <h3 className="gold-gradient-text">Our Track Record</h3>
+              <div className="about-stat-row">
+                <strong>$12M+</strong>
+                <span>Client Revenue Generated</span>
+              </div>
+              <div className="about-stat-row">
+                <strong>150+</strong>
+                <span>High-Scale Campaigns</span>
+              </div>
+              <div className="about-stat-row">
+                <strong>98%</strong>
+                <span>Client Retention Rate</span>
+              </div>
+              <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => setModalOpen(true)}>
+                Partner With Us <ArrowRight size={16} />
+              </button>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* STATS */}
-      <section className="section about-stats-section">
+      {/* BRAND VALUES GRID */}
+      <section className="section section-surface values-section">
         <div className="container">
-          <div className="about-stats-grid-5">
-            {aboutStats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 90}>
-                <div className="card about-stat-card-big">
-                  <div className="about-stat-icon">
-                    <s.icon size={22} strokeWidth={1.8} />
+          <div className="section-head">
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>
+              Core Principles
+            </span>
+            <h2>Our Non-Negotiable <span className="gold-gradient-text">Agency Values</span></h2>
+            <p>The core standards that guide every campaign, strategy, and client partnership.</p>
+          </div>
+
+          <div className="values-grid">
+            {values.map((v, i) => {
+              const VIcon = v.icon;
+              return (
+                <Reveal key={v.title} delay={i * 80}>
+                  <div className="value-card glass-card">
+                    <div className="value-icon">
+                      <VIcon size={24} className="gold-icon" />
+                    </div>
+                    <h3>{v.title}</h3>
+                    <p>{v.desc}</p>
                   </div>
-                  <strong>
-                    <CountUp value={s.value} suffix={s.suffix} />
-                  </strong>
-                  <span>{s.label}</span>
-                </div>
-              </Reveal>
-            ))}
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
-      <section className="section why-choose-section">
+      {/* LEADERSHIP TEAM */}
+      <section className="section section-dark team-section">
         <div className="container">
           <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>Why Choose Us</span>
-            <h2>What Makes Us Different</h2>
+            <span className="eyebrow" style={{ justifyContent: 'center' }}>
+              Growth Leadership
+            </span>
+            <h2>Meet The <span className="gold-gradient-text">Senior Architects</span></h2>
+            <p>Direct executive oversight for every brand we scale.</p>
           </div>
-          <div className="why-choose-grid">
-            {whyChooseUs.map((w, i) => (
-              <Reveal key={w.title} delay={(i % 3) * 90}>
-                <div className="card why-choose-card">
-                  <div className="why-choose-icon">
-                    <w.icon size={22} strokeWidth={1.8} />
+
+          <div className="team-grid">
+            {teamMembers.map((m, i) => (
+              <Reveal key={m.name} delay={i * 90}>
+                <div className="team-card glass-card">
+                  <div className="team-avatar-wrap">
+                    <img src={m.avatar} alt={m.name} loading="lazy" />
+                    <span className="exp-badge">{m.exp}</span>
                   </div>
-                  <h3>{w.title}</h3>
-                  <p>{w.text}</p>
+
+                  <div className="team-body">
+                    <h3>{m.name}</h3>
+                    <div className="team-role">{m.role}</div>
+                    <p>{m.bio}</p>
+                    <a href={m.linkedin} target="_blank" rel="noreferrer" className="team-linkedin-btn">
+                      <Linkedin size={16} /> Connect on LinkedIn
+                    </a>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -128,73 +179,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* FOUNDERS */}
-      <section className="section founders-section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>Our Team</span>
-            <h2>Meet Our Team</h2>
-            <p>Add real names, roles, and photos here to introduce your team.</p>
-          </div>
-          <div className="founders-grid">
-            {founders.map((f, i) => (
-              <Reveal key={i} delay={i * 100}>
-                <div className="card founder-card">
-                  <div className="founder-avatar">{f.initials}</div>
-                  <h3>{f.name}</h3>
-                  <span>{f.role}</span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROCESS */}
-      <section className="section process-section-about">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>How We Work</span>
-            <h2>Our Working Process</h2>
-          </div>
-          <div className="process-timeline">
-            {processSteps.map((p, i) => (
-              <Reveal key={p.step} delay={i * 70}>
-                <div className="process-timeline-step">
-                  <span className="process-step-number">{p.step}</span>
-                  <h3>{p.title}</h3>
-                  <p>{p.text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS CAROUSEL */}
-      <section className="section testimonials-carousel-section">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>Client Reviews</span>
-            <h2>What Our Clients Say</h2>
-          </div>
-          <TestimonialCarousel items={testimonials} />
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta-banner">
-        <div className="container cta-banner-inner">
-          <h2>Let's Talk About Your Brand</h2>
-          <p>Message us on WhatsApp, or send details through our contact form.</p>
-          <div className="cta-banner-actions">
-            <a href="https://wa.me/923266739989" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
-              Chat on WhatsApp
-            </a>
-            <Link to="/contact" className="btn btn-secondary">Contact Form</Link>
-          </div>
-        </div>
-      </section>
+      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
-  )
+  );
 }

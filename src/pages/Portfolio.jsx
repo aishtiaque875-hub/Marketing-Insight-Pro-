@@ -1,127 +1,117 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { X } from 'lucide-react'
-import { caseStudies } from '../data/caseStudies.js'
-import Reveal from '../components/Reveal.jsx'
-import './Portfolio.css'
+import React, { useState } from 'react';
+import { caseStudies } from '../data/caseStudies.js';
+import Reveal from '../components/Reveal.jsx';
+import CalendlyModal from '../components/CalendlyModal.jsx';
+import { TrendingUp, ArrowRight, Sparkles, Filter, CheckCircle2, Award } from 'lucide-react';
+import './Portfolio.css';
+
+const categories = ['All', 'Meta Ads', 'SEO', 'Video Editing', 'Social Media', 'UI/UX Design', 'Content Writing'];
 
 export default function Portfolio() {
-  const [active, setActive] = useState(null)
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [modalOpen, setModalOpen] = useState(false);
 
-  useEffect(() => {
-    if (!active) return
-    const onKey = (e) => e.key === 'Escape' && setActive(null)
-    document.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
-    }
-  }, [active])
+  const filteredStudies = activeCategory === 'All'
+    ? caseStudies
+    : caseStudies.filter((item) => item.category.toLowerCase().includes(activeCategory.toLowerCase()));
 
   return (
     <>
+      {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>
-            Portfolio
-          </span>
-          <h1>A Sample of the Work We Do</h1>
-          <p>Case studies across each of our six services — tap any project for the full story.</p>
+          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+            <Sparkles size={14} className="gold-icon" /> Validated Case Studies
+          </div>
+          <h1>Proven ROI & <span className="gold-gradient-text">Client Success Stories</span></h1>
+          <p>Explore real campaigns where our data-driven growth strategies delivered exponential revenue growth and market authority.</p>
         </div>
       </section>
 
-      <section className="section">
+      {/* PORTFOLIO MASONRY SECTION */}
+      <section className="section section-dark">
         <div className="container">
-          <div className="portfolio-grid">
-            {caseStudies.map((c, i) => (
-              <Reveal key={c.slug} delay={(i % 3) * 90}>
+          {/* CATEGORY FILTER TABS */}
+          <div className="portfolio-filter-tabs">
+            <span className="filter-title"><Filter size={15} className="gold-icon" /> Filter Category:</span>
+            <div className="filter-chips-wrap">
+              {categories.map((cat) => (
                 <button
-                  type="button"
-                  className="card portfolio-card"
-                  onClick={() => setActive(c)}
+                  key={cat}
+                  className={`filter-chip ${activeCategory === cat ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(cat)}
                 >
-                  <div className="portfolio-thumb">
-                    <img src={c.image} alt={c.title} loading="lazy" />
-                    <span className="portfolio-thumb-overlay" />
-                  </div>
-                  <div className="portfolio-card-body">
-                    <span className="portfolio-tag">{c.category}</span>
-                    <h3>{c.title}</h3>
-                    <p>{c.result}</p>
-                    <span className="portfolio-view-link">View Case Study &rarr;</span>
-                  </div>
+                  {cat}
                 </button>
+              ))}
+            </div>
+          </div>
+
+          {/* MASONRY GRID */}
+          <div className="portfolio-grid">
+            {filteredStudies.map((item, index) => (
+              <Reveal key={item.title} delay={index * 80}>
+                <div className="portfolio-card glass-card">
+                  <div className="portfolio-image-wrap">
+                    <img src={item.image} alt={item.title} loading="lazy" />
+                    <div className="portfolio-roi-badge">
+                      <TrendingUp size={14} className="gold-icon" /> {item.roiStat}
+                    </div>
+                  </div>
+
+                  <div className="portfolio-content">
+                    <div className="portfolio-meta">
+                      <span className="portfolio-cat-tag">{item.category}</span>
+                      <span className="portfolio-client">{item.client}</span>
+                    </div>
+
+                    <h3>{item.title}</h3>
+
+                    {/* BEFORE / AFTER METRICS BOX */}
+                    <div className="before-after-box">
+                      <div className="ba-row before">
+                        <span className="ba-label">Before:</span> {item.beforeAfter.before}
+                      </div>
+                      <div className="ba-row after">
+                        <span className="ba-label gold-gradient-text">After:</span> {item.beforeAfter.after}
+                      </div>
+                    </div>
+
+                    <p className="portfolio-goal"><strong>Challenge:</strong> {item.goal}</p>
+                    <p className="portfolio-solution"><strong>Strategy:</strong> {item.solution}</p>
+
+                    <div className="portfolio-tools-wrap">
+                      {item.tools.map((t) => (
+                        <span key={t} className="tool-badge">{t}</span>
+                      ))}
+                    </div>
+
+                    <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => setModalOpen(true)}>
+                      Get Similar ROI Results <ArrowRight size={16} />
+                    </button>
+                  </div>
+                </div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="cta-banner">
-        <div className="container cta-banner-inner">
-          <h2>Want Results Like These?</h2>
-          <p>Let's talk about what's possible for your brand.</p>
-          <Link to="/contact" className="btn btn-primary">
-            Book a Free Consultation
-          </Link>
+      {/* CALL TO ACTION */}
+      <section className="section section-surface portfolio-cta">
+        <div className="container">
+          <div className="portfolio-cta-box glass-card text-center">
+            <Award size={40} className="gold-icon" style={{ margin: '0 auto 16px' }} />
+            <h2>Want Your Brand To Be Our Next <span className="gold-gradient-text">Case Study?</span></h2>
+            <p>Book a strategy session with our senior growth architects. We'll outline an exact 90-day scaling roadmap for your business.</p>
+            <button className="btn btn-gold" onClick={() => setModalOpen(true)}>
+              Schedule Free Growth Session
+            </button>
+          </div>
         </div>
       </section>
 
-      {active && (
-        <div className="case-modal-backdrop" onClick={() => setActive(null)}>
-          <div
-            className="case-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-label={active.title}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="case-modal-close"
-              onClick={() => setActive(null)}
-              aria-label="Close"
-            >
-              <X size={20} />
-            </button>
-            <div className="case-modal-image">
-              <img src={active.image} alt={active.title} />
-            </div>
-            <div className="case-modal-body">
-              <span className="portfolio-tag">{active.category}</span>
-              <h2>{active.title}</h2>
-
-              <div className="case-modal-block">
-                <h4>Client Goal</h4>
-                <p>{active.goal}</p>
-              </div>
-              <div className="case-modal-block">
-                <h4>Our Solution</h4>
-                <p>{active.solution}</p>
-              </div>
-              <div className="case-modal-block">
-                <h4>Tools Used</h4>
-                <div className="case-modal-tools">
-                  {active.tools.map((t) => (
-                    <span key={t} className="case-modal-tool">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="case-modal-block case-modal-result">
-                <h4>Result</h4>
-                <p>{active.result}</p>
-              </div>
-
-              <Link to="/contact" className="btn btn-primary" onClick={() => setActive(null)}>
-                Start a Project Like This
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
-  )
+  );
 }
