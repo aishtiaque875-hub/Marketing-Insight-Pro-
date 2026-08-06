@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, Calendar, Sparkles } from 'lucide-react';
 import logoWide from '../assets/logo-wide.png';
-import logoPng from '../assets/logo.png';
 import CalendlyModal from './CalendlyModal';
 import './Navbar.css';
 
@@ -37,6 +36,7 @@ export default function Navbar() {
             <img src={logoWide} alt="Marketing Insight Pro" className="brand-logo" />
           </Link>
 
+          {/* Nav links aligned to the right side near CTA */}
           <nav className="nav-links">
             <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               Home
@@ -56,8 +56,8 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-actions">
-            <button className="btn btn-gold navbar-cta" onClick={() => setModalOpen(true)}>
-              <Calendar size={15} /> Book Strategy Call <ArrowRight size={15} />
+            <button className="btn btn-gold navbar-cta-small" onClick={() => setModalOpen(true)}>
+              <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
             </button>
 
             <button
@@ -81,7 +81,7 @@ export default function Navbar() {
               <NavLink to="/contact" className="mobile-link">Contact</NavLink>
             </div>
             <button className="btn btn-gold mobile-drawer-cta" onClick={() => { setMobileOpen(false); setModalOpen(true); }}>
-              <Sparkles size={16} /> Book Strategy Call
+              <Sparkles size={14} /> Book Strategy Call
             </button>
           </div>
         )}
