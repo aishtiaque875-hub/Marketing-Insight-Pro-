@@ -197,16 +197,7 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* LOCATION MAP SECTION */}
-      <section className="section section-surface map-section">
-        <div className="container text-center">
-          <div className="map-placeholder-box glass-card">
-            <MapPin size={36} className="gold-icon" style={{ margin: '0 auto 12px' }} />
-            <h3>Marketing Insight Pro Agency HQ</h3>
-            <p>Pakistan, Hyderabad</p>
-          </div>
-        </div>
-      </section>
+
     </>
   );
 }

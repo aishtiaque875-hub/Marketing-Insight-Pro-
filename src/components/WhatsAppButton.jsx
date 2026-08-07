@@ -1,4 +1,3 @@
-import whatsappImg from '../assets/whatsapp-icon.png'
 import './WhatsAppButton.css'
 
 export default function WhatsAppButton() {
@@ -10,7 +9,10 @@ export default function WhatsAppButton() {
       className="whatsapp-fab"
       aria-label="Chat on WhatsApp"
     >
-      <img src={whatsappImg} alt="WhatsApp Inquiry" className="whatsapp-icon-img" />
+      <svg viewBox="0 0 32 32" width="34" height="34" aria-hidden="true">
+        <circle cx="16" cy="16" r="16" fill="#25D366"/>
+        <path fill="#FFFFFF" d="M16.03 5C9.94 5 5 9.94 5 16.03c0 2.44.8 4.69 2.15 6.51L5 27l4.63-1.21a10.98 10.98 0 0 0 6.4 2.01c6.09 0 11.03-4.94 11.03-11.03S22.12 5 16.03 5zm5.72 15.02c-.24.68-1.4 1.31-1.95 1.39-.49.07-1.12.1-1.8-.12-.41-.13-.94-.31-1.62-.6-2.85-1.23-4.71-4.1-4.85-4.29-.15-.19-1.17-1.55-1.17-2.96s.74-2.1 1-2.39c.26-.29.57-.36.76-.36h.55c.17 0 .41.01.64.49.24.57.81 1.98.88 2.12.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.12.58.17.29.74 1.23 1.59 1.99 1.09.98 2.01 1.29 2.3 1.43.29.14.45.12.62-.07.16-.19.71-.83.9-1.12.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.21.55.33.07.12.07.69-.17 1.36z"/>
+      </svg>
       <span className="whatsapp-tooltip">Chat with Growth Team</span>
     </a>
   )

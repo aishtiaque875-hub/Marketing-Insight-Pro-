@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function CountUp({ value, suffix = '', duration = 1400 }) {
+export default function CountUp({ value, prefix = '', suffix = '', duration = 1800 }) {
   const ref = useRef(null)
   const [display, setDisplay] = useState(0)
   const frameRef = useRef(null)
@@ -14,7 +14,7 @@ export default function CountUp({ value, suffix = '', duration = 1400 }) {
       const start = performance.now()
       const tick = (now) => {
         const progress = Math.min((now - start) / duration, 1)
-        const eased = 1 - Math.pow(1 - progress, 3)
+        const eased = 1 - Math.pow(1 - progress, 4)
         setDisplay(Math.round(value * eased))
         if (progress < 1) frameRef.current = requestAnimationFrame(tick)
       }
@@ -25,12 +25,9 @@ export default function CountUp({ value, suffix = '', duration = 1400 }) {
       ([entry]) => {
         if (entry.isIntersecting) {
           animate()
-        } else {
-          if (frameRef.current) cancelAnimationFrame(frameRef.current)
-          setDisplay(0)
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     )
     obs.observe(el)
     return () => {
@@ -41,8 +38,7 @@ export default function CountUp({ value, suffix = '', duration = 1400 }) {
 
   return (
     <span ref={ref}>
-      {display}
-      {suffix}
+      {prefix}{display}{suffix}
     </span>
   )
 }

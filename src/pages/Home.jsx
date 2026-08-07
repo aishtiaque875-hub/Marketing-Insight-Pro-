@@ -274,27 +274,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL CTA BANNER */}
-      <section className="cta-banner">
-        <div className="container cta-banner-inner glass-card">
-          <span className="eyebrow" style={{ justifyContent: 'center' }}>Take The Next Step</span>
-          <h2>Ready To Accelerate Your Brand's Revenue Growth?</h2>
-          <p>Book a confidential 1-on-1 strategy call. We'll analyze your funnel and present a custom 90-day scaling roadmap.</p>
-          <div className="cta-banner-actions">
-            <button className="btn btn-gold" onClick={() => setModalOpen(true)}>
-              <Calendar size={18} /> Schedule Strategy Session
-            </button>
-            <a
-              href="https://wa.me/923266739989"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline-gold"
-            >
-              Instant WhatsApp Inquiry
-            </a>
-          </div>
-        </div>
-      </section>
+
 
       <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>

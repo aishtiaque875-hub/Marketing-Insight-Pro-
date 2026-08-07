@@ -58,7 +58,7 @@ export const caseStudies = [
   {
     slug: 'social-media-managing',
     title: 'Luxury Real Estate Brand Growth',
-    category: 'Social Media',
+    category: 'Social Media Managing',
     client: 'Prestige Haven Estates',
     image: portfolioImages['social-media-managing'],
     roiStat: '+280% Qualified Leads',

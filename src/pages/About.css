@@ -56,14 +56,21 @@
 
 .about-stat-row strong {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 800;
   color: var(--gold-primary);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 4px;
+  line-height: 1.1;
 }
 
 .about-stat-row span {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
 }
 
 /* VALUES GRID */

@@ -17,14 +17,14 @@
 
   /* Light Canvas Theme (Requested White Background) */
   --paper: #FFFFFF;          /* Pure white canvas */
-  --paper-soft: #F8FAFC;     /* Soft slate white background */
-  --paper-card: #FFFFFF;     /* Pure white card surface */
+  --paper-soft: #FFFFFF;     /* Pure white background for sections */
+  --paper-card: #04142C;     /* Pure blue card surface */
   --border-light: #E2E8F0;   /* Light border */
   --border-gold: rgba(197, 160, 89, 0.3);
   --heading: #04142C;
-  --ink: #1E293B;
-  --slate: #64748B;
-  --slate-light: #94A3B8;
+  --ink: #000000;            /* Jet Black body text */
+  --slate: #1E293B;          /* Dark slate for secondary text */
+  --slate-light: #475569;
 
   /* Fonts (Updated to modern ultra-clean Plus Jakarta Sans & Outfit) */
   --font-display: 'Plus Jakarta Sans', 'Outfit', -apple-system, sans-serif;
@@ -127,28 +127,29 @@ button {
 .section {
   padding: 100px 0;
   position: relative;
+  background-color: #FFFFFF;
 }
 
 .section-dark {
-  background-color: var(--navy-deep);
-  color: #FFFFFF;
+  background-color: #FFFFFF; /* Canvas background white */
+  color: #000000;
 }
 
 .section-dark h1,
 .section-dark h2,
 .section-dark h3,
 .section-dark h4 {
-  color: #FFFFFF;
+  color: var(--navy-deep);
 }
 
 .section-surface {
-  background-color: var(--paper-soft);
-  color: var(--ink);
+  background-color: #FFFFFF;
+  color: #000000;
 }
 
 .section-light {
   background-color: #FFFFFF;
-  color: var(--ink);
+  color: #000000;
 }
 
 .section-head {
@@ -160,15 +161,17 @@ button {
 .section-head h2 {
   font-size: clamp(30px, 4vw, 46px);
   margin-bottom: 16px;
+  color: var(--navy-deep);
 }
 
 .section-head p {
   font-size: 1.125rem;
-  color: var(--slate);
+  color: #000000;
+  font-weight: 500;
 }
 
 .section-dark .section-head p {
-  color: rgba(255, 255, 255, 0.75);
+  color: #000000;
 }
 
 /* Eyebrow Tag */

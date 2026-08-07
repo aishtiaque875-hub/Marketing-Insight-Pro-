@@ -97,7 +97,7 @@ export default function About() {
             <div className="about-stats-card glass-card">
               <h3 className="gold-gradient-text">Our Track Record</h3>
               <div className="about-stat-row">
-                <strong>$<CountUp value={12} suffix="M+" /></strong>
+                <strong><CountUp prefix="$" value={12} suffix="M+" /></strong>
                 <span>Client Revenue Generated</span>
               </div>
               <div className="about-stat-row">
