@@ -230,39 +230,42 @@ button {
   transform: rotate(45deg);
 }
 
-/* Buttons System */
+/* Buttons System - Matching Reference Image Gold Pill Button */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: 10px;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 9999px; /* Fully rounded pill button as in reference image */
   font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.02em;
+  font-size: 15px;
+  letter-spacing: 0.01em;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  height: 50px;
+  white-space: nowrap;
 }
 
 .btn-gold {
   background: var(--gold-gradient);
   color: var(--navy-deep);
-  box-shadow: var(--shadow-gold);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .btn-gold:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 14px 32px -6px rgba(197, 160, 89, 0.5);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 32px -4px rgba(212, 175, 55, 0.6);
 }
 
 .btn-outline-gold {
   background: rgba(4, 20, 44, 0.04);
   color: var(--navy-deep);
   border: 1.5px solid var(--gold-primary);
+  border-radius: 9999px;
 }
 
 .btn-outline-gold:hover {
@@ -282,31 +285,44 @@ button {
   color: var(--navy-deep);
 }
 
-/* Cards */
+/* Cards System - All Cards Set To Dark Blue Canvas With White Text */
 .glass-card {
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
+  background: var(--navy-surface); /* Dark Blue Card Color */
+  border: 1px solid rgba(197, 160, 89, 0.3);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 14px 36px rgba(4, 20, 44, 0.12);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #FFFFFF;
+}
+
+.glass-card h1,
+.glass-card h2,
+.glass-card h3,
+.glass-card h4,
+.glass-card h5,
+.glass-card h6 {
+  color: #FFFFFF;
+}
+
+.glass-card p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .glass-card:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 16px 40px -10px rgba(4, 20, 44, 0.12), 0 0 20px rgba(197, 160, 89, 0.15);
-  transform: translateY(-5px);
+  box-shadow: 0 20px 48px -8px rgba(4, 20, 44, 0.25), 0 0 25px rgba(197, 160, 89, 0.25);
+  transform: translateY(-6px);
 }
 
 .section-dark .glass-card {
-  background: rgba(10, 38, 80, 0.55);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 160, 89, 0.25);
+  background: var(--navy-card);
+  border: 1px solid rgba(197, 160, 89, 0.3);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .section-dark .glass-card:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 25px rgba(197, 160, 89, 0.2);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 25px rgba(197, 160, 89, 0.25);
 }
 
 /* Scroll Reveal Base - Extra Smooth */

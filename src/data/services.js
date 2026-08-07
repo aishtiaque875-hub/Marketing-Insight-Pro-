@@ -2,8 +2,8 @@ export const services = [
   {
     slug: 'meta-ads',
     icon: 'Target',
-    title: 'Meta Ads & Paid Growth',
-    short: 'Precision Facebook & Instagram ad campaigns engineered for 3x+ ROAS.',
+    title: 'Meta Ads',
+    short: 'High-converting Facebook & Instagram ad campaigns engineered for 3x+ ROAS.',
     detail:
       'We handle strategy, audience profiling, high-converting video creatives, copy, and continuous bid optimization to scale your customer acquisition profitably.',
     targetRoi: '3.5x - 6.0x ROAS',
@@ -18,7 +18,7 @@ export const services = [
   {
     slug: 'seo',
     icon: 'TrendingUp',
-    title: 'High-Rank SEO & Content Strategy',
+    title: 'SEO',
     short: 'Dominate top Google search results for commercial high-intent keywords.',
     detail:
       'Technical SEO audits, speed optimization, high-authority backlink outreach, and content strategies engineered to drive organic qualified buyers 24/7.',
@@ -32,9 +32,25 @@ export const services = [
     ]
   },
   {
+    slug: 'content-writing',
+    icon: 'PenLine',
+    title: 'Content Writing',
+    short: 'Direct-response sales copy and SEO articles that convert readers into buyers.',
+    detail:
+      'Psychology-backed sales pages, landing page headlines, email sequences, and blog content written to eliminate objections and trigger immediate action.',
+    targetRoi: '+35% Checkout Conversions',
+    deliverables: [
+      'High-Converting Landing Page Copy',
+      'Meta & Google Ad Angle Variations',
+      'Email Marketing & Nurture Flows',
+      'Brand Tone-of-Voice Guidelines',
+      'SEO-Optimized Long-Form Articles'
+    ]
+  },
+  {
     slug: 'video-editing',
     icon: 'Clapperboard',
-    title: 'Direct-Response Video Editing',
+    title: 'Video Editing',
     short: 'High-retention Reels, TikToks, and Ad Videos that grab attention in 2 seconds.',
     detail:
       'Hollywood-grade visual edits, kinetic typography captions, motion graphics, and audio design tailored specifically to maximize watch time and conversions.',
@@ -48,51 +64,35 @@ export const services = [
     ]
   },
   {
+    slug: 'social-media-post-design',
+    icon: 'PenTool',
+    title: 'Social Media Post Design',
+    short: 'Stunning luxury graphic designs and carousels that elevate your brand aesthetic.',
+    detail:
+      'Custom visual assets, high-engagement carousel templates, infographics, and promotional graphics tailored to position your brand as an industry leader.',
+    targetRoi: '+210% Visual Engagement',
+    deliverables: [
+      'Custom Branded Graphic Templates',
+      'High-Converting Carousel Layouts',
+      'Infographics & Data Visualizations',
+      'Promotional & Seasonal Ad Creatives',
+      'Source Files & Brand Style Assets'
+    ]
+  },
+  {
     slug: 'social-media-managing',
     icon: 'MessagesSquare',
-    title: 'Social Media & Brand Growth',
-    short: 'Build an authoritative social presence that builds trust and warm leads.',
+    title: 'Social Media Managing',
+    short: 'Consistent posting, community management, and page growth on autopilot.',
     detail:
-      'End-to-end content calendars, carousel graphic design, engaging captions, and community management that position your business as the industry leader.',
-    targetRoi: '+180% Engagement Growth',
+      'End-to-end content calendars, engaging captions, DM management, and audience growth strategies so your social pages build trust and revenue every single day.',
+    targetRoi: '+180% Audience Growth',
     deliverables: [
       '30-Day Strategic Content Calendar',
-      'Custom Branded Graphic Design & Carousels',
       'Persuasive Caption & Hashtag Optimization',
       'DM & Comment Community Engagement',
-      'Monthly Audience Analytics Review'
-    ]
-  },
-  {
-    slug: 'ui-ux-designing',
-    icon: 'PenTool',
-    title: 'Luxury UI/UX & Web Redesign',
-    short: 'High-converting website interfaces designed to turn traffic into sales.',
-    detail:
-      'Responsive, lightning-fast web experiences engineered with glassmorphism, micro-animations, intuitive user flows, and conversion rate optimization (CRO).',
-    targetRoi: '+45% Conversion Rate',
-    deliverables: [
-      'User Journey & Wireframe Architecture',
-      'Figma & Modern Web Design Systems',
-      'Mobile-First Responsive Layouts',
-      'Speed & Lighthouse 95+ Performance',
-      'Seamless E-Commerce & CRM Integrations'
-    ]
-  },
-  {
-    slug: 'content-writing',
-    icon: 'PenLine',
-    title: 'Conversion Copywriting',
-    short: 'Direct-response sales copy that speaks directly to your ideal customer.',
-    detail:
-      'Psychology-backed sales pages, landing page headlines, email sequences, and ad copy written to eliminate objections and trigger immediate action.',
-    targetRoi: '+35% Checkout Conversions',
-    deliverables: [
-      'High-Converting Landing Page Copy',
-      'Meta & Google Ad Angle Variations',
-      'Email Marketing & Nurture Flows',
-      'Brand Tone-of-Voice Guidelines',
-      'SEO-Optimized Long-Form Articles'
+      'Cross-Platform Scheduling (Insta/FB/LinkedIn)',
+      'Monthly Growth & Analytics Reports'
     ]
   },
 ];

@@ -2,18 +2,12 @@ import React, { useState } from 'react';
 import { caseStudies } from '../data/caseStudies.js';
 import Reveal from '../components/Reveal.jsx';
 import CalendlyModal from '../components/CalendlyModal.jsx';
-import { TrendingUp, ArrowRight, Sparkles, Filter, CheckCircle2, Award } from 'lucide-react';
+import { TrendingUp, ArrowRight, Sparkles, CheckCircle2, Award } from 'lucide-react';
 import './Portfolio.css';
 
-const categories = ['All', 'Meta Ads', 'SEO', 'Video Editing', 'Social Media', 'UI/UX Design', 'Content Writing'];
 
 export default function Portfolio() {
-  const [activeCategory, setActiveCategory] = useState('All');
   const [modalOpen, setModalOpen] = useState(false);
-
-  const filteredStudies = activeCategory === 'All'
-    ? caseStudies
-    : caseStudies.filter((item) => item.category.toLowerCase().includes(activeCategory.toLowerCase()));
 
   return (
     <>
@@ -28,28 +22,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* PORTFOLIO MASONRY SECTION */}
+      {/* PORTFOLIO GRID SECTION */}
       <section className="section section-dark">
         <div className="container">
-          {/* CATEGORY FILTER TABS */}
-          <div className="portfolio-filter-tabs">
-            <span className="filter-title"><Filter size={15} className="gold-icon" /> Filter Category:</span>
-            <div className="filter-chips-wrap">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  className={`filter-chip ${activeCategory === cat ? 'active' : ''}`}
-                  onClick={() => setActiveCategory(cat)}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* MASONRY GRID */}
           <div className="portfolio-grid">
-            {filteredStudies.map((item, index) => (
+            {caseStudies.map((item, index) => (
               <Reveal key={item.title} delay={index * 80}>
                 <div className="portfolio-card glass-card">
                   <div className="portfolio-image-wrap">

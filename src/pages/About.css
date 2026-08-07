@@ -195,8 +195,57 @@
   border-color: var(--gold-primary);
 }
 
+/* TEAM TEXT GRID (NO PICTURES) */
+.team-text-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.team-text-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--navy-deep);
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.team-text-card:hover {
+  border-color: var(--gold-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(197, 160, 89, 0.2);
+}
+
+.team-text-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(197, 160, 89, 0.15);
+  border: 1px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.team-text-info h3 {
+  font-size: 19px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.team-text-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold-primary);
+}
+
 @media (max-width: 960px) {
   .story-grid {
     grid-template-columns: 1fr;
   }
 }
+

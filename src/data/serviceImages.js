@@ -10,6 +10,8 @@ export const serviceImages = {
   seo: seo,
   'video-editing': videoEditing,
   'social-media-managing': socialMedia,
+  'social-media-post-design': uiUx,
   'ui-ux-designing': uiUx,
   'content-writing': contentWriting,
 }
+

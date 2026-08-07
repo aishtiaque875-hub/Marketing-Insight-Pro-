@@ -61,20 +61,24 @@ const processSteps = [
 
 const faqs = [
   {
-    q: 'How fast can we expect measurable ROI on Meta Ads?',
-    a: 'Early data signals and lead flow typically begin within the first 7-14 days. Full funnel calibration and scaling to 3x-5x ROAS occurs within the first 30-45 days.',
+    q: 'What performance metrics and ROAS targets does Marketing Insight Pro deliver for Meta Ads?',
+    a: 'We focus strictly on net profitable revenue gain, target ROAS (typically 3.5x–6.0x+ based on unit economics), Customer Acquisition Cost (CAC) reduction, and Customer Lifetime Value (LTV). You receive real-time dashboard access and transparent weekly reporting.',
   },
   {
-    q: 'Why choose Marketing Insight Pro over standard marketing agencies?',
-    a: 'Most agencies charge high retainers without accountability. We focus 100% on unit economics, profit margins, and verifiable revenue growth — giving you direct access to senior strategists.',
+    q: 'How quickly will our SEO and digital content campaigns generate qualified organic leads?',
+    a: 'Technical SEO fixes and commercial keyword optimization show rank improvements within 14–30 days. Full authority compounding and sustained lead acquisition accelerate significantly over 60–90 days.',
   },
   {
-    q: 'Do I need to sign long-term contract locks?',
-    a: 'No. We believe in earning your business every single month through performance. We offer flexible growth agreements focused on performance milestones.',
+    q: 'Why partner with Marketing Insight Pro over traditional marketing agencies?',
+    a: 'Traditional agencies hide behind vanity metrics like impressions and pass accounts to junior interns. Marketing Insight Pro provides direct executive oversight by senior specialists, 100% client-owned ad accounts, and direct revenue accountability.',
   },
   {
-    q: 'What is included in the initial 1-on-1 Growth Consultation?',
-    a: 'During your 30-minute call with our Chief Growth Officer, we audit your current marketing funnel, reveal your highest-leverage growth opportunities, and provide an actionable scaling roadmap.',
+    q: 'Are long-term contracts or locked-in retainers required?',
+    a: 'No rigid long-term locks. We believe in earning your partnership every single month through validated ROI, clear deliverables, and scalable growth milestones.',
+  },
+  {
+    q: 'What is included in the initial Growth Strategy Audit?',
+    a: 'In your strategic consultation, our senior growth architects audit your ad funnels, SEO footprint, and landing page UX to deliver a customized 90-day execution roadmap tailored specifically to your revenue goals.',
   },
 ];
 
@@ -98,7 +102,7 @@ export default function Home() {
               </h1>
 
               <p className="hero-sub">
-                We engineer enterprise-level Meta Ads, High-Rank SEO, Luxury UI/UX, and Direct-Response Video Creatives that transform clicks into predictable profit.
+                We engineer enterprise-level Meta Ads, High-Rank SEO, Direct-Response Video Creatives, Social Media Design, and Content Writing that transform clicks into predictable profit.
               </p>
 
               <div className="hero-actions">
@@ -166,10 +170,10 @@ export default function Home() {
         <div className="container">
           <div className="section-head">
             <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Full-Funnel Capabilities
+              Core Specialized Services
             </span>
-            <h2>Enterprise Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h2>
-            <p>Every service is executed by senior specialists committed to max ROI — eliminate vendor disconnects.</p>
+            <h2>Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h2>
+            <p>Six core growth disciplines executed by senior specialists committed to max ROI.</p>
           </div>
 
           <div className="services-grid">
@@ -234,74 +238,6 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* WHY US / ROI PROFILES */}
-      <section className="section section-surface why-us">
-        <div className="container why-inner">
-          <Reveal direction="left">
-            <div className="why-copy">
-              <span className="eyebrow">The Agency Difference</span>
-              <h2>We Don't Sell Likes — We Deliver <span className="gold-gradient-text">Verifiable Profit</span></h2>
-              <p>
-                Most agencies hide behind vanity metrics like impressions and clicks. At Marketing Insight Pro, every campaign is measured by net revenue gain, customer acquisition cost (CAC), and customer lifetime value (LTV).
-              </p>
-
-              <div className="why-features-grid">
-                <div className="why-feature-item">
-                  <div className="feature-check"><CheckCircle2 size={18} className="gold-icon" /></div>
-                  <div>
-                    <strong>Direct Executive Oversight</strong>
-                    <p>Your account is managed directly by senior growth strategists, not junior interns.</p>
-                  </div>
-                </div>
-
-                <div className="why-feature-item">
-                  <div className="feature-check"><CheckCircle2 size={18} className="gold-icon" /></div>
-                  <div>
-                    <strong>Custom Creative Production</strong>
-                    <p>High-converting video ads and high-converting copy built specifically for your niche.</p>
-                  </div>
-                </div>
-
-                <div className="why-feature-item">
-                  <div className="feature-check"><CheckCircle2 size={18} className="gold-icon" /></div>
-                  <div>
-                    <strong>Full-Funnel Optimization</strong>
-                    <p>From initial ad click to final checkout page — we optimize every touchpoint.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          <Reveal direction="right">
-            <div className="why-card glass-card">
-              <div className="why-card-badge">
-                <BarChart3 size={16} className="gold-icon" /> Enterprise Case Highlight
-              </div>
-              <h3 className="why-card-title">How We Scaled E-Commerce Revenue by <span className="gold-gradient-text">+480%</span></h3>
-              <p className="why-card-text">
-                By pairing targeted Meta Ads retargeting with technical SEO and a redesigned checkout UX, our client generated $1.4M in incremental sales within 90 days.
-              </p>
-
-              <div className="why-metrics-grid">
-                <div className="metric-box">
-                  <strong>4.8x</strong>
-                  <span>Average ROAS</span>
-                </div>
-                <div className="metric-box">
-                  <strong>-32%</strong>
-                  <span>CAC Reduction</span>
-                </div>
-              </div>
-
-              <button className="btn btn-gold btn-full" onClick={() => setModalOpen(true)}>
-                Get Similar Growth Audit
-              </button>
-            </div>
-          </Reveal>
         </div>
       </section>
 

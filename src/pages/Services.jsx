@@ -73,29 +73,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* SERVICE GUARANTEE BANNER */}
-      <section className="section section-surface service-guarantee">
-        <div className="container">
-          <div className="guarantee-box glass-card">
-            <div className="guarantee-icon">
-              <ShieldCheck size={48} className="gold-icon" />
-            </div>
-            <div className="guarantee-text">
-              <h2>The Marketing Insight Pro <span className="gold-gradient-text">Performance Promise</span></h2>
-              <p>We do not lock clients into rigid 12-month agency traps. We earn your business month-over-month through clear reporting, transparent ad accounts, and verifiable revenue milestones.</p>
-              <div className="guarantee-perks">
-                <span>✓ 100% Client-Owned Ad Accounts</span>
-                <span>✓ Weekly Video Updates</span>
-                <span>✓ Direct Slack / WhatsApp Channel</span>
-              </div>
-            </div>
-            <button className="btn btn-gold" onClick={() => setModalOpen(true)}>
-              Schedule Growth Consultation
-            </button>
-          </div>
-        </div>
-      </section>
-
       <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );

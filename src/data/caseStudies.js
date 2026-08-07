@@ -74,22 +74,22 @@ export const caseStudies = [
     result: 'Generated 24 prime property sales inquiries directly from Instagram DMs.',
   },
   {
-    slug: 'ui-ux-designing',
-    title: 'SaaS Platform Web Redesign',
-    category: 'UI/UX Design',
-    client: 'CloudFlow Analytics',
-    image: portfolioImages['ui-ux-designing'],
-    roiStat: '+65% Signup Conversion',
-    roasMetric: '99/100 Speed Score',
+    slug: 'social-media-post-design',
+    title: 'High-Impact Brand & Post Design',
+    category: 'Social Media Post Design',
+    client: 'CloudFlow Tech & Lifestyle',
+    image: portfolioImages['social-media-post-design'],
+    roiStat: '+210% Engagement',
+    roasMetric: '99/100 Visual Score',
     beforeAfter: {
-      before: '2.1% visitor-to-trial conversion',
-      after: '5.8% visitor-to-trial conversion'
+      before: 'Low engagement & inconsistent branding',
+      after: '+210% visual engagement & 45k new impressions'
     },
-    goal: 'Redesign a complex tech product homepage into a sleek, high-converting enterprise portal.',
+    goal: 'Design luxury branded social posts and high-converting carousel graphics.',
     solution:
-      'Created a modern dark-navy & metallic gold aesthetic, clear visual hierarchy, interactive interactive demo preview, and 1-click CTA checkout.',
-    tools: ['Figma', 'Vite React', 'Framer Motion'],
-    result: '65% boost in free trial conversions and zero bounce rate spikes.',
+      'Created custom branded design templates, high-converting carousel layouts, and sleek visual assets tailored for peak engagement.',
+    tools: ['Figma', 'Adobe Illustrator', 'Canva Pro'],
+    result: '210% boost in visual engagement and double brand inquiries.',
   },
   {
     slug: 'content-writing',

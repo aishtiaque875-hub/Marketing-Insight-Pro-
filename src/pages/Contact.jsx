@@ -200,18 +200,10 @@ export default function Contact() {
       {/* LOCATION MAP SECTION */}
       <section className="section section-surface map-section">
         <div className="container text-center">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Global Reach
-            </span>
-            <h2>Serving High-Growth Brands <span className="gold-gradient-text">Worldwide</span></h2>
-            <p>Remote growth agency capabilities delivering results across US, UK, UAE, and Asian markets.</p>
-          </div>
-
           <div className="map-placeholder-box glass-card">
             <MapPin size={36} className="gold-icon" style={{ margin: '0 auto 12px' }} />
             <h3>Marketing Insight Pro Agency HQ</h3>
-            <p>Operating Remote-First Across North America, Europe, & Asia-Pacific</p>
+            <p>Pakistan, Hyderabad</p>
           </div>
         </div>
       </section>
