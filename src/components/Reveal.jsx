@@ -1,12 +1,34 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
+/**
+ * Subtle, professional scroll reveal.
+ * direction: 'up' | 'left' | 'right' | 'scale' | 'fade'
+ * Automatically disabled for users who prefer reduced motion.
+ */
+export default function Reveal({
+  children,
+  delay = 0,
+  direction = 'up',
+  className = '',
+  threshold = 0.15,
+}) {
   const ref = useRef(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    const reduceMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduceMotion || typeof IntersectionObserver === 'undefined') {
+      setVisible(true)
+      return
+    }
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -14,11 +36,11 @@ export default function Reveal({ children, delay = 0, direction = 'up', classNam
           obs.unobserve(el)
         }
       },
-      { threshold: 0.15 }
+      { threshold, rootMargin: '0px 0px -60px 0px' }
     )
     obs.observe(el)
     return () => obs.disconnect()
-  }, [])
+  }, [threshold])
 
   return (
     <div

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://marketinginsight.com/sitemap.xml
+Sitemap: https://marketing-insight-pro.vercel.app/sitemap.xml

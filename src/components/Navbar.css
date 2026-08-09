@@ -5,20 +5,22 @@
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(255, 255, 255, 0.85);
+  transition: padding 0.35s var(--ease-lux), background 0.35s var(--ease-lux),
+    box-shadow 0.35s var(--ease-lux), border-color 0.35s var(--ease-lux);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(4, 20, 44, 0.08);
+  animation: mip-fade-down 0.6s var(--ease-lux) both;
 }
 
 .navbar-header.scrolled {
   padding: 10px 0;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 30px rgba(4, 20, 44, 0.08);
-  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
+  border-bottom: 1px solid var(--gold-a30);
 }
 
 .navbar-container {
@@ -36,11 +38,15 @@
   height: 42px;
   width: auto;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s var(--ease-lux);
 }
 
 .navbar-brand:hover .brand-logo {
-  transform: scale(1.03);
+  transform: scale(1.04);
+}
+
+.navbar-header.scrolled .brand-logo {
+  height: 38px;
 }
 
 /* Nav links shifted to the right side next to CTA button */
@@ -59,11 +65,11 @@
   color: var(--navy-deep);
   position: relative;
   padding: 4px 0;
-  transition: color 0.25s ease;
+  transition: color 0.25s var(--ease-lux);
 }
 
 .nav-link:hover {
-  color: var(--gold-primary);
+  color: var(--gold-ink);
 }
 
 .nav-link::after {
@@ -73,13 +79,17 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold-gradient);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: var(--gold);
+  transition: width 0.35s var(--ease-lux);
   border-radius: 2px;
 }
 
+.nav-link:hover::after {
+  width: 100%;
+}
+
 .nav-link.active {
-  color: var(--gold-primary);
+  color: var(--gold-ink);
   font-weight: 700;
 }
 
@@ -93,13 +103,14 @@
   gap: 14px;
 }
 
-/* Strategy Call Button Matching Reference Image Pill Design */
+/* Strategy Call Button Matching Reference Pill Design */
 .navbar-cta-small {
   padding: 12px 24px !important;
   font-size: 14px !important;
   border-radius: 9999px !important;
   height: 46px !important;
   letter-spacing: 0.01em;
+  width: auto !important;
 }
 
 .mobile-toggle {
@@ -109,26 +120,42 @@
   color: var(--navy-deep);
   cursor: pointer;
   padding: 4px;
+  line-height: 0;
+  transition: color 0.25s var(--ease-lux), transform 0.25s var(--ease-lux);
+}
+
+.mobile-toggle:hover {
+  color: var(--gold-ink);
+  transform: scale(1.06);
 }
 
 .mobile-drawer {
   display: none;
-  position: fixed;
-  top: 64px;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   background: #FFFFFF;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.3);
-  padding: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-bottom: 1px solid var(--gold-a30);
+  padding: 22px 24px 26px;
+  box-shadow: 0 22px 40px rgba(4, 20, 44, 0.15);
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
+  transform-origin: top center;
+  animation: mip-drawer-in 0.32s var(--ease-lux) both;
+  max-height: calc(100vh - 100%);
+  overflow-y: auto;
+}
+
+@keyframes mip-drawer-in {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
 }
 
 .mobile-link {
@@ -136,17 +163,32 @@
   font-size: 16px;
   font-weight: 600;
   color: var(--navy-deep);
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 12px 2px;
+  border-bottom: 1px solid rgba(4, 20, 44, 0.06);
+  animation: mip-fade-up 0.42s var(--ease-lux) both;
+}
+
+.mobile-nav-links .mobile-link:nth-child(1) { animation-delay: 40ms; }
+.mobile-nav-links .mobile-link:nth-child(2) { animation-delay: 80ms; }
+.mobile-nav-links .mobile-link:nth-child(3) { animation-delay: 120ms; }
+.mobile-nav-links .mobile-link:nth-child(4) { animation-delay: 160ms; }
+.mobile-nav-links .mobile-link:nth-child(5) { animation-delay: 200ms; }
+
+.mobile-link:hover {
+  color: var(--gold-ink);
+  padding-left: 6px;
 }
 
 .mobile-link.active {
-  color: var(--gold-primary);
+  color: var(--gold-ink);
+  font-weight: 700;
 }
 
 .mobile-drawer-cta {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 6px;
+  animation: mip-fade-up 0.42s var(--ease-lux) both;
+  animation-delay: 240ms;
 }
 
 @media (max-width: 960px) {

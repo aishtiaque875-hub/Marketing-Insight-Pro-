@@ -38,14 +38,14 @@ export default function Navbar() {
 
           {/* Nav links aligned to the right side near CTA */}
           <nav className="nav-links">
-            <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+            <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               Home
             </NavLink>
             <NavLink to="/services" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               Services
             </NavLink>
             <NavLink to="/portfolio" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-              Portfolio & ROI
+              Portfolio
             </NavLink>
             <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               About Us
@@ -74,11 +74,11 @@ export default function Navbar() {
         {mobileOpen && (
           <div className="mobile-drawer">
             <div className="mobile-nav-links">
-              <NavLink to="/" className="mobile-link">Home</NavLink>
-              <NavLink to="/services" className="mobile-link">Services</NavLink>
-              <NavLink to="/portfolio" className="mobile-link">Portfolio & ROI</NavLink>
-              <NavLink to="/about" className="mobile-link">About Us</NavLink>
-              <NavLink to="/contact" className="mobile-link">Contact</NavLink>
+              <NavLink to="/" end className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>Home</NavLink>
+              <NavLink to="/services" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>Services</NavLink>
+              <NavLink to="/portfolio" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>Portfolio</NavLink>
+              <NavLink to="/about" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>About Us</NavLink>
+              <NavLink to="/contact" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>Contact</NavLink>
             </div>
             <button className="btn btn-gold mobile-drawer-cta" onClick={() => { setMobileOpen(false); setModalOpen(true); }}>
               <Sparkles size={14} /> Book Strategy Call

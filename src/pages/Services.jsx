@@ -15,11 +15,11 @@ export default function Services() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+          <div className="hero-badge anim-load" style={{ margin: '0 auto 16px' }}>
             <Sparkles size={14} className="gold-icon" /> Core Capabilities
           </div>
-          <h1>Enterprise Growth Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h1>
-          <p>Six specialized growth disciplines under one roof — executed by senior specialists dedicated to maximizing your return on investment.</p>
+          <h1 className="anim-load" style={{ '--d': '90ms' }}>Enterprise Growth Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h1>
+          <p className="anim-load" style={{ '--d': '180ms' }}>Six specialized growth disciplines under one roof — executed by senior specialists dedicated to measurable results.</p>
         </div>
       </section>
 
@@ -34,7 +34,7 @@ export default function Services() {
                   <div className="service-detail-card glass-card">
                     <div className="service-detail-image-wrap">
                       <img src={serviceImages[s.slug]} alt={s.title} loading="lazy" />
-                      <div className="roi-tag">
+                      <div className="outcome-tag">
                         <Zap size={13} className="gold-icon" /> Expected Outcome: {s.targetRoi}
                       </div>
                     </div>

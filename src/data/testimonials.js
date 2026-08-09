@@ -21,7 +21,7 @@ export const testimonials = [
     result: '4.8x ROAS Achieved',
     verified: true,
     quote:
-      'Their UI/UX team transformed our store experience while their performance team scaled our Meta ad campaigns. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
+      'Their design and content team rebuilt our social presence while their media buyers scaled our Meta ad campaigns. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
   },
   {
     name: 'Hamza Sheikh',

@@ -29,7 +29,7 @@
   font-weight: 700;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid var(--gold-primary);
+  border: 1px solid var(--gold);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;

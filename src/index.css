@@ -1,32 +1,54 @@
 :root {
-  /* --- Brand Tokens (Navy & Gold on Luxury White Canvas) --- */
+  /* --- Brand Tokens (Navy & Logo Gold on Luxury White Canvas) --- */
   --navy-deep: #04142C;      /* Deep luxury navy for headers & dark cards */
   --navy-surface: #071F42;   /* Elevated navy card surface */
   --navy-card: #0A2650;      /* Dark navy container */
   --navy-soft: #103468;      /* Interactive hover state */
   --navy-light: #164380;     /* Border glow navy */
 
-  /* Luxury Gold System */
-  --gold-primary: #C5A059;   /* Official logo metallic gold */
-  --gold-light: #F5D77F;     /* Highlights & shiny borders */
-  --gold-mid: #D4AF37;       /* Signature metallic gold */
-  --gold-deep: #997529;      /* Dark gold shadow & borders */
-  --gold-gradient: linear-gradient(135deg, #F5D77F 0%, #D4AF37 45%, #C5A059 70%, #997529 100%);
-  --gold-text-gradient: linear-gradient(135deg, #D4AF37 0%, #B8892F 100%);
+  /* ==========================================================
+     SINGLE BRAND GOLD — taken from the logo.
+     EVERY gold on this website comes from --gold.
+     --gold-tint and --gold-ink are NOT new colours: they are the
+     exact same gold rendered lighter / darker, and they exist only
+     so gold text stays readable on white and on navy.
+     Never introduce another gold value anywhere in the project.
+     ========================================================== */
+  --gold: #C5A059;
+  --gold-tint: #D4B883;   /* same gold, lightened — readable on navy */
+  --gold-ink: #8E7340;    /* same gold, darkened — readable on white */
+
+  /* Aliases kept so older selectors keep working — all resolve to the one gold */
+  --gold-primary: var(--gold);
+  --gold-mid: var(--gold);
+  --gold-light: var(--gold-tint);
+  --gold-deep: var(--gold-ink);
+
+  /* Transparent washes of the SAME gold (197,160,89) */
+  --gold-a08: rgba(197, 160, 89, 0.08);
+  --gold-a12: rgba(197, 160, 89, 0.12);
+  --gold-a15: rgba(197, 160, 89, 0.15);
+  --gold-a22: rgba(197, 160, 89, 0.22);
+  --gold-a30: rgba(197, 160, 89, 0.3);
+  --gold-a45: rgba(197, 160, 89, 0.45);
   --gold-glow: rgba(197, 160, 89, 0.2);
 
-  /* Light Canvas Theme (Requested White Background) */
+  --gold-gradient: linear-gradient(135deg, var(--gold-tint) 0%, var(--gold) 55%, var(--gold-ink) 100%);
+  --gold-text-gradient: linear-gradient(135deg, var(--gold) 0%, var(--gold-ink) 100%);
+  --gold-text-gradient-dark-bg: linear-gradient(135deg, var(--gold-tint) 0%, var(--gold) 100%);
+
+  /* Light Canvas Theme */
   --paper: #FFFFFF;          /* Pure white canvas */
   --paper-soft: #FFFFFF;     /* Pure white background for sections */
-  --paper-card: #04142C;     /* Pure blue card surface */
+  --paper-card: #04142C;     /* Dark navy card surface */
   --border-light: #E2E8F0;   /* Light border */
   --border-gold: rgba(197, 160, 89, 0.3);
   --heading: #04142C;
-  --ink: #000000;            /* Jet Black body text */
+  --ink: #0B1220;            /* Near-black body text */
   --slate: #1E293B;          /* Dark slate for secondary text */
-  --slate-light: #475569;
+  --slate-light: #334155;
 
-  /* Fonts (Updated to modern ultra-clean Plus Jakarta Sans & Outfit) */
+  /* Fonts */
   --font-display: 'Plus Jakarta Sans', 'Outfit', -apple-system, sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
   --font-ui: 'Plus Jakarta Sans', sans-serif;
@@ -39,6 +61,18 @@
   --shadow-gold: 0 10px 30px -8px rgba(197, 160, 89, 0.35);
   --shadow-navy: 0 20px 50px rgba(4, 20, 44, 0.08);
   --shadow-card: 0 10px 30px -5px rgba(4, 20, 44, 0.06);
+
+  /* Motion */
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Modern browsers derive the lighter/darker renderings straight from --gold,
+   so changing the single hex above updates the entire site. */
+@supports (color: color-mix(in srgb, red 50%, white)) {
+  :root {
+    --gold-tint: color-mix(in srgb, var(--gold) 75%, #FFFFFF);
+    --gold-ink: color-mix(in srgb, var(--gold) 72%, #000000);
+  }
 }
 
 * {
@@ -52,17 +86,6 @@ html {
   font-size: 16px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
 body {
   background-color: var(--paper);
   color: var(--ink);
@@ -71,6 +94,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -88,7 +115,8 @@ p {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: color 0.3s var(--ease-lux), background 0.3s var(--ease-lux),
+    transform 0.3s var(--ease-lux), opacity 0.3s var(--ease-lux);
 }
 
 button {
@@ -96,11 +124,11 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s var(--ease-lux);
 }
 
 :focus-visible {
-  outline: 2px solid var(--gold-primary);
+  outline: 2px solid var(--gold);
   outline-offset: 4px;
 }
 
@@ -112,8 +140,13 @@ button {
   background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--gold-primary), var(--navy-deep));
+  background: linear-gradient(180deg, var(--gold), var(--navy-deep));
   border-radius: 5px;
+}
+
+::selection {
+  background: var(--gold-a30);
+  color: var(--navy-deep);
 }
 
 /* Common Container */
@@ -121,6 +154,7 @@ button {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 24px;
+  width: 100%;
 }
 
 /* Section Styling */
@@ -130,9 +164,11 @@ button {
   background-color: #FFFFFF;
 }
 
-.section-dark {
-  background-color: #FFFFFF; /* Canvas background white */
-  color: #000000;
+.section-dark,
+.section-surface,
+.section-light {
+  background-color: #FFFFFF;
+  color: var(--ink);
 }
 
 .section-dark h1,
@@ -140,16 +176,6 @@ button {
 .section-dark h3,
 .section-dark h4 {
   color: var(--navy-deep);
-}
-
-.section-surface {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.section-light {
-  background-color: #FFFFFF;
-  color: #000000;
 }
 
 .section-head {
@@ -164,27 +190,48 @@ button {
   color: var(--navy-deep);
 }
 
-.section-head p {
+.section-head p,
+.section-dark .section-head p {
   font-size: 1.125rem;
-  color: #000000;
+  color: var(--slate);
   font-weight: 500;
 }
 
-.section-dark .section-head p {
-  color: #000000;
+/* Utilities */
+.text-center {
+  text-align: center;
 }
 
-/* Eyebrow Tag */
+.btn-full {
+  width: 100%;
+}
+
+/* Full-width buttons may hold long labels — let them wrap instead of clipping.
+   Extra specificity so the mobile .btn overrides below can't clip them. */
+.btn.btn-full,
+.btn.btn-full-card,
+.btn.mobile-drawer-cta {
+  width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 50px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  line-height: 1.35;
+  max-width: none;
+}
+
+/* Eyebrow Tag (section label) */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   font-family: var(--font-ui);
   font-size: 12.5px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-primary);
+  color: var(--gold-ink);
   margin-bottom: 16px;
 }
 
@@ -192,20 +239,71 @@ button {
   content: '';
   width: 24px;
   height: 2px;
-  background: var(--gold-gradient);
+  background: var(--gold);
 }
 
-/* Metallic Gold Text Gradient Utility */
+/* Gold labels sitting on dark navy surfaces */
+.page-header .eyebrow,
+.glass-card .eyebrow,
+.footer-wrap .eyebrow {
+  color: var(--gold-tint);
+}
+
+/* Badge / pill used on the hero + every page header */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold-a12);
+  border: 1px solid var(--gold);
+  color: var(--gold-ink);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 15px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+
+/* On the dark page-header banner the badge must go light, not dark */
+.page-header .hero-badge {
+  background: rgba(197, 160, 89, 0.16);
+  border-color: var(--gold-a45);
+  color: var(--gold-tint);
+}
+
+/* Gold icons */
+.gold-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.page-header .gold-icon,
+.glass-card .gold-icon,
+.footer-wrap .gold-icon,
+.team-text-card .gold-icon {
+  color: var(--gold-tint);
+}
+
+/* Metallic Gold Text (headings & accents) */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #C5A059 0%, #997529 100%);
+  background: var(--gold-text-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: var(--gold-ink);
   display: inline-block;
 }
 
-.section-dark .gold-gradient-text {
-  background: linear-gradient(135deg, #FFF0BD 0%, #D4AF37 50%, #C5A059 100%);
+/* Same gold, lighter rendering, when it sits on a dark navy surface */
+.page-header .gold-gradient-text,
+.glass-card .gold-gradient-text,
+.footer-wrap .gold-gradient-text,
+.team-text-card .gold-gradient-text,
+.testimonial-card .gold-gradient-text,
+.modal-content .gold-gradient-text {
+  background: var(--gold-text-gradient-dark-bg);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -223,78 +321,106 @@ button {
 .signature-divider .line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .signature-divider .diamond {
   width: 7px;
   height: 7px;
-  background: var(--gold-primary);
+  background: var(--gold);
   transform: rotate(45deg);
 }
 
-/* Buttons System - Matching Reference Image Gold Pill Button */
+/* ============ Buttons System ============ */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 14px 32px;
-  border-radius: 9999px; /* Fully rounded pill button as in reference image */
+  border-radius: 9999px;
   font-weight: 700;
   font-size: 15px;
   letter-spacing: 0.01em;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s var(--ease-lux), box-shadow 0.35s var(--ease-lux),
+    background 0.35s var(--ease-lux), color 0.35s var(--ease-lux), border-color 0.35s var(--ease-lux);
   position: relative;
   overflow: hidden;
-  z-index: 1;
+  isolation: isolate;
   height: 50px;
   white-space: nowrap;
+  text-align: center;
+}
+
+/* Premium light sweep on hover (shared by every button) */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 25%, rgba(255, 255, 255, 0.45) 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform 0.75s var(--ease-lux);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  transform: translateX(130%);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 .btn-gold {
-  background: var(--gold-gradient);
+  background: var(--gold);
   color: var(--navy-deep);
-  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 22px -6px var(--gold-a45);
+  border: 1px solid var(--gold);
 }
 
 .btn-gold:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 32px -4px rgba(212, 175, 55, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -8px rgba(197, 160, 89, 0.55);
+}
+
+.btn-glow {
+  box-shadow: 0 8px 22px -6px var(--gold-a45), 0 0 0 0 var(--gold-a30);
 }
 
 .btn-outline-gold {
-  background: rgba(4, 20, 44, 0.04);
+  background: transparent;
   color: var(--navy-deep);
-  border: 1.5px solid var(--gold-primary);
-  border-radius: 9999px;
+  border: 1.5px solid var(--gold);
 }
 
 .btn-outline-gold:hover {
-  background: var(--gold-primary);
+  background: var(--gold);
   color: var(--navy-deep);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-gold);
 }
 
-.section-dark .btn-outline-gold {
-  background: rgba(255, 255, 255, 0.05);
+.page-header .btn-outline-gold,
+.glass-card .btn-outline-gold {
   color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.section-dark .btn-outline-gold:hover {
-  background: var(--gold-primary);
+.page-header .btn-outline-gold:hover,
+.glass-card .btn-outline-gold:hover {
   color: var(--navy-deep);
+  background: var(--gold);
 }
 
-/* Cards System - All Cards Set To Dark Blue Canvas With White Text */
+/* ============ Cards System ============ */
 .glass-card {
-  background: var(--navy-surface); /* Dark Blue Card Color */
-  border: 1px solid rgba(197, 160, 89, 0.3);
+  background: var(--navy-surface);
+  border: 1px solid var(--gold-a30);
   border-radius: var(--radius-lg);
   box-shadow: 0 14px 36px rgba(4, 20, 44, 0.12);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s var(--ease-lux), box-shadow 0.4s var(--ease-lux),
+    border-color 0.4s var(--ease-lux);
   color: #FFFFFF;
 }
 
@@ -308,46 +434,38 @@ button {
 }
 
 .glass-card p {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .glass-card:hover {
-  border-color: var(--gold-primary);
-  box-shadow: 0 20px 48px -8px rgba(4, 20, 44, 0.25), 0 0 25px rgba(197, 160, 89, 0.25);
+  border-color: var(--gold);
+  box-shadow: 0 24px 50px -10px rgba(4, 20, 44, 0.28), 0 0 22px var(--gold-a22);
   transform: translateY(-6px);
 }
 
-.section-dark .glass-card {
-  background: var(--navy-card);
-  border: 1px solid rgba(197, 160, 89, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+/* Cards that must not lift (layout blocks, modals, hero mockup) */
+.hero-stats-wrap:hover,
+.modal-content:hover,
+.contact-form-card:hover {
+  transform: none;
 }
 
-.section-dark .glass-card:hover {
-  border-color: var(--gold-primary);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 25px rgba(197, 160, 89, 0.25);
-}
-
-/* Scroll Reveal Base - Extra Smooth */
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal.reveal-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Page Header Banner */
+/* ============ Page Header Banner ============ */
 .page-header {
   background: radial-gradient(circle at 50% 20%, #071F42 0%, var(--navy-deep) 100%);
-  padding: 130px 0 76px;
+  padding: 140px 0 82px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+  border-bottom: 1px solid var(--gold-a30);
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .page-header h1 {
@@ -358,18 +476,119 @@ button {
 
 .page-header p {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
   max-width: 680px;
   margin: 0 auto;
+}
+
+/* =========================================================
+   MOTION SYSTEM
+   Subtle, premium, GPU-friendly. Everything is disabled for
+   users who prefer reduced motion (see the block at the end).
+   ========================================================= */
+@keyframes mip-fade-up {
+  from { opacity: 0; transform: translate3d(0, 26px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes mip-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes mip-fade-down {
+  from { opacity: 0; transform: translate3d(0, -14px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes mip-image-reveal {
+  from { opacity: 0; transform: scale(1.05) translate3d(0, 14px, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes mip-float {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+
+/* Page-load animation helper: add class + inline --d delay */
+.anim-load {
+  opacity: 0;
+  animation: mip-fade-up 0.85s var(--ease-lux) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+.anim-load-image {
+  opacity: 0;
+  animation: mip-image-reveal 1s var(--ease-lux) forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+/* Scroll Reveal (used by <Reveal />) */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 0.8s var(--ease-lux), transform 0.8s var(--ease-lux);
+}
+
+.reveal-left  { transform: translate3d(-34px, 0, 0); }
+.reveal-right { transform: translate3d(34px, 0, 0); }
+.reveal-scale { transform: scale(0.965); }
+.reveal-fade  { transform: none; }
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Reveal wrappers must never break grid/flex children */
+.reveal > * {
+  height: 100%;
 }
 
 /* Responsive Utilities */
 @media (max-width: 768px) {
   .section {
-    padding: 64px 0;
+    padding: 68px 0;
+  }
+  .section-head {
+    margin-bottom: 44px;
   }
   .btn {
-    padding: 10px 20px;
-    font-size: 13.5px;
+    padding: 12px 22px;
+    font-size: 14px;
+    height: 48px;
+  }
+  .page-header {
+    padding: 118px 0 62px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0 18px;
+  }
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Accessibility: honour reduced-motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .anim-load,
+  .anim-load-image,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

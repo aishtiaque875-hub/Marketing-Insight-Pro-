@@ -53,7 +53,7 @@ const processSteps = [
   },
   {
     step: '04',
-    title: 'ROI Optimization & Scaling',
+    title: 'Continuous Optimization & Scaling',
     text: 'We continuously test ad variations, optimize bid strategies, and scale winning campaigns to double revenue predictability.',
     icon: Award
   },
@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     q: 'Are long-term contracts or locked-in retainers required?',
-    a: 'No rigid long-term locks. We believe in earning your partnership every single month through validated ROI, clear deliverables, and scalable growth milestones.',
+    a: 'No rigid long-term locks. We believe in earning your partnership every single month through validated results, clear deliverables, and scalable growth milestones.',
   },
   {
     q: 'What is included in the initial Growth Strategy Audit?',
@@ -93,37 +93,37 @@ export default function Home() {
         <div className="container hero-inner">
           <div className="hero-grid">
             <div className="hero-copy">
-              <div className="hero-badge">
+              <div className="hero-badge anim-load">
                 <Sparkles size={14} className="gold-icon" /> Premier Growth Marketing Agency
               </div>
 
-              <h1 className="hero-title">
+              <h1 className="hero-title anim-load" style={{ '--d': '90ms' }}>
                 Scale Your Revenue With <span className="gold-gradient-text">High-ROAS Meta Ads</span> & Precision Growth Engine
               </h1>
 
-              <p className="hero-sub">
+              <p className="hero-sub anim-load" style={{ '--d': '180ms' }}>
                 We engineer enterprise-level Meta Ads, High-Rank SEO, Direct-Response Video Creatives, Social Media Design, and Content Writing that transform clicks into predictable profit.
               </p>
 
-              <div className="hero-actions">
+              <div className="hero-actions anim-load" style={{ '--d': '270ms' }}>
                 <button className="btn btn-gold btn-glow" onClick={() => setModalOpen(true)}>
                   <Calendar size={18} /> Book Strategy Session <ArrowRight size={18} />
                 </button>
                 <Link to="/portfolio" className="btn btn-outline-gold">
-                  Explore Case Studies
+                  View Portfolio
                 </Link>
               </div>
 
-              <div className="hero-trust-bar">
+              <div className="hero-trust-bar anim-load" style={{ '--d': '360ms' }}>
                 <div className="trust-item"><ShieldCheck size={16} className="gold-icon" /> 100% Data-Driven</div>
                 <div className="trust-item"><CheckCircle2 size={16} className="gold-icon" /> Verifiable ROAS</div>
                 <div className="trust-item"><Clock size={16} className="gold-icon" /> 24h Response SLA</div>
               </div>
             </div>
 
-            <Reveal direction="right" className="hero-visual-wrap">
+            <div className="hero-visual-wrap anim-load-image" style={{ '--d': '260ms' }}>
               <div className="hero-mockup glass-card">
-                {/* Floating ROAS Badges */}
+                {/* Floating Performance Badges */}
                 <div className="floating-badge badge-roas">
                   <TrendingUp size={16} className="gold-icon" />
                   <div>
@@ -148,33 +148,37 @@ export default function Home() {
                 </div>
                 <img src={heroDashboard} alt="Marketing Performance Analytics Dashboard" className="hero-dashboard-img" loading="eager" />
               </div>
-            </Reveal>
+            </div>
           </div>
 
           {/* STATS BAR */}
-          <div className="hero-stats-wrap glass-card">
-            {stats.map((s) => (
-              <div key={s.label} className="hero-stat-card">
-                <strong className="stat-number">
-                  <CountUp value={s.value} suffix={s.suffix} />
-                </strong>
-                <span className="stat-label">{s.label}</span>
-              </div>
-            ))}
-          </div>
+          <Reveal delay={80}>
+            <div className="hero-stats-wrap glass-card">
+              {stats.map((s) => (
+                <div key={s.label} className="hero-stat-card">
+                  <strong className="stat-number">
+                    <CountUp value={s.value} suffix={s.suffix} />
+                  </strong>
+                  <span className="stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* SERVICES PREVIEW */}
       <section className="section section-surface services-preview">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Core Specialized Services
-            </span>
-            <h2>Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h2>
-            <p>Six core growth disciplines executed by senior specialists committed to max ROI.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                Core Specialized Services
+              </span>
+              <h2>Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h2>
+              <p>Six core growth disciplines executed by senior specialists committed to measurable results.</p>
+            </div>
+          </Reveal>
 
           <div className="services-grid">
             {services.map((s, i) => {
@@ -211,13 +215,15 @@ export default function Home() {
       {/* INTERACTIVE PROCESS */}
       <section className="section section-dark process-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              The Growth Blueprint
-            </span>
-            <h2>Our 4-Step <span className="gold-gradient-text">Scalability Framework</span></h2>
-            <p>A proven, systematic methodology that consistently transforms ad spend into profitable enterprise growth.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                The Growth Blueprint
+              </span>
+              <h2>Our 4-Step <span className="gold-gradient-text">Scalability Framework</span></h2>
+              <p>A proven, systematic methodology that consistently transforms ad spend into profitable enterprise growth.</p>
+            </div>
+          </Reveal>
 
           <div className="process-timeline">
             {processSteps.map((p, i) => {
@@ -244,31 +250,39 @@ export default function Home() {
       {/* REVIEWS & TESTIMONIALS */}
       <section className="section section-dark testimonials-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Validated Success
-            </span>
-            <h2>Client Case Studies & <span className="gold-gradient-text">Testimonials</span></h2>
-            <p>Discover how we help brands break growth plateaus and achieve market leadership.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                Validated Success
+              </span>
+              <h2>Client Reviews & <span className="gold-gradient-text">Testimonials</span></h2>
+              <p>Discover how we help brands break growth plateaus and achieve market leadership.</p>
+            </div>
+          </Reveal>
 
-          <TestimonialCarousel />
+          <Reveal delay={80}>
+            <TestimonialCarousel />
+          </Reveal>
         </div>
       </section>
 
       {/* FAQ SECTION */}
       <section className="section section-surface faq-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Got Questions?
-            </span>
-            <h2>Frequently Asked <span className="gold-gradient-text">Questions</span></h2>
-            <p>Everything you need to know about working with Marketing Insight Pro.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                Got Questions?
+              </span>
+              <h2>Frequently Asked <span className="gold-gradient-text">Questions</span></h2>
+              <p>Everything you need to know about working with Marketing Insight Pro.</p>
+            </div>
+          </Reveal>
           <div className="faq-list">
-            {faqs.map((f) => (
-              <FaqItem key={f.q} q={f.q} a={f.a} />
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 60}>
+                <FaqItem q={f.q} a={f.a} />
+              </Reveal>
             ))}
           </div>
         </div>

@@ -6,10 +6,14 @@
 .testimonial-card {
   padding: 44px 40px;
   position: relative;
-  border: 1px solid rgba(197, 160, 89, 0.35);
-  background: rgba(10, 38, 80, 0.6);
+  border: 1px solid var(--gold-a30);
+  background: var(--navy-surface);
   border-radius: var(--radius-lg);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 50px rgba(4, 20, 44, 0.18);
+}
+
+.testimonial-card:hover {
+  transform: none;
 }
 
 .card-top {
@@ -17,6 +21,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .stars-wrap {
@@ -24,10 +30,15 @@
   gap: 4px;
 }
 
+.gold-star {
+  color: var(--gold);
+  fill: var(--gold);
+}
+
 .result-badge {
-  background: rgba(197, 160, 89, 0.15);
-  border: 1px solid var(--gold-primary);
-  color: var(--gold-light);
+  background: var(--gold-a15);
+  border: 1px solid var(--gold);
+  color: var(--gold-tint);
   font-size: 13px;
   font-weight: 700;
   padding: 6px 14px;
@@ -40,16 +51,17 @@
 }
 
 .gold-quote-icon {
-  color: var(--gold-primary);
+  color: var(--gold);
 }
 
 .quote-text {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.5vw, 22px);
+  font-size: clamp(17px, 2.5vw, 22px);
   font-weight: 600;
   line-height: 1.65;
   color: #FFFFFF;
   margin-bottom: 32px;
+  animation: mip-fade-in 0.5s var(--ease-lux) both;
 }
 
 .client-footer {
@@ -73,8 +85,8 @@
   height: 52px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--gold-primary);
-  box-shadow: 0 0 12px rgba(197, 160, 89, 0.3);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 12px var(--gold-glow);
 }
 
 .client-name {
@@ -84,6 +96,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .verified-badge {
@@ -91,20 +104,25 @@
   align-items: center;
   gap: 4px;
   font-size: 12px;
-  color: var(--gold-light);
+  color: var(--gold-tint);
   font-weight: 500;
-  background: rgba(197, 160, 89, 0.1);
+  background: var(--gold-a12);
   padding: 2px 8px;
   border-radius: 12px;
 }
 
+.verified-check {
+  color: var(--gold);
+  fill: var(--gold);
+}
+
 .client-role {
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .gold-company {
-  color: var(--gold-light);
+  color: var(--gold-tint);
   font-weight: 600;
 }
 
@@ -116,7 +134,7 @@
 
 .carousel-counter {
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
 }
 
@@ -130,13 +148,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  transition: all 0.3s var(--ease-lux);
 }
 
 .carousel-btn:hover {
-  background: var(--gold-primary);
+  background: var(--gold);
   color: var(--navy-deep);
-  border-color: var(--gold-primary);
+  border-color: var(--gold);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {

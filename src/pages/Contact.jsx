@@ -8,7 +8,7 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    service: 'Meta Ads & Paid Media',
+    service: 'Meta Ads',
     budget: '$5,000 - $10,000 / mo',
     message: ''
   });
@@ -24,11 +24,11 @@ export default function Contact() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+          <div className="hero-badge anim-load" style={{ margin: '0 auto 16px' }}>
             <Sparkles size={14} className="gold-icon" /> Direct Growth Consultation
           </div>
-          <h1>Let's Scale Your Brand To <span className="gold-gradient-text">New Heights</span></h1>
-          <p>Book a confidential consultation or send us a message. Our growth strategists respond within 24 hours.</p>
+          <h1 className="anim-load" style={{ '--d': '90ms' }}>Let's Scale Your Brand To <span className="gold-gradient-text">New Heights</span></h1>
+          <p className="anim-load" style={{ '--d': '180ms' }}>Book a confidential consultation or send us a message. Our growth strategists respond within 24 hours.</p>
         </div>
       </section>
 
@@ -41,7 +41,8 @@ export default function Contact() {
               <span className="eyebrow">Direct Contact</span>
               <h2>Get In Touch With Our <span className="gold-gradient-text">Growth Team</span></h2>
               <p className="contact-lead-desc">
-                Have questions about scaling your Meta Ads, boosting your Google SEO rankings, or redesigning your website? We are ready to audit your funnel.
+                Have questions about scaling your Meta Ads, ranking higher on Google, or building a
+                consistent social media presence? We are ready to audit your funnel.
               </p>
 
               <div className="contact-cards-list">
@@ -140,12 +141,12 @@ export default function Contact() {
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       >
-                        <option>Meta Ads & Paid Media</option>
-                        <option>High-Rank SEO</option>
-                        <option>Direct-Response Video Editing</option>
-                        <option>UI/UX & Web Redesign</option>
-                        <option>Social Media Management</option>
-                        <option>Conversion Copywriting</option>
+                        <option>Meta Ads</option>
+                        <option>SEO</option>
+                        <option>Content Writing</option>
+                        <option>Video Editing</option>
+                        <option>Social Media Post Design</option>
+                        <option>Social Media Managing</option>
                         <option>Full-Funnel Growth Package</option>
                       </select>
                     </div>

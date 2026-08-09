@@ -1,94 +1,59 @@
-import React, { useState } from 'react';
-import { caseStudies } from '../data/caseStudies.js';
+import React from 'react';
+import { portfolioItems } from '../data/portfolio.js';
 import Reveal from '../components/Reveal.jsx';
-import CalendlyModal from '../components/CalendlyModal.jsx';
-import { TrendingUp, ArrowRight, Sparkles, CheckCircle2, Award } from 'lucide-react';
+import { Check } from 'lucide-react';
 import './Portfolio.css';
 
-
 export default function Portfolio() {
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <>
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
-            <Sparkles size={14} className="gold-icon" /> Validated Case Studies
-          </div>
-          <h1>Proven ROI & <span className="gold-gradient-text">Client Success Stories</span></h1>
-          <p>Explore real campaigns where our data-driven growth strategies delivered exponential revenue growth and market authority.</p>
+          <h1 className="anim-load">Portfolio</h1>
+          <p className="anim-load" style={{ '--d': '120ms' }}>
+            A look at the work we deliver across Meta Ads, SEO, Content Writing, Video Editing,
+            Social Media Post Design and Social Media Managing.
+          </p>
         </div>
       </section>
 
-      {/* PORTFOLIO GRID SECTION */}
+      {/* PORTFOLIO GRID */}
       <section className="section section-dark">
         <div className="container">
           <div className="portfolio-grid">
-            {caseStudies.map((item, index) => (
-              <Reveal key={item.title} delay={index * 80}>
-                <div className="portfolio-card glass-card">
+            {portfolioItems.map((item, index) => (
+              <Reveal key={item.slug} delay={index * 80}>
+                <article className="portfolio-card glass-card">
                   <div className="portfolio-image-wrap">
-                    <img src={item.image} alt={item.title} loading="lazy" />
-                    <div className="portfolio-roi-badge">
-                      <TrendingUp size={14} className="gold-icon" /> {item.roiStat}
-                    </div>
+                    <img src={item.image} alt={`${item.category} work by Marketing Insight Pro`} loading="lazy" />
+                    <span className="portfolio-cat-tag">{item.category}</span>
                   </div>
 
                   <div className="portfolio-content">
-                    <div className="portfolio-meta">
-                      <span className="portfolio-cat-tag">{item.category}</span>
-                      <span className="portfolio-client">{item.client}</span>
-                    </div>
-
                     <h3>{item.title}</h3>
+                    <p className="portfolio-desc">{item.description}</p>
 
-                    {/* BEFORE / AFTER METRICS BOX */}
-                    <div className="before-after-box">
-                      <div className="ba-row before">
-                        <span className="ba-label">Before:</span> {item.beforeAfter.before}
-                      </div>
-                      <div className="ba-row after">
-                        <span className="ba-label gold-gradient-text">After:</span> {item.beforeAfter.after}
-                      </div>
-                    </div>
-
-                    <p className="portfolio-goal"><strong>Challenge:</strong> {item.goal}</p>
-                    <p className="portfolio-solution"><strong>Strategy:</strong> {item.solution}</p>
+                    <ul className="portfolio-highlights">
+                      {item.highlights.map((h) => (
+                        <li key={h}>
+                          <Check size={15} className="gold-icon" /> <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="portfolio-tools-wrap">
                       {item.tools.map((t) => (
                         <span key={t} className="tool-badge">{t}</span>
                       ))}
                     </div>
-
-                    <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => setModalOpen(true)}>
-                      Get Similar ROI Results <ArrowRight size={16} />
-                    </button>
                   </div>
-                </div>
+                </article>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
-
-      {/* CALL TO ACTION */}
-      <section className="section section-surface portfolio-cta">
-        <div className="container">
-          <div className="portfolio-cta-box glass-card text-center">
-            <Award size={40} className="gold-icon" style={{ margin: '0 auto 16px' }} />
-            <h2>Want Your Brand To Be Our Next <span className="gold-gradient-text">Case Study?</span></h2>
-            <p>Book a strategy session with our senior growth architects. We'll outline an exact 90-day scaling roadmap for your business.</p>
-            <button className="btn btn-gold" onClick={() => setModalOpen(true)}>
-              Schedule Free Growth Session
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

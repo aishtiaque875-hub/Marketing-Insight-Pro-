@@ -29,7 +29,7 @@ export default function TestimonialCarousel() {
         <div className="card-top">
           <div className="stars-wrap">
             {[...Array(item.rating)].map((_, i) => (
-              <Star key={i} size={18} fill="#D4AF37" color="#D4AF37" />
+              <Star key={i} size={18} className="gold-star" />
             ))}
           </div>
           <div className="result-badge">
@@ -41,7 +41,7 @@ export default function TestimonialCarousel() {
           <Quote size={32} className="gold-quote-icon" />
         </div>
 
-        <p className="quote-text">"{item.quote}"</p>
+        <p className="quote-text" key={current}>"{item.quote}"</p>
 
         <div className="client-footer">
           <div className="client-info">
@@ -51,7 +51,7 @@ export default function TestimonialCarousel() {
                 {item.name}
                 {item.verified && (
                   <span className="verified-badge" title="Verified Client">
-                    <CheckCircle size={14} fill="#D4AF37" color="#04142C" /> Verified Partner
+                    <CheckCircle size={14} className="verified-check" /> Verified Partner
                   </span>
                 )}
               </div>

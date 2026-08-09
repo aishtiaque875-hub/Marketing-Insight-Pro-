@@ -63,11 +63,11 @@ export default function About() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+          <div className="hero-badge anim-load" style={{ margin: '0 auto 16px' }}>
             <Sparkles size={14} className="gold-icon" /> Agency Identity
           </div>
-          <h1>Built To Scale Brands Through <span className="gold-gradient-text">Uncompromising Data & Design</span></h1>
-          <p>We are a specialized team of performance marketers, media buyers, UX designers, and copywriters obsessed with business growth.</p>
+          <h1 className="anim-load" style={{ '--d': '90ms' }}>Built To Scale Brands Through <span className="gold-gradient-text">Uncompromising Data & Design</span></h1>
+          <p className="anim-load" style={{ '--d': '180ms' }}>We are a specialized team of performance marketers, media buyers, designers, and copywriters obsessed with business growth.</p>
         </div>
       </section>
 
@@ -119,13 +119,15 @@ export default function About() {
       {/* BRAND VALUES GRID - CORE PRINCIPLES */}
       <section className="section section-surface values-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Core Principles
-            </span>
-            <h2>Our Non-Negotiable <span className="gold-gradient-text">Agency Values</span></h2>
-            <p>The core standards that guide every campaign, strategy, and client partnership.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                Core Principles
+              </span>
+              <h2>Our Non-Negotiable <span className="gold-gradient-text">Agency Values</span></h2>
+              <p>The core standards that guide every campaign, strategy, and client partnership.</p>
+            </div>
+          </Reveal>
 
           <div className="values-grid">
             {values.map((v, i) => {
@@ -149,13 +151,15 @@ export default function About() {
       {/* LEADERSHIP TEAM */}
       <section className="section section-dark team-section">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Growth Leadership
-            </span>
-            <h2>Meet The <span className="gold-gradient-text">Senior Architects</span></h2>
-            <p>Dedicated specialists bringing expertise to every campaign.</p>
-          </div>
+          <Reveal>
+            <div className="section-head">
+              <span className="eyebrow" style={{ justifyContent: 'center' }}>
+                Growth Leadership
+              </span>
+              <h2>Meet The <span className="gold-gradient-text">Senior Architects</span></h2>
+              <p>Dedicated specialists bringing expertise to every campaign.</p>
+            </div>
+          </Reveal>
 
           <div className="team-text-grid">
             {teamMembers.map((m, i) => (

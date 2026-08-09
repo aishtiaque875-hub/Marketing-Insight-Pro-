@@ -13,8 +13,8 @@ export default function TermsConditions() {
 
       <h2>Our Services</h2>
       <p>
-        We offer Meta Ads, SEO, Video Editing, Social Media Management, UI/UX Design, and
-        Content Writing services. The specific scope, timeline, and price for any project will
+        We offer Meta Ads, SEO, Content Writing, Video Editing, Social Media Post Design, and
+        Social Media Managing services. The specific scope, timeline, and price for any project will
         be agreed separately with each client before work begins.
       </p>
 

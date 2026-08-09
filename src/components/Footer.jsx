@@ -21,7 +21,8 @@ export default function Footer() {
               </div>
             </Link>
             <p className="brand-desc">
-              Marketing Insight Pro is an enterprise digital growth agency specializing in high-ROAS Meta Ads, Technical SEO, High-Converting Video Editing, Social Media Post Design, Social Media Management, and Copywriting.
+              Marketing Insight Pro is a digital growth agency specializing in Meta Ads, SEO,
+              Content Writing, Video Editing, Social Media Post Design and Social Media Managing.
             </p>
             <div className="social-links">
               <a href="https://www.facebook.com/MarketingInsightPro" target="_blank" rel="noreferrer" aria-label="Facebook"><Facebook size={18} /></a>
@@ -32,12 +33,12 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Growth Services</h4>
             <ul>
-              <li><Link to="/services">Meta Ads & Performance</Link></li>
-              <li><Link to="/services">High-Rank SEO Optimization</Link></li>
-              <li><Link to="/services">Video Editing & Content</Link></li>
+              <li><Link to="/services">Meta Ads</Link></li>
+              <li><Link to="/services">SEO</Link></li>
+              <li><Link to="/services">Content Writing</Link></li>
+              <li><Link to="/services">Video Editing</Link></li>
               <li><Link to="/services">Social Media Post Design</Link></li>
-              <li><Link to="/services">Social Media Management</Link></li>
-              <li><Link to="/services">Direct Response Copywriting</Link></li>
+              <li><Link to="/services">Social Media Managing</Link></li>
             </ul>
           </div>
 
@@ -45,7 +46,7 @@ export default function Footer() {
             <h4>Agency</h4>
             <ul>
               <li><Link to="/about">About Our Vision</Link></li>
-              <li><Link to="/portfolio">Case Studies & ROI</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
               <li><Link to="/contact">Book Strategy Session</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms-conditions">Terms & Conditions</Link></li>
