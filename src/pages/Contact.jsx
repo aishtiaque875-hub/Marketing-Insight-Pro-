@@ -140,13 +140,12 @@ export default function Contact() {
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       >
-                        <option>Meta Ads & Paid Media</option>
-                        <option>High-Rank SEO</option>
-                        <option>Direct-Response Video Editing</option>
-                        <option>UI/UX & Web Redesign</option>
-                        <option>Social Media Management</option>
-                        <option>Conversion Copywriting</option>
-                        <option>Full-Funnel Growth Package</option>
+                        <option>Meta Ads</option>
+                        <option>SEO</option>
+                        <option>Content Writing</option>
+                        <option>Video Editing</option>
+                        <option>Social Media Post Design</option>
+                        <option>Social Media Managing</option>
                       </select>
                     </div>
                   </div>
