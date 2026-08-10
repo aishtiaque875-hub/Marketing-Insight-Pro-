@@ -45,7 +45,7 @@ export default function Navbar() {
               Services
             </NavLink>
             <NavLink to="/portfolio" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-              Portfolio & ROI
+              Portfolio
             </NavLink>
             <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               About Us
@@ -76,7 +76,7 @@ export default function Navbar() {
             <div className="mobile-nav-links">
               <NavLink to="/" className="mobile-link">Home</NavLink>
               <NavLink to="/services" className="mobile-link">Services</NavLink>
-              <NavLink to="/portfolio" className="mobile-link">Portfolio & ROI</NavLink>
+              <NavLink to="/portfolio" className="mobile-link">Portfolio</NavLink>
               <NavLink to="/about" className="mobile-link">About Us</NavLink>
               <NavLink to="/contact" className="mobile-link">Contact</NavLink>
             </div>

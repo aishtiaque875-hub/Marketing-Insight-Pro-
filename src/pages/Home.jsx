@@ -92,7 +92,7 @@ export default function Home() {
         <div className="hero-glow-bg"></div>
         <div className="container hero-inner">
           <div className="hero-grid">
-            <div className="hero-copy">
+            <Reveal direction="left" className="hero-copy">
               <div className="hero-badge">
                 <Sparkles size={14} className="gold-icon" /> Premier Growth Marketing Agency
               </div>
@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="trust-item"><CheckCircle2 size={16} className="gold-icon" /> Verifiable ROAS</div>
                 <div className="trust-item"><Clock size={16} className="gold-icon" /> 24h Response SLA</div>
               </div>
-            </div>
+            </Reveal>
 
             <Reveal direction="right" className="hero-visual-wrap">
               <div className="hero-mockup glass-card">

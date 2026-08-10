@@ -6,14 +6,14 @@
   --navy-soft: #103468;      /* Interactive hover state */
   --navy-light: #164380;     /* Border glow navy */
 
-  /* Luxury Gold System */
-  --gold-primary: #C5A059;   /* Official logo metallic gold */
-  --gold-light: #F5D77F;     /* Highlights & shiny borders */
-  --gold-mid: #D4AF37;       /* Signature metallic gold */
-  --gold-deep: #997529;      /* Dark gold shadow & borders */
-  --gold-gradient: linear-gradient(135deg, #F5D77F 0%, #D4AF37 45%, #C5A059 70%, #997529 100%);
-  --gold-text-gradient: linear-gradient(135deg, #D4AF37 0%, #B8892F 100%);
-  --gold-glow: rgba(197, 160, 89, 0.2);
+  /* Luxury Gold System — Exact Logo Gold */
+  --gold-primary: #B8860B;   /* Rich saturated logo metallic gold */
+  --gold-light: #D4A017;     /* Brighter logo gold */
+  --gold-mid: #A0740A;       /* Mid-depth gold */
+  --gold-deep: #7A5808;      /* Deep shadow gold */
+  --gold-gradient: linear-gradient(135deg, #D4A017 0%, #B8860B 50%, #A0740A 100%);
+  --gold-text-gradient: linear-gradient(135deg, #D4A017 0%, #B8860B 100%);
+  --gold-glow: rgba(184, 134, 11, 0.3);
 
   /* Light Canvas Theme (Requested White Background) */
   --paper: #FFFFFF;          /* Pure white canvas */
@@ -197,16 +197,18 @@ button {
 
 /* Metallic Gold Text Gradient Utility */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #C5A059 0%, #997529 100%);
+  background: linear-gradient(135deg, #D4A017 0%, #B8860B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   display: inline-block;
 }
 
 .section-dark .gold-gradient-text {
-  background: linear-gradient(135deg, #FFF0BD 0%, #D4AF37 50%, #C5A059 100%);
+  background: linear-gradient(135deg, #D4A017 0%, #B8860B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Signature Gold Divider */
@@ -331,13 +333,29 @@ button {
 /* Scroll Reveal Base - Extra Smooth */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal-up {
+  transform: translateY(40px);
+}
+
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
 }
 
 .reveal.reveal-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0);
 }
 
 /* Page Header Banner */

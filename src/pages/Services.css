@@ -9,8 +9,8 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  background: rgba(10, 38, 80, 0.5);
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  background: var(--navy-surface);
 }
 
 .service-detail-image-wrap {

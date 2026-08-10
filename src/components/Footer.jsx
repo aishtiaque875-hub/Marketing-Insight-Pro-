@@ -45,7 +45,7 @@ export default function Footer() {
             <h4>Agency</h4>
             <ul>
               <li><Link to="/about">About Our Vision</Link></li>
-              <li><Link to="/portfolio">Case Studies & ROI</Link></li>
+              <li><Link to="/portfolio">Portfolio</Link></li>
               <li><Link to="/contact">Book Strategy Session</Link></li>
               <li><Link to="/privacy-policy">Privacy Policy</Link></li>
               <li><Link to="/terms-conditions">Terms & Conditions</Link></li>

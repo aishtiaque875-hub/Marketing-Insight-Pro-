@@ -17,7 +17,7 @@ export default function Portfolio() {
           <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
             <Sparkles size={14} className="gold-icon" /> Validated Case Studies
           </div>
-          <h1>Proven ROI & <span className="gold-gradient-text">Client Success Stories</span></h1>
+          <h1>Proven <span className="gold-gradient-text">Client Success Stories</span></h1>
           <p>Explore real campaigns where our data-driven growth strategies delivered exponential revenue growth and market authority.</p>
         </div>
       </section>
@@ -31,9 +31,6 @@ export default function Portfolio() {
                 <div className="portfolio-card glass-card">
                   <div className="portfolio-image-wrap">
                     <img src={item.image} alt={item.title} loading="lazy" />
-                    <div className="portfolio-roi-badge">
-                      <TrendingUp size={14} className="gold-icon" /> {item.roiStat}
-                    </div>
                   </div>
 
                   <div className="portfolio-content">
@@ -64,26 +61,12 @@ export default function Portfolio() {
                     </div>
 
                     <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => setModalOpen(true)}>
-                      Get Similar ROI Results <ArrowRight size={16} />
+                      Book a Free Strategy Call <ArrowRight size={16} />
                     </button>
                   </div>
                 </div>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CALL TO ACTION */}
-      <section className="section section-surface portfolio-cta">
-        <div className="container">
-          <div className="portfolio-cta-box glass-card text-center">
-            <Award size={40} className="gold-icon" style={{ margin: '0 auto 16px' }} />
-            <h2>Want Your Brand To Be Our Next <span className="gold-gradient-text">Case Study?</span></h2>
-            <p>Book a strategy session with our senior growth architects. We'll outline an exact 90-day scaling roadmap for your business.</p>
-            <button className="btn btn-gold" onClick={() => setModalOpen(true)}>
-              Schedule Free Growth Session
-            </button>
           </div>
         </div>
       </section>

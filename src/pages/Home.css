@@ -240,8 +240,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #FFFFFF;
-  border: 1px solid var(--border-light);
+  background: var(--navy-surface);
+  border: 1.5px solid rgba(184, 134, 11, 0.35);
+  border-radius: var(--radius-md);
 }
 
 .service-card-art {
@@ -286,13 +287,13 @@
 
 .service-card h3 {
   font-size: 22px;
-  color: var(--navy-deep);
+  color: #FFFFFF;
   margin-bottom: 12px;
 }
 
 .service-card p {
   font-size: 14.5px;
-  color: var(--slate);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
   flex: 1;
 }
@@ -303,12 +304,12 @@
   gap: 6px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--navy-deep);
+  color: var(--gold-primary);
 }
 
 .service-card:hover .service-link {
   gap: 10px;
-  color: var(--gold-primary);
+  color: var(--gold-light);
 }
 
 .services-preview-cta {
