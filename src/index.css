@@ -1,8 +1,8 @@
 :root {
   /* --- Brand Tokens (Exact Logo Colors: Gold #dbb762 | Navy #142d65) --- */
   --navy-deep: #142d65;      /* Exact logo navy blue */
-  --navy-surface: #1a3370;   /* Elevated navy card surface */
-  --navy-card: #1f3a7d;      /* Dark navy container */
+  --navy-surface: #142d65;   /* Exact logo navy card surface */
+  --navy-card: #1a3370;      /* Elevated navy container */
   --navy-soft: #243f85;      /* Interactive hover state */
   --navy-light: #2a4890;     /* Border glow navy */
 

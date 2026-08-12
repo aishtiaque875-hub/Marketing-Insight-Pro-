@@ -20,8 +20,7 @@ import {
   ShieldCheck, 
   Sparkles,
   BarChart3,
-  Users,
-  Clock
+  Users
 } from 'lucide-react';
 import './Home.css';
 
@@ -61,36 +60,36 @@ const processSteps = [
 
 const faqs = [
   {
-    q: 'What revenue results and ROAS have you delivered for real clients?',
-    a: 'Across our portfolio — from sales-driven Meta Ads campaigns to full SEO audits for PEPVIAL and PLANETCERT — we plan against and typically achieve 3.5x–6.0x ROAS on Meta Ads while reducing wasted ad spend. Every engagement is measured against real revenue outcomes, never vanity metrics, and validated in transparent weekly reporting.',
+    q: 'What real results have you delivered across your Meta Ads campaigns?',
+    a: 'From our client portfolio, Meta Ads engagements have produced outcomes like +340% WhatsApp sales inquiries in 30 days and a 4.8x ROAS within two months. Every campaign is engineered for sales objectives — not impressions — and scaled only when the cost per acquisition supports profitable growth.',
   },
   {
-    q: 'How quickly do Meta Ads campaigns become profitable and scalable?',
-    a: 'The first 14–21 days focus on structured testing of audiences, creatives, and offers. Once we find a winning angle at an acceptable cost per acquisition, we scale aggressively while continuously testing fresh creative to protect your ROAS and customer acquisition cost.',
+    q: 'How does your SEO process work and how long until rankings improve?',
+    a: 'Our SEO framework combines technical audits, keyword intent mapping, on-page and schema optimization, and high-authority link building — the same methodology behind our documented audits for PEPVIAL and PLANETCERT. Technical fixes deliver quick wins in 14–30 days, while compounding authority and organic lead flow strengthen over 60–90 days.',
   },
   {
-    q: 'What does your SEO process include and when will rankings improve?',
-    a: 'We combine a technical audit, keyword intent mapping, on-page and schema optimization, and high-authority link building — the same framework behind our documented PEPVIAL and PLANETCERT audits. Technical fixes deliver quick wins within 14–30 days, while compounding authority and organic lead flow strengthen over 60–90 days.',
+    q: 'What types of content and copywriting do you deliver?',
+    a: 'Our copywriters produce psychology-backed landing pages, Meta and Google ad angle variations, email nurture flows, and SEO long-form articles. Copy is written to eliminate objections and drive action, with tone-of-voice guidelines so every piece stays consistent with your brand across all channels.',
   },
   {
-    q: 'Can you handle content writing and ad copy from strategy to publication?',
-    a: 'Yes. Our copywriters produce psychology-backed landing pages, e-commerce ad angle variations, email nurture flows, and SEO long-form articles. Every piece is written to eliminate objections and trigger action, with tone-of-voice guidelines so all content sounds consistently like your brand.',
-  },
-  {
-    q: 'What types of short-form video do you edit and for which platforms?',
-    a: 'We edit retention-first short-form video built around a 2-second hook — product demos, painting reels, and review reels, as featured in our portfolio — complete with kinetic captions, motion graphics, color grading, and audio design. Deliverables are optimized in 9:16 or 16:9 formats for Instagram Reels, TikTok, and YouTube Shorts.',
+    q: 'What kind of video content do you edit and what results does it drive?',
+    a: 'We edit retention-first short-form video — product demos, painting reels, and client review reels, as featured in our portfolio — with 2-second hooks, kinetic captions, color grading, and audio design. These projects have generated 12M+ combined reel views, delivered in 9:16 and 16:9 formats for Instagram, TikTok, and YouTube Shorts.',
   },
   {
     q: 'Do you design social media posts and manage accounts end-to-end?',
-    a: 'Both. We create branded post designs, carousels, and infographics for Instagram, LinkedIn, and Facebook, and we manage the full account lifecycle — 30-day content calendars, caption and hashtag optimization, DM and comment engagement, plus cross-platform scheduling via Meta Business Suite.',
+    a: 'Both. We create branded post designs, carousels, and infographics for Instagram, LinkedIn, and Facebook, and we manage the full account lifecycle — 30-day content calendars, caption and hashtag optimization, DM and comment engagement, plus cross-platform scheduling through Meta Business Suite.',
   },
   {
-    q: 'Will I own my ad accounts and get full transparency on spend?',
-    a: 'Always. Your ad accounts and all assets remain 100% client-owned. You receive real-time dashboard access and weekly reports covering spend, ROAS, CAC, and creative performance — so you always know exactly where your budget is working.',
+    q: 'Will I own my ad accounts and get complete transparency?',
+    a: 'Yes. Your ad accounts, pixels, and creative assets remain 100% client-owned. You receive real-time dashboard access and regular reporting covering ROAS, customer acquisition cost, and creative performance — so you always know exactly where your budget is working.',
   },
   {
-    q: 'Are long-term contracts or locked-in retainers required?',
-    a: 'No. We operate on a month-to-month partnership and earn your business every month through validated ROI and clear deliverables. If we are not growing your revenue, you are free to leave with zero lock-in.',
+    q: 'How is your agency different from other marketing agencies?',
+    a: 'We are a revenue-accountability partner, not a task agency. Every service — Meta Ads, SEO, content, video editing, and social management — is delivered by senior specialists with direct executive oversight, transparent reporting, and month-to-month flexibility instead of locked-in retainers.',
+  },
+  {
+    q: 'Are there long-term contracts or minimum commitments?',
+    a: 'No. We operate on a monthly partnership and earn your business every month through validated ROI and clearly defined deliverables. If we are not growing your revenue, you are free to leave without any lock-in.',
   },
 ];
 
@@ -129,7 +128,6 @@ export default function Home() {
               <div className="hero-trust-bar">
                 <div className="trust-item"><ShieldCheck size={16} className="gold-icon" /> 100% Data-Driven</div>
                 <div className="trust-item"><CheckCircle2 size={16} className="gold-icon" /> Verifiable ROAS</div>
-                <div className="trust-item"><Clock size={16} className="gold-icon" /> 24h Response SLA</div>
               </div>
             </Reveal>
 

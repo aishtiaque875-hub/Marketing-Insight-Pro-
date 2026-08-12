@@ -1,4 +1,5 @@
 import './WhatsAppButton.css'
+import whatsappIcon from '../assets/whatsapp-icon.png'
 
 export default function WhatsAppButton() {
   return (
@@ -9,12 +10,7 @@ export default function WhatsAppButton() {
       className="whatsapp-fab"
       aria-label="Chat on WhatsApp"
     >
-      <svg className="whatsapp-logo" viewBox="0 0 32 32" aria-hidden="true">
-        <path
-          fill="#ffffff"
-          d="M16.03 5C9.94 5 5 9.94 5 16.03c0 2.44.8 4.69 2.15 6.51L5 27l4.63-1.21a10.98 10.98 0 0 0 6.4 2.01c6.09 0 11.03-4.94 11.03-11.03S22.12 5 16.03 5zm5.72 15.02c-.24.68-1.95 1.39-2.51 1.47-2.45.35-4.8-.45-6.7-2.16C10.88 17.24 9.88 15.1 9.56 12.9a4.9 4.9 0 0 1 1.42-4.26c.28-.28.64-.41 1.02-.41.27 0 .53.09.75.24.34.24.56.61.61 1.03.08.7.17 1.33.24 1.83.07.5-.13 1.43-.11 1.55.03.14.2.06.21-.19.07-.31.48-1.1 1.06-1.52.09.03.57-.45.65-.5.15-.09.34.03.38.2l.4 1.35c.05.16-.02.34-.16.45-.37.3-.62.52-.5.73.18.31 1.19 1.87 2.07 2.64.83.73 1.57 1.12 1.78 1.2.24.1.43-.04.52-.23l.35-.8c.11-.23.39-.34.62-.24.5.2 1.2.52 1.7.7.21.08.35.29.35.53-.02.23-.55 2.77-.85 3.42-2.04-.05-1.03-.1.71-.32z"
-        />
-      </svg>
+      <img src={whatsappIcon} alt="WhatsApp" className="whatsapp-logo" />
       <span className="whatsapp-ring"></span>
     </a>
   )

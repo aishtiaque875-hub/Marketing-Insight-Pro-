@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Sparkles, ShieldCheck } from 'lucide-react';
 import './Contact.css';
 
 export default function Contact() {
@@ -61,10 +61,10 @@ export default function Contact() {
                 </div>
 
                 <div className="contact-card glass-card">
-                  <div className="c-icon-wrap"><Clock size={22} className="gold-icon" /></div>
+                  <div className="c-icon-wrap"><MapPin size={22} className="gold-icon" /></div>
                   <div>
-                    <strong>Response Time SLA</strong>
-                    <span>Under 24 Hours Guaranteed</span>
+                    <strong>Office Location</strong>
+                    <span>Pakistan, Hyderabad</span>
                   </div>
                 </div>
               </div>

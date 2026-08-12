@@ -1,7 +1,6 @@
 export const testimonials = [
   {
     name: 'Bilal Hashmi',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     rating: 5,
     result: '+340% WhatsApp Sales',
     quote:
@@ -9,15 +8,13 @@ export const testimonials = [
   },
   {
     name: 'Ayesha Farooq',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     rating: 5,
     result: '4.8x ROAS Achieved',
     quote:
-      'Their UI/UX team transformed our store experience while their performance team scaled our Meta ad campaigns. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
+      'Their performance team scaled our Meta ad campaigns while their analytics team refined our store experience. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
   },
   {
     name: 'Hamza Sheikh',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     rating: 5,
     result: '#1 Rank on Google',
     quote:
@@ -25,7 +22,6 @@ export const testimonials = [
   },
   {
     name: 'Sana Malik',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
     rating: 5,
     result: '12M+ Reel Views',
     quote:

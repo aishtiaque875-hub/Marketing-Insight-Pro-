@@ -68,19 +68,24 @@
   gap: 16px;
 }
 
-.client-avatar {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--gold-primary);
-  box-shadow: 0 0 12px rgba(219, 183, 98, 0.3);
-}
-
 .client-name {
+  position: relative;
+  padding-left: 18px;
   font-size: 17px;
   font-weight: 700;
   color: #FFFFFF;
+}
+
+.client-name::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 2px;
+  background: var(--gold-primary);
+  border-radius: 2px;
 }
 
 .carousel-controls {

@@ -44,11 +44,7 @@ export default function TestimonialCarousel() {
         <p className="quote-text">"{item.quote}"</p>
 
         <div className="client-footer">
-          <div className="client-info">
-            <img src={item.avatar} alt={item.name} className="client-avatar" />
-            <div className="client-name">{item.name}</div>
-          </div>
-
+          <div className="client-name">{item.name}</div>
           <div className="carousel-controls">
             <button className="carousel-btn" onClick={prevSlide} aria-label="Previous Testimonial">
               <ChevronLeft size={20} />
