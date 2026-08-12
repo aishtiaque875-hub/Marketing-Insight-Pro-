@@ -2,77 +2,53 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 58px;
-  height: 58px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: transparent;
+  background: #25D366;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
-  border: none;
-  filter: drop-shadow(0 10px 25px rgba(37, 211, 102, 0.45));
+  box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.45);
+  border: 2px solid #dbb762;
+  overflow: visible;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .whatsapp-fab:hover {
-  transform: scale(1.12) translateY(-4px);
-  filter: drop-shadow(0 16px 35px rgba(37, 211, 102, 0.7));
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 16px 35px -4px rgba(37, 211, 102, 0.7);
+  border-color: #e8c97a;
 }
 
-.whatsapp-tooltip {
+.whatsapp-logo {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.whatsapp-ring {
   position: absolute;
-  right: 70px;
-  background: var(--navy-deep);
-  color: #FFFFFF;
-  font-size: 12.5px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid var(--gold-primary);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateX(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.whatsapp-fab:hover .whatsapp-tooltip {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.whatsapp-fab::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
+  inset: -6px;
   border-radius: 50%;
   border: 2px solid #25D366;
-  animation: pulse-ring 2s ease-out infinite;
+  opacity: 0.6;
+  animation: whatsapp-pulse 2s ease-out infinite;
+  pointer-events: none;
 }
 
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 1; }
-  100% { transform: scale(1.4); opacity: 0; }
+@keyframes whatsapp-pulse {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  80% { transform: scale(1.6); opacity: 0; }
+  100% { transform: scale(1.8); opacity: 0; }
 }
 
 @media (max-width: 768px) {
   .whatsapp-fab {
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
-  }
-  .whatsapp-icon-img {
-    width: 32px;
-    height: 32px;
-  }
-  .whatsapp-tooltip {
-    display: none;
+    width: 58px;
+    height: 58px;
   }
 }
-
