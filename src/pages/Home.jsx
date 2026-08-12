@@ -16,10 +16,7 @@ import {
   Zap, 
   ArrowRight, 
   Calendar, 
-  CheckCircle2, 
-  ShieldCheck, 
   Sparkles,
-  BarChart3,
   Users
 } from 'lucide-react';
 import './Home.css';
@@ -123,11 +120,6 @@ export default function Home() {
                 <Link to="/portfolio" className="btn btn-outline-gold">
                   Explore Case Studies
                 </Link>
-              </div>
-
-              <div className="hero-trust-bar">
-                <div className="trust-item"><ShieldCheck size={16} className="gold-icon" /> 100% Data-Driven</div>
-                <div className="trust-item"><CheckCircle2 size={16} className="gold-icon" /> Verifiable ROAS</div>
               </div>
             </Reveal>
 

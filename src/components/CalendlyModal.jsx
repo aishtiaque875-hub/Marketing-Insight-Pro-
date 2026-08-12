@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Calendar, CheckCircle2, Send, ShieldCheck } from 'lucide-react';
+import { X, CheckCircle2, Send, ShieldCheck } from 'lucide-react';
 import './CalendlyModal.css';
 
 export default function CalendlyModal({ isOpen, onClose }) {
@@ -29,9 +29,6 @@ export default function CalendlyModal({ isOpen, onClose }) {
         {!submitted ? (
           <>
             <div className="modal-header">
-              <div className="modal-badge">
-                <Calendar size={14} /> 1-on-1 Strategy Session
-              </div>
               <h2>Book Your Free <span className="gold-gradient-text">Growth Consultation</span></h2>
               <p>Speak directly with our senior growth specialists. 30 minutes to audit your funnel and map out your revenue growth roadmap.</p>
             </div>

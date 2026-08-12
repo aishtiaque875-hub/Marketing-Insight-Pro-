@@ -112,6 +112,7 @@
   background: var(--navy-surface);
   border: 1.5px solid rgba(219, 183, 98, 0.4);
   box-shadow: 0 24px 60px rgba(20, 45, 101, 0.25), 0 0 35px rgba(219, 183, 98, 0.2);
+  animation: mockupGlow 4s ease-in-out infinite alternate;
 }
 
 .floating-badge {
@@ -187,6 +188,21 @@
   height: auto;
   border-radius: 10px;
   object-fit: cover;
+  animation: dashboardZoom 14s ease-in-out infinite alternate;
+}
+
+@keyframes mockupGlow {
+  0% {
+    box-shadow: 0 24px 60px rgba(20, 45, 101, 0.25), 0 0 25px rgba(219, 183, 98, 0.18);
+  }
+  100% {
+    box-shadow: 0 28px 70px rgba(20, 45, 101, 0.35), 0 0 50px rgba(219, 183, 98, 0.42);
+  }
+}
+
+@keyframes dashboardZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
 /* STATS BAR */

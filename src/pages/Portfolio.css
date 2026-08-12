@@ -109,3 +109,12 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Portfolio intro spacing */
+.portfolio-intro {
+  padding-bottom: 32px;
+}
+
+.portfolio-margin-reset {
+  padding-top: 0;
+}
