@@ -154,16 +154,18 @@ export default function Home() {
           </div>
 
           {/* STATS BAR */}
-          <div className="hero-stats-wrap glass-card">
-            {stats.map((s) => (
-              <div key={s.label} className="hero-stat-card">
-                <strong className="stat-number">
-                  <CountUp value={s.value} suffix={s.suffix} />
-                </strong>
-                <span className="stat-label">{s.label}</span>
-              </div>
-            ))}
-          </div>
+          <Reveal>
+            <div className="hero-stats-wrap glass-card">
+              {stats.map((s) => (
+                <div key={s.label} className="hero-stat-card">
+                  <strong className="stat-number">
+                    <CountUp value={s.value} suffix={s.suffix} />
+                  </strong>
+                  <span className="stat-label">{s.label}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -269,8 +271,10 @@ export default function Home() {
             <p>Everything you need to know about working with Marketing Insight Pro.</p>
           </div>
           <div className="faq-list">
-            {faqs.map((f) => (
-              <FaqItem key={f.q} q={f.q} a={f.a} />
+            {faqs.map((f, i) => (
+              <Reveal key={f.q} delay={i * 80}>
+                <FaqItem q={f.q} a={f.a} />
+              </Reveal>
             ))}
           </div>
         </div>
