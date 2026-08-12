@@ -5,12 +5,12 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: #25D366;
+  background: #142d65;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  box-shadow: 0 8px 24px -4px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 10px 30px -6px rgba(20, 45, 101, 0.5);
   border: 2px solid #dbb762;
   overflow: visible;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
@@ -18,7 +18,7 @@
 
 .whatsapp-fab:hover {
   transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 16px 35px -4px rgba(37, 211, 102, 0.7);
+  box-shadow: 0 16px 40px -8px rgba(20, 45, 101, 0.65);
   border-color: #e8c97a;
 }
 
@@ -32,14 +32,14 @@
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 2px solid #25D366;
+  border: 2px solid #dbb762;
   opacity: 0.6;
   animation: whatsapp-pulse 2s ease-out infinite;
   pointer-events: none;
 }
 
 @keyframes whatsapp-pulse {
-  0% { transform: scale(0.9); opacity: 0.8; }
+  0% { transform: scale(0.9); opacity: 0.85; }
   80% { transform: scale(1.6); opacity: 0; }
   100% { transform: scale(1.8); opacity: 0; }
 }

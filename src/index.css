@@ -257,17 +257,17 @@ button {
 .btn-gold {
   background: var(--gold-gradient);
   color: var(--navy-deep);
-  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(219, 183, 98, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .btn-gold:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 32px -4px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 14px 32px -4px rgba(219, 183, 98, 0.6);
 }
 
 .btn-outline-gold {
-  background: rgba(4, 20, 44, 0.04);
+  background: rgba(20, 45, 101, 0.04);
   color: var(--navy-deep);
   border: 1.5px solid var(--gold-primary);
   border-radius: 9999px;

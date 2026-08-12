@@ -61,24 +61,36 @@ const processSteps = [
 
 const faqs = [
   {
-    q: 'What performance metrics and ROAS targets does Marketing Insight Pro deliver for Meta Ads?',
-    a: 'We focus strictly on net profitable revenue gain, target ROAS (typically 3.5x–6.0x+ based on unit economics), Customer Acquisition Cost (CAC) reduction, and Customer Lifetime Value (LTV). You receive real-time dashboard access and transparent weekly reporting.',
+    q: 'What revenue results and ROAS have you delivered for real clients?',
+    a: 'Across our portfolio — from sales-driven Meta Ads campaigns to full SEO audits for PEPVIAL and PLANETCERT — we plan against and typically achieve 3.5x–6.0x ROAS on Meta Ads while reducing wasted ad spend. Every engagement is measured against real revenue outcomes, never vanity metrics, and validated in transparent weekly reporting.',
   },
   {
-    q: 'How quickly will our SEO and digital content campaigns generate qualified organic leads?',
-    a: 'Technical SEO fixes and commercial keyword optimization show rank improvements within 14–30 days. Full authority compounding and sustained lead acquisition accelerate significantly over 60–90 days.',
+    q: 'How quickly do Meta Ads campaigns become profitable and scalable?',
+    a: 'The first 14–21 days focus on structured testing of audiences, creatives, and offers. Once we find a winning angle at an acceptable cost per acquisition, we scale aggressively while continuously testing fresh creative to protect your ROAS and customer acquisition cost.',
   },
   {
-    q: 'Why partner with Marketing Insight Pro over traditional marketing agencies?',
-    a: 'Traditional agencies hide behind vanity metrics like impressions and pass accounts to junior interns. Marketing Insight Pro provides direct executive oversight by senior specialists, 100% client-owned ad accounts, and direct revenue accountability.',
+    q: 'What does your SEO process include and when will rankings improve?',
+    a: 'We combine a technical audit, keyword intent mapping, on-page and schema optimization, and high-authority link building — the same framework behind our documented PEPVIAL and PLANETCERT audits. Technical fixes deliver quick wins within 14–30 days, while compounding authority and organic lead flow strengthen over 60–90 days.',
+  },
+  {
+    q: 'Can you handle content writing and ad copy from strategy to publication?',
+    a: 'Yes. Our copywriters produce psychology-backed landing pages, e-commerce ad angle variations, email nurture flows, and SEO long-form articles. Every piece is written to eliminate objections and trigger action, with tone-of-voice guidelines so all content sounds consistently like your brand.',
+  },
+  {
+    q: 'What types of short-form video do you edit and for which platforms?',
+    a: 'We edit retention-first short-form video built around a 2-second hook — product demos, painting reels, and review reels, as featured in our portfolio — complete with kinetic captions, motion graphics, color grading, and audio design. Deliverables are optimized in 9:16 or 16:9 formats for Instagram Reels, TikTok, and YouTube Shorts.',
+  },
+  {
+    q: 'Do you design social media posts and manage accounts end-to-end?',
+    a: 'Both. We create branded post designs, carousels, and infographics for Instagram, LinkedIn, and Facebook, and we manage the full account lifecycle — 30-day content calendars, caption and hashtag optimization, DM and comment engagement, plus cross-platform scheduling via Meta Business Suite.',
+  },
+  {
+    q: 'Will I own my ad accounts and get full transparency on spend?',
+    a: 'Always. Your ad accounts and all assets remain 100% client-owned. You receive real-time dashboard access and weekly reports covering spend, ROAS, CAC, and creative performance — so you always know exactly where your budget is working.',
   },
   {
     q: 'Are long-term contracts or locked-in retainers required?',
-    a: 'No rigid long-term locks. We believe in earning your partnership every single month through validated ROI, clear deliverables, and scalable growth milestones.',
-  },
-  {
-    q: 'What is included in the initial Growth Strategy Audit?',
-    a: 'In your strategic consultation, our senior growth architects audit your ad funnels, SEO footprint, and landing page UX to deliver a customized 90-day execution roadmap tailored specifically to your revenue goals.',
+    a: 'No. We operate on a month-to-month partnership and earn your business every month through validated ROI and clear deliverables. If we are not growing your revenue, you are free to leave with zero lock-in.',
   },
 ];
 
