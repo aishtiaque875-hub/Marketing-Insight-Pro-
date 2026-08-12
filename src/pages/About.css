@@ -39,7 +39,7 @@
   background: var(--navy-surface);
   border-radius: var(--radius-lg);
   text-align: center;
-  box-shadow: 0 14px 36px rgba(21, 44, 101, 0.15);
+  box-shadow: 0 14px 36px rgba(20, 45, 101, 0.15);
 }
 
 .about-stats-card h3 {

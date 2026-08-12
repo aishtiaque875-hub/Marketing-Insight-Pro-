@@ -51,7 +51,7 @@ export default function TestimonialCarousel() {
                 {item.name}
                 {item.verified && (
                   <span className="verified-badge" title="Verified Client">
-                    <CheckCircle size={14} fill="#dbb762" color="#152c65" /> Verified Partner
+                    <CheckCircle size={14} fill="#dbb762" color="#142d65" /> Verified Partner
                   </span>
                 )}
               </div>

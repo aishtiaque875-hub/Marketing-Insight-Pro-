@@ -9,7 +9,6 @@ export default function Contact() {
     email: '',
     phone: '',
     service: 'Meta Ads & Paid Media',
-    budget: '$5,000 - $10,000 / mo',
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
@@ -148,19 +147,6 @@ export default function Contact() {
                         <option>Social Media Managing</option>
                       </select>
                     </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label>Monthly Marketing Budget</label>
-                    <select
-                      value={formData.budget}
-                      onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    >
-                      <option>$3,000 - $5,000 / mo</option>
-                      <option>$5,000 - $10,000 / mo</option>
-                      <option>$10,000 - $25,000 / mo</option>
-                      <option>$25,000+ / mo</option>
-                    </select>
                   </div>
 
                   <div className="form-group">

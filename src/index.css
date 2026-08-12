@@ -1,6 +1,6 @@
 :root {
-  /* --- Brand Tokens (Exact Logo Colors: Gold #dbb762 | Navy #152c65) --- */
-  --navy-deep: #152c65;      /* Exact logo navy blue */
+  /* --- Brand Tokens (Exact Logo Colors: Gold #dbb762 | Navy #142d65) --- */
+  --navy-deep: #142d65;      /* Exact logo navy blue */
   --navy-surface: #1a3370;   /* Elevated navy card surface */
   --navy-card: #1f3a7d;      /* Dark navy container */
   --navy-soft: #243f85;      /* Interactive hover state */
@@ -18,10 +18,10 @@
   /* Light Canvas Theme */
   --paper: #FFFFFF;
   --paper-soft: #FFFFFF;
-  --paper-card: #152c65;
+  --paper-card: #142d65;
   --border-light: #E2E8F0;
   --border-gold: rgba(219, 183, 98, 0.3);
-  --heading: #152c65;
+  --heading: #142d65;
   --ink: #000000;
   --slate: #1E293B;
   --slate-light: #475569;
@@ -37,8 +37,8 @@
   --radius-lg: 20px;
   --container: 1280px;
   --shadow-gold: 0 10px 30px -8px rgba(219, 183, 98, 0.35);
-  --shadow-navy: 0 20px 50px rgba(21, 44, 101, 0.08);
-  --shadow-card: 0 10px 30px -5px rgba(21, 44, 101, 0.06);
+  --shadow-navy: 0 20px 50px rgba(20, 45, 101, 0.08);
+  --shadow-card: 0 10px 30px -5px rgba(20, 45, 101, 0.06);
 }
 
 * {
@@ -295,7 +295,7 @@ button {
   background: var(--navy-surface); /* Exact logo navy blue card */
   border: 1px solid rgba(219, 183, 98, 0.3);
   border-radius: var(--radius-lg);
-  box-shadow: 0 14px 36px rgba(21, 44, 101, 0.12);
+  box-shadow: 0 14px 36px rgba(20, 45, 101, 0.12);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   color: #FFFFFF;
 }
@@ -315,7 +315,7 @@ button {
 
 .glass-card:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 20px 48px -8px rgba(21, 44, 101, 0.25), 0 0 25px rgba(219, 183, 98, 0.25);
+  box-shadow: 0 20px 48px -8px rgba(20, 45, 101, 0.25), 0 0 25px rgba(219, 183, 98, 0.25);
   transform: translateY(-6px);
 }
 
