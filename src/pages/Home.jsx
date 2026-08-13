@@ -22,7 +22,7 @@ import {
 import './Home.css';
 
 const stats = [
-  { value: 12, suffix: 'M+', label: 'Client Revenue Generated ($)' },
+  { prefix: '$', value: 12, suffix: 'M+', label: 'Client Revenue Generated' },
   { value: 340, suffix: '%', label: 'Average ROAS Increase' },
   { value: 98, suffix: '%', label: 'Client Retention Rate' },
   { value: 4, suffix: '.9/5', label: 'Client Satisfaction Rating' },
@@ -159,7 +159,7 @@ export default function Home() {
               {stats.map((s) => (
                 <div key={s.label} className="hero-stat-card">
                   <strong className="stat-number">
-                    <CountUp value={s.value} suffix={s.suffix} />
+                    <CountUp prefix={s.prefix || ''} value={s.value} suffix={s.suffix} />
                   </strong>
                   <span className="stat-label">{s.label}</span>
                 </div>
