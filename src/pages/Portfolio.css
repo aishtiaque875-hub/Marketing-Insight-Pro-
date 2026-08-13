@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(196, 154, 58, 0.25);
+  border: 1px solid rgba(189, 137, 44, 0.25);
   background: var(--navy-surface);
 }
 
@@ -106,8 +106,8 @@
 }
 
 .tool-badge {
-  background: rgba(196, 154, 58, 0.1);
-  border: 1px solid rgba(196, 154, 58, 0.25);
+  background: rgba(189, 137, 44, 0.1);
+  border: 1px solid rgba(189, 137, 44, 0.25);
   color: var(--gold-light);
   font-size: 12px;
   padding: 4px 10px;
