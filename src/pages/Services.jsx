@@ -1,14 +1,14 @@
 ﻿import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import * as Icons from 'lucide-react';
 import { services } from '../data/services.js';
 import { serviceImages } from '../data/serviceImages.js';
 import Reveal from '../components/Reveal.jsx';
+import CalendlyModal from '../components/CalendlyModal.jsx';
 import { CheckCircle2, ArrowRight, Sparkles, Calendar, ShieldCheck, Zap } from 'lucide-react';
 import './Services.css';
 
 export default function Services() {
-  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function Services() {
                         </ul>
                       </div>
 
-                      <button className="btn btn-gold btn-full-card" onClick={() => navigate('/strategy')}>
+                      <button className="btn btn-gold btn-full-card" onClick={() => setModalOpen(true)}>
                         <Calendar size={16} /> Book Strategy for {s.title.split('&')[0]} <ArrowRight size={16} />
                       </button>
                     </div>
@@ -86,6 +86,7 @@ export default function Services() {
         </div>
       </section>
 
+      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

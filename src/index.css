@@ -197,7 +197,7 @@ button {
 
 /* Exact Logo Gold Text Gradient Utility */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #e8c97a 0%, #dbb762 100%);
+  background: linear-gradient(135deg, #d4b060 0%, #c49a3a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -205,7 +205,7 @@ button {
 }
 
 .section-dark .gold-gradient-text {
-  background: linear-gradient(135deg, #e8c97a 0%, #dbb762 100%);
+  background: linear-gradient(135deg, #d4b060 0%, #c49a3a 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -360,7 +360,7 @@ button {
 
 /* Page Header Banner */
 .page-header {
-  background: radial-gradient(circle at 50% 20%, #1a3370 0%, var(--navy-deep) 100%);
+  background: radial-gradient(circle at 50% 20%, var(--navy-card) 0%, var(--navy-deep) 100%);
   padding: 130px 0 76px;
   text-align: center;
   position: relative;

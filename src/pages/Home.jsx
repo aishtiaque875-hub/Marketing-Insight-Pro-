@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as Icons from 'lucide-react';
 import { services } from '../data/services.js';
 import { serviceImages } from '../data/serviceImages.js';
@@ -8,6 +8,7 @@ import Reveal from '../components/Reveal.jsx';
 import CountUp from '../components/CountUp.jsx';
 import FaqItem from '../components/FaqItem.jsx';
 import TestimonialCarousel from '../components/TestimonialCarousel.jsx';
+import CalendlyModal from '../components/CalendlyModal.jsx';
 import { 
   TrendingUp, 
   Target, 
@@ -90,7 +91,7 @@ const faqs = [
 ];
 
 export default function Home() {
-  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -113,7 +114,7 @@ export default function Home() {
               </p>
 
               <div className="hero-actions">
-                <button className="btn btn-gold btn-glow" onClick={() => navigate('/strategy')}>
+                <button className="btn btn-gold btn-glow" onClick={() => setModalOpen(true)}>
                   <Calendar size={18} /> Book Strategy Session <ArrowRight size={18} />
                 </button>
                 <Link to="/portfolio" className="btn btn-outline-gold">
@@ -281,6 +282,7 @@ export default function Home() {
 
 
 
+      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

@@ -1,7 +1,7 @@
-﻿import React from 'react';
-import { useNavigate } from 'react-router-dom';
+﻿import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import CountUp from '../components/CountUp.jsx';
+import CalendlyModal from '../components/CalendlyModal.jsx';
 import { Target, Users, ShieldCheck, Award, Sparkles, ArrowRight, CheckCircle2, MapPin, Briefcase } from 'lucide-react';
 import './About.css';
 
@@ -56,7 +56,7 @@ const values = [
 ];
 
 export default function About() {
-  const navigate = useNavigate();
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
@@ -108,7 +108,7 @@ export default function About() {
                 <strong><CountUp value={98} suffix="%" /></strong>
                 <span>Client Retention Rate</span>
               </div>
-              <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => navigate('/strategy')}>
+              <button className="btn btn-gold btn-full" style={{ marginTop: '20px' }} onClick={() => setModalOpen(true)}>
                 Partner With Us <ArrowRight size={16} />
               </button>
             </div>
@@ -175,6 +175,7 @@ export default function About() {
         </div>
       </section>
 
+      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }
