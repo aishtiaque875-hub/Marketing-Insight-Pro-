@@ -1,30 +1,38 @@
 export const testimonials = [
   {
     name: 'Bilal Hashmi',
+    role: 'Business Owner',
+    company: 'Hashmi Luxury Living',
+    initials: 'BH',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    result: '+340% WhatsApp Sales',
+    result: 'Consistent Sales Generation',
+    verified: true,
     quote:
-      "I was skeptical about Meta Ads after burning money with past agencies. Marketing Insight Pro redesigned our entire funnel and targeted high-net-worth buyers. In our first 30 days, our qualified sales inquiries tripled!",
+      "The team at Marketing Insight Pro set up and managed our Meta Ads campaigns with extreme precision. They developed high-converting creatives that were specifically designed to sell, handling the campaign management from start to finish. The result was a steady flow of sales inquiries and actual customer conversions.",
   },
   {
-    name: 'Ayesha Farooq',
+    name: 'Ahmad Raza',
+    role: 'Founder',
+    company: 'PEPVIAL & PLANETCERT',
+    initials: 'AR',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    result: '4.8x ROAS Achieved',
+    result: 'Comprehensive SEO Reports',
+    verified: true,
     quote:
-      'Their performance team scaled our Meta ad campaigns while their analytics team refined our store experience. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
-  },
-  {
-    name: 'Hamza Sheikh',
-    rating: 5,
-    result: '#1 Rank on Google',
-    quote:
-      'Our website was invisible on Google before working with Marketing Insight Pro. Within 3 months of technical SEO and content strategy, we captured top 3 rankings for high-intent keywords across our industry.',
+      'We engaged them for a full SEO analysis, covering keyword research, technical on-page auditing, off-page structure, and backlink research. The SEO reports they delivered were highly detailed and actionable. It gave us a clear roadmap to optimize our search presence effectively.',
   },
   {
     name: 'Sana Malik',
+    role: 'Marketing Coordinator',
+    company: 'Interior & Lifestyle Studio',
+    initials: 'SM',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    result: '12M+ Reel Views',
+    result: 'Premium Creative Output',
+    verified: true,
     quote:
-      'The video editing and social media management from this agency genuinely rival global luxury brands. Fast turnarounds, transparent reporting, and unmatched creative direction.',
+      'From social media post graphics for Instagram and Facebook to editing clean, high-retention reels, their work has been top-tier. They align every design with our brand identity and ensure that the copywriting is polished, grammatically correct, and engaging for our target audience.',
   },
 ];

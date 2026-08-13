@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Reveal({ children, delay = 0, direction = 'up', className = '' }) {
   const ref = useRef(null)
@@ -8,26 +8,30 @@ export default function Reveal({ children, delay = 0, direction = 'up', classNam
     const el = ref.current
     if (!el) return
 
+    // Fallback timer: force visibility if IntersectionObserver doesn't fire
+    const fallbackTimer = setTimeout(() => {
+      setVisible(true)
+    }, 1200 + delay)
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => setVisible(true), 50)
+          setVisible(true)
+          clearTimeout(fallbackTimer)
           obs.unobserve(el)
         }
       },
       { 
-        threshold: 0.1,
-        rootMargin: '0px 0px -60px 0px'
+        threshold: 0.01,
+        rootMargin: '0px 0px -20px 0px'
       }
     )
-
-    const timer = setTimeout(() => obs.observe(el), 100)
-
+    obs.observe(el)
     return () => {
-      clearTimeout(timer)
       obs.disconnect()
+      clearTimeout(fallbackTimer)
     }
-  }, [])
+  }, [delay])
 
   return (
     <div

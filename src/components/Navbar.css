@@ -1,24 +1,24 @@
-﻿.navbar-header {
+.navbar-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 14px 0;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(2, 29, 77, 0.08);
+  border-bottom: 1px solid rgba(20, 45, 101, 0.08);
 }
 
 .navbar-header.scrolled {
   padding: 10px 0;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 10px 30px rgba(2, 29, 77, 0.08);
-  border-bottom: 1px solid rgba(189, 137, 44, 0.3);
+  box-shadow: 0 6px 24px rgba(20, 45, 101, 0.1);
+  border-bottom: 1px solid rgba(219, 183, 98, 0.3);
 }
 
 .navbar-container {
@@ -30,10 +30,11 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .brand-logo {
-  height: 42px;
+  height: 40px;
   width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -43,20 +44,20 @@
   transform: scale(1.03);
 }
 
-/* Nav links shifted to the right side next to CTA button */
+/* Desktop Nav links */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 28px;
   margin-left: auto;
-  margin-right: 24px;
+  margin-right: 20px;
 }
 
 .nav-link {
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 600;
-  color: var(--navy-deep);
+  color: #142d65;
   position: relative;
   padding: 4px 0;
   transition: color 0.25s ease;
@@ -90,15 +91,28 @@
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
-/* Strategy Call Button Matching Reference Image Pill Design */
+/* Desktop CTA button */
 .navbar-cta-small {
-  padding: 10px 18px !important;
-  font-size: 13px !important;
+  padding: 10px 20px !important;
+  font-size: 13.5px !important;
   border-radius: 9999px !important;
-  height: 40px !important;
+  height: 42px !important;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+/* Mobile CTA pill - hidden on desktop */
+.mobile-cta-pill {
+  display: none;
+  padding: 8px 14px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  height: 34px !important;
+  white-space: nowrap;
   letter-spacing: 0.01em;
 }
 
@@ -106,38 +120,53 @@
   display: none;
   background: transparent;
   border: none;
-  color: var(--navy-deep);
+  color: #142d65;
   cursor: pointer;
   padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
 }
 
+.mobile-toggle:hover {
+  background: rgba(20, 45, 101, 0.08);
+}
+
+/* Mobile Drawer */
 .mobile-drawer {
   display: none;
   position: fixed;
-  top: 54px;
+  top: 64px;
   left: 0;
   right: 0;
   background: #FFFFFF;
-  border-bottom: 1px solid rgba(189, 137, 44, 0.3);
-  padding: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border-bottom: 2px solid rgba(219, 183, 98, 0.4);
+  padding: 20px 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  z-index: 999;
 }
 
 .mobile-nav-links {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
 }
 
 .mobile-link {
   font-family: var(--font-ui);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
-  color: var(--navy-deep);
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  color: #142d65;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.mobile-link:last-child {
+  border-bottom: none;
 }
 
 .mobile-link.active {
@@ -146,47 +175,52 @@
 
 .mobile-drawer-cta {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 6px;
+  padding: 13px !important;
+  font-size: 14px !important;
+  border-radius: 12px !important;
 }
 
+/* RESPONSIVE */
 @media (max-width: 960px) {
   .nav-links {
     display: none;
   }
-  .navbar-header {
-    padding: 10px 0;
+
+  /* Hide desktop CTA, show mobile pill */
+  .desktop-cta {
+    display: none !important;
   }
-  .brand-logo {
-    height: 34px;
+
+  .mobile-cta-pill {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
-  .navbar-actions {
-    gap: 10px;
-  }
-  .navbar-cta-small {
-    display: inline-flex;
-    padding: 7px 12px !important;
-    font-size: 12px !important;
-    height: 32px !important;
-    gap: 6px;
-  }
-  .navbar-cta-small svg {
-    width: 13px;
-    height: 13px;
-  }
+
   .mobile-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   .mobile-drawer {
     display: flex;
   }
+
+  .navbar-header {
+    padding: 12px 0;
+  }
 }
 
-@media (max-width: 380px) {
-  .navbar-cta-small {
-    padding: 7px 10px !important;
-    font-size: 11px !important;
+@media (max-width: 480px) {
+  .brand-logo {
+    height: 32px;
   }
-  .navbar-cta-small svg {
-    display: none;
+
+  .mobile-cta-pill {
+    font-size: 11px !important;
+    padding: 7px 12px !important;
+    height: 32px !important;
   }
 }

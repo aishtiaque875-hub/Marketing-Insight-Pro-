@@ -1,7 +1,6 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Sparkles, ShieldCheck } from 'lucide-react';
-import { submitLead } from '../utils/submitLead.js';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck } from 'lucide-react';
 import './Contact.css';
 
 export default function Contact() {
@@ -12,26 +11,11 @@ export default function Contact() {
     service: 'Meta Ads',
     message: ''
   });
-  const [status, setStatus] = useState('idle');
-  const [error, setError] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('sending');
-    setError('');
-    try {
-      await submitLead({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        service: formData.service,
-        message: formData.message,
-      }, 'contact');
-      setStatus('success');
-    } catch (err) {
-      setStatus('error');
-      setError(err.message);
-    }
+    setSubmitted(true);
   };
 
   return (
@@ -72,15 +56,15 @@ export default function Contact() {
                   <div className="c-icon-wrap"><Phone size={22} className="gold-icon" /></div>
                   <div>
                     <strong>Phone & Direct WhatsApp</strong>
-                    <a href="https://api.whatsapp.com/send/?phone=923266739989&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">+92 326 6739989</a>
+                    <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer">+92 326 6739989</a>
                   </div>
                 </div>
 
                 <div className="contact-card glass-card">
-                  <div className="c-icon-wrap"><MapPin size={22} className="gold-icon" /></div>
+                  <div className="c-icon-wrap"><Clock size={22} className="gold-icon" /></div>
                   <div>
-                    <strong>Office Location</strong>
-                    <span>Pakistan, Hyderabad</span>
+                    <strong>Response Time SLA</strong>
+                    <span>Under 24 Hours Guaranteed</span>
                   </div>
                 </div>
               </div>
@@ -92,7 +76,7 @@ export default function Contact() {
                   <h4>Need an Instant Reply?</h4>
                   <p>Chat directly with our lead growth engineer on WhatsApp right now.</p>
                   <a
-                    href="https://api.whatsapp.com/send/?phone=923266739989&text&type=phone_number&app_absent=0"
+                    href="https://wa.me/923266739989"
                     target="_blank"
                     rel="noreferrer"
                     className="btn btn-gold btn-sm"
@@ -108,7 +92,7 @@ export default function Contact() {
           {/* CONTACT FORM */}
           <Reveal direction="right">
             <div className="contact-form-card glass-card">
-              {status !== 'success' ? (
+              {!submitted ? (
                 <form onSubmit={handleSubmit}>
                   <div className="form-head">
                     <h2>Submit Growth Inquiry</h2>
@@ -165,6 +149,7 @@ export default function Contact() {
                     </div>
                   </div>
 
+
                   <div className="form-group">
                     <label>Tell Us About Your Brand & Goals</label>
                     <textarea
@@ -175,10 +160,8 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  {status === 'error' && <p className="form-error">{error}</p>}
-
-                  <button type="submit" className="btn btn-gold btn-full" disabled={status === 'sending'}>
-                    {status === 'sending' ? 'Sending Your Inquiry...' : <>Send Inquiry & Request Audit <Send size={16} /></>}
+                  <button type="submit" className="btn btn-gold btn-full">
+                    Send Inquiry & Request Audit <Send size={16} />
                   </button>
 
                   <div className="form-privacy-note">
@@ -190,7 +173,7 @@ export default function Contact() {
                   <CheckCircle2 size={64} className="gold-icon" style={{ margin: '0 auto 16px' }} />
                   <h2>Message Received <span className="gold-gradient-text">Successfully!</span></h2>
                   <p>Thank you <strong>{formData.name}</strong>. Our senior growth officer is reviewing your inquiry and will contact you at <strong>{formData.email}</strong> within 24 hours.</p>
-                  <button className="btn btn-gold" onClick={() => { setStatus('idle'); setFormData({ name: '', email: '', phone: '', service: 'Meta Ads', message: '' }); }} style={{ marginTop: '20px' }}>
+                  <button className="btn btn-gold" onClick={() => setSubmitted(false)} style={{ marginTop: '20px' }}>
                     Send Another Message
                   </button>
                 </div>

@@ -1,42 +1,89 @@
-﻿.whatsapp-fab {
+.whatsapp-fab {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 62px;
-  height: 62px;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #25D366;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   border: none;
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+  text-decoration: none;
 }
 
 .whatsapp-fab:hover {
   transform: scale(1.1) translateY(-3px);
-  filter: drop-shadow(0 6px 12px rgba(37, 211, 102, 0.5));
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
 }
 
-.whatsapp-logo {
-  width: 34px;
-  height: 34px;
-  display: block;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+.wa-text {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  user-select: none;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 68px;
+  background: #142d65;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.whatsapp-fab:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Pulse ring */
+.whatsapp-fab::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.5);
+  animation: wa-pulse 2.2s ease-out infinite;
+}
+
+@keyframes wa-pulse {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.45); opacity: 0; }
 }
 
 @media (max-width: 768px) {
   .whatsapp-fab {
     bottom: 20px;
     right: 20px;
-    width: 56px;
-    height: 56px;
+    width: 50px;
+    height: 50px;
   }
-  .whatsapp-logo {
-    width: 38px;
-    height: 38px;
+
+  .wa-text {
+    font-size: 16px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
   }
 }

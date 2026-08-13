@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight, Calendar, Sparkles } from 'lucide-react';
 import logoWide from '../assets/logo-wide.png';
@@ -36,7 +36,7 @@ export default function Navbar() {
             <img src={logoWide} alt="Marketing Insight Pro" className="brand-logo" />
           </Link>
 
-          {/* Nav links aligned to the right side near CTA */}
+          {/* Desktop Nav links */}
           <nav className="nav-links">
             <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
               Home
@@ -56,8 +56,14 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-actions">
-            <button className="btn btn-gold navbar-cta-small" onClick={() => setModalOpen(true)}>
+            {/* Desktop CTA */}
+            <button className="btn btn-gold navbar-cta-small desktop-cta" onClick={() => setModalOpen(true)}>
               <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
+            </button>
+
+            {/* Mobile: small CTA between logo and hamburger */}
+            <button className="btn btn-gold mobile-cta-pill" onClick={() => setModalOpen(true)}>
+              Book Call
             </button>
 
             <button
@@ -65,7 +71,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle Navigation"
             >
-              {mobileOpen ? <X size={26} /> : <Menu size={26} />}
+              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>

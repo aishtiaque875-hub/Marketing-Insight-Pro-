@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import * as Icons from 'lucide-react';
 import { services } from '../data/services.js';
 import { serviceImages } from '../data/serviceImages.js';
@@ -18,26 +18,13 @@ export default function Services() {
           <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
             <Sparkles size={14} className="gold-icon" /> Core Capabilities
           </div>
-          <h1>Enterprise Growth Services Designed For <span className="gold-gradient-text">Aggressive Scale</span></h1>
-          <p>Six specialized growth disciplines under one roof â€” every engagement scoped, executed, and reported by senior specialists dedicated to measurable return on investment.</p>
-        </div>
-      </section>
-
-      {/* SERVICES INTRO */}
-      <section className="section section-dark services-intro">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow" style={{ justifyContent: 'center' }}>
-              Full Service Catalog
-            </span>
-            <h2>Every Discipline Your Brand Needs To <span className="gold-gradient-text">Compete & Win</span></h2>
-            <p>Each service below ships with clearly defined deliverables and expected outcomes. No vague promises â€” a scoped scope of work and transparent reporting on what counts.</p>
-          </div>
+          <h1>Services Configured For <span className="gold-gradient-text">Sustainable Growth</span></h1>
+          <p>Six specialized marketing disciplines under one roof — executed with direct focus, transparency, and a commitment to real business outcomes.</p>
         </div>
       </section>
 
       {/* SERVICES CATALOG GRID */}
-      <section className="section section-dark services-margin-reset">
+      <section className="section section-dark">
         <div className="container">
           <div className="services-catalog-grid">
             {services.map((s, index) => {
