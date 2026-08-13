@@ -72,7 +72,7 @@ export default function Contact() {
                   <div className="c-icon-wrap"><Phone size={22} className="gold-icon" /></div>
                   <div>
                     <strong>Phone & Direct WhatsApp</strong>
-                    <a href="https://wa.me/923266739989" target="_blank" rel="noreferrer">+92 326 6739989</a>
+                    <a href="https://api.whatsapp.com/send/?phone=923266739989&text&type=phone_number&app_absent=0" target="_blank" rel="noreferrer">+92 326 6739989</a>
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@ export default function Contact() {
                   <h4>Need an Instant Reply?</h4>
                   <p>Chat directly with our lead growth engineer on WhatsApp right now.</p>
                   <a
-                    href="https://wa.me/923266739989"
+                    href="https://api.whatsapp.com/send/?phone=923266739989&text&type=phone_number&app_absent=0"
                     target="_blank"
                     rel="noreferrer"
                     className="btn btn-gold btn-sm"
