@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, Send, ShieldCheck, Sparkles, ArrowRight, Clock } from 'lucide-react';
-import { submitLead, confirmationEmail } from '../utils/submitLead.js';
+import { submitLead } from '../utils/submitLead.js';
 import './CalendlyModal.css';
 
 const timeSlots = ['10:00 AM', '11:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '5:30 PM'];
@@ -38,15 +38,12 @@ export default function CalendlyModal({ isOpen, onClose }) {
     setError('');
     try {
       await submitLead({
-        subject: 'New Strategy Call Request — Marketing Insight Pro',
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        preferred_call_time: slot,
-        goals: formData.goals,
-        from_name: formData.name,
-        autoresponse: confirmationEmail(formData.name, 'strategy'),
-      });
+        message: formData.goals,
+        preferredTime: slot,
+      }, 'strategy');
       setStatus('success');
     } catch (err) {
       setStatus('error');

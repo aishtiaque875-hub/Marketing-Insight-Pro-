@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
 import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Sparkles, ShieldCheck } from 'lucide-react';
-import { submitLead, confirmationEmail } from '../utils/submitLead.js';
+import { submitLead } from '../utils/submitLead.js';
 import './Contact.css';
 
 export default function Contact() {
@@ -21,15 +21,12 @@ export default function Contact() {
     setError('');
     try {
       await submitLead({
-        subject: `New Inquiry: ${formData.service} — Marketing Insight Pro`,
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         service: formData.service,
         message: formData.message,
-        from_name: formData.name,
-        autoresponse: confirmationEmail(formData.name),
-      });
+      }, 'contact');
       setStatus('success');
     } catch (err) {
       setStatus('error');

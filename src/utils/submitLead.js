@@ -1,27 +1,54 @@
-export const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY';
+export const EMAILJS_CONFIG = {
+  publicKey: 'YOUR_EMAILJS_PUBLIC_KEY',
+  serviceId: 'YOUR_EMAILJS_SERVICE_ID',
+  leadTemplateId: 'YOUR_EMAILJS_LEAD_TEMPLATE_ID',
+  confirmTemplateId: 'YOUR_EMAILJS_CONFIRM_TEMPLATE_ID',
+};
 
-export async function submitLead(payload) {
-  const body = {
-    access_key: WEB3FORMS_ACCESS_KEY,
-    botcheck: 'false',
-    replyto: payload.email,
-    ...payload,
-  };
-
-  const res = await fetch('https://api.web3forms.com/submit', {
+async function sendEmail(templateId, templateParams) {
+  const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      service_id: EMAILJS_CONFIG.serviceId,
+      template_id: templateId,
+      user_id: EMAILJS_CONFIG.publicKey,
+      template_params: templateParams,
+    }),
   });
 
-  const json = await res.json();
-  if (!json.success) {
-    throw new Error(json.message || 'Something went wrong. Please try again.');
+  if (!res.ok) {
+    const text = await res.text().catch(() => '');
+    throw new Error(text || 'Message could not be sent. Please try again.');
   }
-  return json;
+}
+
+export async function submitLead(data, context) {
+  try {
+    await sendEmail(EMAILJS_CONFIG.leadTemplateId, {
+      to_name: 'Marketing Insight Pro Team',
+      from_name: data.name,
+      reply_to: data.email,
+      email: data.email,
+      phone: data.phone,
+      service: data.service || 'Growth Consultation',
+      message: data.message || '',
+      preferred_time: data.preferredTime || '',
+    });
+  } catch (err) {
+    throw new Error(err.message);
+  }
+
+  try {
+    await sendEmail(EMAILJS_CONFIG.confirmTemplateId, {
+      to_name: data.name,
+      to_email: data.email,
+      service: data.service || 'Growth Consultation',
+      confirmation_html: confirmationEmail(data.name, context),
+    });
+  } catch (err) {
+    throw new Error(err.message);
+  }
 }
 
 export function confirmationEmail(name, context) {
