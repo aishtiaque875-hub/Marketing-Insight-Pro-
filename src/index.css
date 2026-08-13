@@ -1,27 +1,27 @@
 :root {
-  /* --- Brand Tokens (Exact Logo Colors: Gold #dbb762 | Navy #142d65) --- */
-  --navy-deep: #142d65;      /* Exact logo navy blue */
-  --navy-surface: #193372;   /* Elevated navy card surface */
-  --navy-card: #1e3a7f;      /* Dark navy container */
-  --navy-soft: #233f87;      /* Interactive hover state */
-  --navy-light: #2a4890;     /* Border glow navy */
+  /* --- Brand Tokens (Gold #BD892C | Navy #021D4D) --- */
+  --navy-deep: #021D4D;      /* Exact logo navy blue */
+  --navy-surface: #07265e;   /* Elevated navy card surface */
+  --navy-card: #0c2e6e;      /* Dark navy container */
+  --navy-soft: #113480;      /* Interactive hover state */
+  --navy-light: #173c92;     /* Border glow navy */
 
   /* Exact Logo Gold System */
-  --gold-primary: #dbb762;   /* Exact logo golden color */
-  --gold-light: #e8c97a;     /* Brighter logo gold highlight */
-  --gold-mid: #c9a44e;       /* Mid-depth gold */
-  --gold-deep: #b08a36;      /* Deep shadow gold */
-  --gold-gradient: linear-gradient(135deg, #e8c97a 0%, #dbb762 50%, #c9a44e 100%);
-  --gold-text-gradient: linear-gradient(135deg, #e8c97a 0%, #dbb762 100%);
-  --gold-glow: rgba(219, 183, 98, 0.3);
+  --gold-primary: #BD892C;   /* Exact logo golden color */
+  --gold-light: #d09a3e;     /* Brighter logo gold highlight */
+  --gold-mid: #a87625;       /* Mid-depth gold */
+  --gold-deep: #8f5e1a;      /* Deep shadow gold */
+  --gold-gradient: linear-gradient(135deg, #d09a3e 0%, #BD892C 50%, #a87625 100%);
+  --gold-text-gradient: linear-gradient(135deg, #d09a3e 0%, #BD892C 100%);
+  --gold-glow: rgba(189, 137, 44, 0.3);
 
   /* Light Canvas Theme */
   --paper: #FFFFFF;
   --paper-soft: #FFFFFF;
-  --paper-card: #152c65;
+  --paper-card: #021D4D;
   --border-light: #E2E8F0;
-  --border-gold: rgba(219, 183, 98, 0.3);
-  --heading: #152c65;
+  --border-gold: rgba(189, 137, 44, 0.3);
+  --heading: #021D4D;
   --ink: #000000;
   --slate: #1E293B;
   --slate-light: #475569;
@@ -36,9 +36,9 @@
   --radius-md: 14px;
   --radius-lg: 20px;
   --container: 1280px;
-  --shadow-gold: 0 10px 30px -8px rgba(219, 183, 98, 0.35);
-  --shadow-navy: 0 20px 50px rgba(21, 44, 101, 0.08);
-  --shadow-card: 0 10px 30px -5px rgba(21, 44, 101, 0.06);
+  --shadow-gold: 0 10px 30px -8px rgba(189, 137, 44, 0.35);
+  --shadow-navy: 0 20px 50px rgba(2, 29, 77, 0.08);
+  --shadow-card: 0 10px 30px -5px rgba(2, 29, 77, 0.06);
 }
 
 * {

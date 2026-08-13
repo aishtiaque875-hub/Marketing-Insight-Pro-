@@ -1,4 +1,4 @@
-﻿.testimonials-wrap {
+.testimonials-wrap {
   max-width: 860px;
   margin: 0 auto;
 }
@@ -68,24 +68,44 @@
   gap: 16px;
 }
 
-.client-name {
-  position: relative;
-  padding-left: 18px;
-  font-size: 17px;
-  font-weight: 700;
-  color: #FFFFFF;
+.client-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold-primary);
+  box-shadow: 0 0 12px rgba(189, 137, 44, 0.3);
 }
 
-.client-name::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 2px;
-  background: var(--gold-primary);
-  border-radius: 2px;
+.client-name {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--gold-light);
+  font-weight: 500;
+  background: rgba(189, 137, 44, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.client-role {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.gold-company {
+  color: var(--gold-light);
+  font-weight: 600;
 }
 
 .carousel-controls {

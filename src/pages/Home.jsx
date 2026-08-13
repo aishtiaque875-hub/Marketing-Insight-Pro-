@@ -61,24 +61,24 @@ const processSteps = [
 
 const faqs = [
   {
-    q: 'What performance metrics and ROAS targets does Marketing Insight Pro deliver for Meta Ads?',
-    a: 'We focus strictly on net profitable revenue gain, target ROAS (typically 3.5x–6.0x+ based on unit economics), Customer Acquisition Cost (CAC) reduction, and Customer Lifetime Value (LTV). You receive real-time dashboard access and transparent weekly reporting.',
+    q: 'What does your Meta Ads service include?',
+    a: 'We handle end-to-end Meta Ads campaign setup on Meta Ads Manager — from defining campaign objectives and target audience to creating high-converting ad creatives designed for sales. We also manage and monitor the campaigns using Meta Business Suite.',
   },
   {
-    q: 'How quickly will our SEO and digital content campaigns generate qualified organic leads?',
-    a: 'Technical SEO fixes and commercial keyword optimization show rank improvements within 14–30 days. Full authority compounding and sustained lead acquisition accelerate significantly over 60–90 days.',
+    q: 'What is included in your SEO audit service?',
+    a: 'Our SEO service covers comprehensive keyword research, technical on-page SEO analysis, off-page structure review, and backlink research. We deliver a detailed, actionable PDF SEO report that outlines exactly what needs to be improved for better search visibility.',
   },
   {
-    q: 'Why partner with Marketing Insight Pro over traditional marketing agencies?',
-    a: 'Traditional agencies hide behind vanity metrics like impressions and pass accounts to junior interns. Marketing Insight Pro provides direct executive oversight by senior specialists, 100% client-owned ad accounts, and direct revenue accountability.',
+    q: 'What kind of content do you write?',
+    a: 'We write social media post captions, website blog articles, and advertising copy. We use professional writing assistants and grammar tools like Grammarly and QuillBot to ensure all content is polished, readable, and aligned with your brand voice.',
   },
   {
-    q: 'Are long-term contracts or locked-in retainers required?',
-    a: 'No rigid long-term locks. We believe in earning your partnership every single month through validated ROI, clear deliverables, and scalable growth milestones.',
+    q: 'What video editing services do you offer?',
+    a: 'We edit short-form social media videos including painting reels and review reels. We apply clean cuts, engaging captions/subtitles, smooth transitions, and audio sync using CapCut and Adobe Premiere Pro.',
   },
   {
-    q: 'What is included in the initial Growth Strategy Audit?',
-    a: 'In your strategic consultation, our senior growth architects audit your ad funnels, SEO footprint, and landing page UX to deliver a customized 90-day execution roadmap tailored specifically to your revenue goals.',
+    q: 'What does your social media management service cover?',
+    a: 'We plan, schedule, and post content consistently on your Facebook and Instagram pages. We manage your page activity through Meta Business Suite and ensure a professional and consistent brand presence across platforms.',
   },
 ];
 
@@ -98,11 +98,11 @@ export default function Home() {
               </div>
 
               <h1 className="hero-title">
-                Scale Your Brand With <span className="gold-gradient-text">Structured Meta Ads</span> & Precision SEO Audits
+                Professional <span className="gold-gradient-text">Digital Marketer</span> Specializing in Meta Ads & Creative Growth
               </h1>
 
               <p className="hero-sub">
-                We deliver professional Meta Ads campaign setups, technical SEO audit reports, direct-response video editing, social media post designs, and content writing that align with your business goals.
+                From structured Meta Ads campaigns and technical SEO audits to short-form video editing, social media designs, and content writing — everything you need to grow your brand online.
               </p>
 
               <div className="hero-actions">

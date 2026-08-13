@@ -61,11 +61,6 @@ export default function Navbar() {
               <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
             </button>
 
-            {/* Mobile: small CTA between logo and hamburger */}
-            <button className="btn btn-gold mobile-cta-pill" onClick={() => setModalOpen(true)}>
-              Book Call
-            </button>
-
             <button
               className="mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
