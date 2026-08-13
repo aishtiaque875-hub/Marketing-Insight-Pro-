@@ -1,4 +1,4 @@
-.services-catalog-grid {
+﻿.services-catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 40px;
@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  border: 1.5px solid rgba(219, 183, 98, 0.35);
+  border: 1.5px solid rgba(196, 154, 58, 0.35);
   background: var(--navy-surface);
 }
 
@@ -66,7 +66,7 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(219, 183, 98, 0.15);
+  background: rgba(196, 154, 58, 0.15);
   border: 1px solid var(--gold-primary);
   display: flex;
   align-items: center;
@@ -137,7 +137,7 @@
   align-items: center;
   gap: 36px;
   padding: 48px 40px;
-  border: 1px solid rgba(219, 183, 98, 0.35);
+  border: 1px solid rgba(196, 154, 58, 0.35);
   background: rgba(20, 45, 101, 0.6);
   flex-wrap: wrap;
 }
@@ -146,7 +146,7 @@
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background: rgba(219, 183, 98, 0.15);
+  background: rgba(196, 154, 58, 0.15);
   border: 1px solid var(--gold-primary);
   display: flex;
   align-items: center;

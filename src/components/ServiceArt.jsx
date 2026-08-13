@@ -1,4 +1,4 @@
-// Original, hand-built SVG illustrations for each service — navy + gold themed
+﻿// Original, hand-built SVG illustrations for each service â€” navy + gold themed
 // to match the Marketing Insight Pro brand. No external images are used here.
 
 const wrap = (children) => (

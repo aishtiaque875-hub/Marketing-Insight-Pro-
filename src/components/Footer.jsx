@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUp, Mail, Phone, MapPin, Send, CheckCircle2, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import logoWide from '../assets/logo-wide.png';

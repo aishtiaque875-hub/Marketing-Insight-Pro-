@@ -1,4 +1,4 @@
-import './Legal.css'
+﻿import './Legal.css'
 
 export default function CookiePolicy() {
   return (
@@ -13,8 +13,8 @@ export default function CookiePolicy() {
 
       <h2>Types of Cookies We Use</h2>
       <ul>
-        <li><strong>Essential cookies</strong> — needed for basic site functionality.</li>
-        <li><strong>Analytics cookies</strong> — help us understand which pages are visited, so we can improve the site (only if analytics tools are added later).</li>
+        <li><strong>Essential cookies</strong> â€” needed for basic site functionality.</li>
+        <li><strong>Analytics cookies</strong> â€” help us understand which pages are visited, so we can improve the site (only if analytics tools are added later).</li>
       </ul>
 
       <h2>Managing Cookies</h2>

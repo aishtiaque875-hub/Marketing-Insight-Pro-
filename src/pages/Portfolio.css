@@ -1,4 +1,4 @@
-.portfolio-grid {
+﻿.portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 40px;
@@ -9,7 +9,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  border: 1px solid rgba(219, 183, 98, 0.25);
+  border: 1px solid rgba(196, 154, 58, 0.25);
   background: var(--navy-surface);
 }
 
@@ -106,8 +106,8 @@
 }
 
 .tool-badge {
-  background: rgba(219, 183, 98, 0.1);
-  border: 1px solid rgba(219, 183, 98, 0.25);
+  background: rgba(196, 154, 58, 0.1);
+  border: 1px solid rgba(196, 154, 58, 0.25);
   color: var(--gold-light);
   font-size: 12px;
   padding: 4px 10px;

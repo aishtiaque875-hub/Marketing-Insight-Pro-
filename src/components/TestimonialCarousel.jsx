@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { testimonials } from '../data/testimonials';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import './TestimonialCarousel.css';

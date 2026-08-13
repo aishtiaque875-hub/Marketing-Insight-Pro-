@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { caseStudies } from '../data/caseStudies.js';
 import Reveal from '../components/Reveal.jsx';
 import { ArrowRight, Sparkles, Wrench } from 'lucide-react';
@@ -14,7 +14,7 @@ export default function Portfolio() {
             <Sparkles size={14} className="gold-icon" /> Our Work
           </div>
           <h1>Our Work Speaks In <span className="gold-gradient-text">Results</span></h1>
-          <p>Real client engagements across Meta Ads, SEO, Content Writing, Video Editing, Social Media Design, and Social Media Management — each briefed, executed, and delivered by senior specialists.</p>
+          <p>Real client engagements across Meta Ads, SEO, Content Writing, Video Editing, Social Media Design, and Social Media Management â€” each briefed, executed, and delivered by senior specialists.</p>
         </div>
       </section>
 
@@ -26,7 +26,7 @@ export default function Portfolio() {
               Selected Engagements
             </span>
             <h2>Performance <span className="gold-gradient-text">Case Studies</span></h2>
-            <p>A snapshot of the campaigns, audits, and creative projects we have delivered — and the measurable outcomes that followed.</p>
+            <p>A snapshot of the campaigns, audits, and creative projects we have delivered â€” and the measurable outcomes that followed.</p>
           </div>
         </div>
       </section>

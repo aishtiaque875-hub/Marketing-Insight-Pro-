@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+﻿import React, { useState, useEffect } from 'react';
+import { NavLink, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ArrowRight, Calendar, Sparkles } from 'lucide-react';
 import logoWide from '../assets/logo-wide.png';
-import CalendlyModal from './CalendlyModal';
 import './Navbar.css';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -56,7 +55,7 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-actions">
-            <button className="btn btn-gold navbar-cta-small" onClick={() => setModalOpen(true)}>
+            <button className="btn btn-gold navbar-cta-small" onClick={() => navigate('/strategy')}>
               <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
             </button>
 
@@ -80,14 +79,12 @@ export default function Navbar() {
               <NavLink to="/about" className="mobile-link">About Us</NavLink>
               <NavLink to="/contact" className="mobile-link">Contact</NavLink>
             </div>
-            <button className="btn btn-gold mobile-drawer-cta" onClick={() => { setMobileOpen(false); setModalOpen(true); }}>
+            <button className="btn btn-gold mobile-drawer-cta" onClick={() => { setMobileOpen(false); navigate('/strategy'); }}>
               <Sparkles size={14} /> Book Strategy Call
             </button>
           </div>
         )}
       </header>
-
-      <CalendlyModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

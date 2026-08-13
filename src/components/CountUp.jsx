@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+﻿import { useEffect, useRef, useState } from 'react'
 
 export default function CountUp({ value, prefix = '', suffix = '', duration = 1800 }) {
   const ref = useRef(null)

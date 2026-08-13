@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   /* --- Brand Tokens (Exact Logo Colors: Gold #dbb762 | Navy #142d65) --- */
   --navy-deep: #142d65;      /* Exact logo navy blue */
   --navy-surface: #142d65;   /* Exact logo navy card surface */
@@ -6,21 +6,21 @@
   --navy-soft: #243f85;      /* Interactive hover state */
   --navy-light: #2a4890;     /* Border glow navy */
 
-  /* Exact Logo Gold System */
-  --gold-primary: #dbb762;   /* Exact logo golden color */
-  --gold-light: #e8c97a;     /* Brighter logo gold highlight */
-  --gold-mid: #c9a44e;       /* Mid-depth gold */
-  --gold-deep: #b08a36;      /* Deep shadow gold */
-  --gold-gradient: linear-gradient(135deg, #e8c97a 0%, #dbb762 50%, #c9a44e 100%);
-  --gold-text-gradient: linear-gradient(135deg, #e8c97a 0%, #dbb762 100%);
-  --gold-glow: rgba(219, 183, 98, 0.3);
+  /* Exact Logo Gold System â€” darkened slightly */
+  --gold-primary: #c49a3a;   /* Deeper logo gold */
+  --gold-light: #d4b060;     /* Brighter gold highlight */
+  --gold-mid: #b8903a;       /* Mid-depth gold */
+  --gold-deep: #a07c30;      /* Deep shadow gold */
+  --gold-gradient: linear-gradient(135deg, #d4b060 0%, #c49a3a 50%, #b8903a 100%);
+  --gold-text-gradient: linear-gradient(135deg, #d4b060 0%, #c49a3a 100%);
+  --gold-glow: rgba(196, 154, 58, 0.3);
 
   /* Light Canvas Theme */
   --paper: #FFFFFF;
   --paper-soft: #FFFFFF;
   --paper-card: #142d65;
   --border-light: #E2E8F0;
-  --border-gold: rgba(219, 183, 98, 0.3);
+  --border-gold: rgba(196, 154, 58, 0.3);
   --heading: #142d65;
   --ink: #000000;
   --slate: #1E293B;
@@ -36,7 +36,7 @@
   --radius-md: 14px;
   --radius-lg: 20px;
   --container: 1280px;
-  --shadow-gold: 0 10px 30px -8px rgba(219, 183, 98, 0.35);
+  --shadow-gold: 0 10px 30px -8px rgba(196, 154, 58, 0.35);
   --shadow-navy: 0 20px 50px rgba(20, 45, 101, 0.08);
   --shadow-card: 0 10px 30px -5px rgba(20, 45, 101, 0.06);
 }
@@ -257,13 +257,13 @@ button {
 .btn-gold {
   background: var(--gold-gradient);
   color: var(--navy-deep);
-  box-shadow: 0 8px 24px -4px rgba(219, 183, 98, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(196, 154, 58, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .btn-gold:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 32px -4px rgba(219, 183, 98, 0.6);
+  box-shadow: 0 14px 32px -4px rgba(196, 154, 58, 0.6);
 }
 
 .btn-outline-gold {
@@ -293,7 +293,7 @@ button {
 /* Cards System - All Cards Set To Dark Blue Canvas With White Text */
 .glass-card {
   background: var(--navy-surface); /* Exact logo navy blue card */
-  border: 1px solid rgba(219, 183, 98, 0.3);
+  border: 1px solid rgba(196, 154, 58, 0.3);
   border-radius: var(--radius-lg);
   box-shadow: 0 14px 36px rgba(20, 45, 101, 0.12);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -315,19 +315,19 @@ button {
 
 .glass-card:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 20px 48px -8px rgba(20, 45, 101, 0.25), 0 0 25px rgba(219, 183, 98, 0.25);
+  box-shadow: 0 20px 48px -8px rgba(20, 45, 101, 0.25), 0 0 25px rgba(196, 154, 58, 0.25);
   transform: translateY(-6px);
 }
 
 .section-dark .glass-card {
   background: var(--navy-card);
-  border: 1px solid rgba(219, 183, 98, 0.3);
+  border: 1px solid rgba(196, 154, 58, 0.3);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 .section-dark .glass-card:hover {
   border-color: var(--gold-primary);
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 25px rgba(219, 183, 98, 0.25);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.4), 0 0 25px rgba(196, 154, 58, 0.25);
 }
 
 /* Scroll Reveal Base - Fade Up Smooth */
@@ -365,7 +365,7 @@ button {
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(219, 183, 98, 0.2);
+  border-bottom: 1px solid rgba(196, 154, 58, 0.2);
 }
 
 .page-header h1 {
