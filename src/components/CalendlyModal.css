@@ -138,6 +138,26 @@
   width: 100%;
 }
 
+.modal-next-btn:disabled,
+.modal-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.time-chip {
+  cursor: pointer;
+}
+
+.form-error {
+  color: #ff8a8a;
+  background: rgba(255, 138, 138, 0.1);
+  border: 1px solid rgba(255, 138, 138, 0.35);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
 .selected-slot-banner {
   background: rgba(219, 183, 98, 0.15);
   border: 1px solid var(--gold-primary);
@@ -182,7 +202,8 @@
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   width: 100%;
   background: rgba(20, 45, 101, 0.6);
   border: 1px solid rgba(219, 183, 98, 0.3);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Sparkles, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, MessageSquare, Sparkles, ShieldCheck } from 'lucide-react';
+import { submitLead, confirmationEmail } from '../utils/submitLead.js';
 import './Contact.css';
 
 export default function Contact() {
@@ -8,14 +9,32 @@ export default function Contact() {
     name: '',
     email: '',
     phone: '',
-    service: 'Meta Ads & Paid Media',
+    service: 'Meta Ads',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle');
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus('sending');
+    setError('');
+    try {
+      await submitLead({
+        subject: `New Inquiry: ${formData.service} — Marketing Insight Pro`,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        from_name: formData.name,
+        autoresponse: confirmationEmail(formData.name),
+      });
+      setStatus('success');
+    } catch (err) {
+      setStatus('error');
+      setError(err.message);
+    }
   };
 
   return (
@@ -92,7 +111,7 @@ export default function Contact() {
           {/* CONTACT FORM */}
           <Reveal direction="right">
             <div className="contact-form-card glass-card">
-              {!submitted ? (
+              {status !== 'success' ? (
                 <form onSubmit={handleSubmit}>
                   <div className="form-head">
                     <h2>Submit Growth Inquiry</h2>
@@ -159,8 +178,10 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-gold btn-full">
-                    Send Inquiry & Request Audit <Send size={16} />
+                  {status === 'error' && <p className="form-error">{error}</p>}
+
+                  <button type="submit" className="btn btn-gold btn-full" disabled={status === 'sending'}>
+                    {status === 'sending' ? 'Sending Your Inquiry...' : <>Send Inquiry & Request Audit <Send size={16} /></>}
                   </button>
 
                   <div className="form-privacy-note">
@@ -172,7 +193,7 @@ export default function Contact() {
                   <CheckCircle2 size={64} className="gold-icon" style={{ margin: '0 auto 16px' }} />
                   <h2>Message Received <span className="gold-gradient-text">Successfully!</span></h2>
                   <p>Thank you <strong>{formData.name}</strong>. Our senior growth officer is reviewing your inquiry and will contact you at <strong>{formData.email}</strong> within 24 hours.</p>
-                  <button className="btn btn-gold" onClick={() => setSubmitted(false)} style={{ marginTop: '20px' }}>
+                  <button className="btn btn-gold" onClick={() => { setStatus('idle'); setFormData({ name: '', email: '', phone: '', service: 'Meta Ads', message: '' }); }} style={{ marginTop: '20px' }}>
                     Send Another Message
                   </button>
                 </div>
