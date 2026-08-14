@@ -29,7 +29,7 @@ export default function TestimonialCarousel() {
         <div className="card-top">
           <div className="stars-wrap">
             {[...Array(item.rating)].map((_, i) => (
-              <Star key={i} size={18} fill="#D4AF37" color="#D4AF37" />
+              <Star key={i} size={18} fill="#BD892C" color="#BD892C" />
             ))}
           </div>
           <div className="result-badge">
@@ -55,7 +55,6 @@ export default function TestimonialCarousel() {
                   </span>
                 )}
               </div>
-              <div className="client-role">{item.role} &bull; <span className="gold-company">{item.company}</span></div>
             </div>
           </div>
 

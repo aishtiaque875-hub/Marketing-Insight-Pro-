@@ -56,14 +56,8 @@ export default function Navbar() {
           </nav>
 
           <div className="navbar-actions">
-            {/* Desktop CTA */}
-            <button className="btn btn-gold navbar-cta-small desktop-cta" onClick={() => setModalOpen(true)}>
-              <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
-            </button>
-
-            {/* Mobile CTA: positioned next to hamburger toggle */}
-            <button className="btn btn-gold mobile-cta-pill" onClick={() => setModalOpen(true)}>
-              Book Call
+            <button className="btn btn-gold navbar-cta-btn" onClick={() => setModalOpen(true)}>
+              <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} className="cta-arrow" />
             </button>
 
             <button
