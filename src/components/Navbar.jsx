@@ -61,6 +61,11 @@ export default function Navbar() {
               <Calendar size={13} /> Book Strategy Call <ArrowRight size={13} />
             </button>
 
+            {/* Mobile CTA: positioned next to hamburger toggle */}
+            <button className="btn btn-gold mobile-cta-pill" onClick={() => setModalOpen(true)}>
+              Book Call
+            </button>
+
             <button
               className="mobile-toggle"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -81,9 +86,6 @@ export default function Navbar() {
               <NavLink to="/about" className="mobile-link">About Us</NavLink>
               <NavLink to="/contact" className="mobile-link">Contact</NavLink>
             </div>
-            <button className="btn btn-gold mobile-drawer-cta" onClick={() => { setMobileOpen(false); setModalOpen(true); }}>
-              <Sparkles size={14} /> Book Strategy Call
-            </button>
           </div>
         )}
       </header>

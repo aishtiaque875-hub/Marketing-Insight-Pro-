@@ -113,12 +113,6 @@ export default function Home() {
                   Explore Case Studies
                 </Link>
               </div>
-
-              <div className="hero-trust-bar">
-                <div className="trust-item"><ShieldCheck size={16} className="gold-icon" /> 100% Data-Driven</div>
-                <div className="trust-item"><CheckCircle2 size={16} className="gold-icon" /> Verifiable ROAS</div>
-                <div className="trust-item"><Clock size={16} className="gold-icon" /> 24h Response SLA</div>
-              </div>
             </Reveal>
 
             <Reveal direction="right" className="hero-visual-wrap">

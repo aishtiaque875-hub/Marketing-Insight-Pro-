@@ -1,6 +1,6 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { testimonials } from '../data/testimonials';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import { Star, ChevronLeft, ChevronRight, CheckCircle, Quote } from 'lucide-react';
 import './TestimonialCarousel.css';
 
 export default function TestimonialCarousel() {
@@ -29,7 +29,7 @@ export default function TestimonialCarousel() {
         <div className="card-top">
           <div className="stars-wrap">
             {[...Array(item.rating)].map((_, i) => (
-              <Star key={i} size={18} fill="#BD892C" color="#BD892C" />
+              <Star key={i} size={18} fill="#D4AF37" color="#D4AF37" />
             ))}
           </div>
           <div className="result-badge">
@@ -44,7 +44,21 @@ export default function TestimonialCarousel() {
         <p className="quote-text">"{item.quote}"</p>
 
         <div className="client-footer">
-          <div className="client-name">{item.name}</div>
+          <div className="client-info">
+            <img src={item.avatar} alt={item.name} className="client-avatar" />
+            <div>
+              <div className="client-name">
+                {item.name}
+                {item.verified && (
+                  <span className="verified-badge" title="Verified Client">
+                    <CheckCircle size={14} fill="#BD892C" color="#021D4D" /> Verified Partner
+                  </span>
+                )}
+              </div>
+              <div className="client-role">{item.role} &bull; <span className="gold-company">{item.company}</span></div>
+            </div>
+          </div>
+
           <div className="carousel-controls">
             <button className="carousel-btn" onClick={prevSlide} aria-label="Previous Testimonial">
               <ChevronLeft size={20} />

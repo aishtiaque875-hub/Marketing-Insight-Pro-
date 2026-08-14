@@ -1,3 +1,5 @@
+import './WhatsAppButton.css';
+
 export default function WhatsAppButton() {
   return (
     <a
@@ -10,5 +12,5 @@ export default function WhatsAppButton() {
       <span className="wa-text">WA</span>
       <span className="whatsapp-tooltip">Chat on WhatsApp</span>
     </a>
-  )
+  );
 }
