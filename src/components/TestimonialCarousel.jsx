@@ -45,15 +45,9 @@ export default function TestimonialCarousel() {
 
         <div className="client-footer">
           <div className="client-info">
-            <img src={item.avatar} alt={item.name} className="client-avatar" />
             <div>
               <div className="client-name">
                 {item.name}
-                {item.verified && (
-                  <span className="verified-badge" title="Verified Client">
-                    <CheckCircle size={14} fill="#BD892C" color="#021D4D" /> Verified Partner
-                  </span>
-                )}
               </div>
             </div>
           </div>
