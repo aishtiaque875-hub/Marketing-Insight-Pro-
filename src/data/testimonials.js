@@ -18,10 +18,10 @@ export const testimonials = [
     initials: 'AF',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    result: '4.8x ROAS Achieved',
+    result: 'Consistent Page Growth',
     verified: true,
     quote:
-      'Their UI/UX team transformed our store experience while their performance team scaled our Meta ad campaigns. Our online revenue doubled within 60 days. Truly an enterprise-level growth partner.',
+      "Their social media management has completely organized our online presence. They handled all our content planning, post design, and daily feed activity on Instagram and Facebook. We now have a highly professional feed and active page engagement.",
   },
   {
     name: 'Hamza Sheikh',
