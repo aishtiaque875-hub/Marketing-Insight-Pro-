@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUp, Mail, Phone, MapPin, Send, CheckCircle2, Linkedin, Instagram, Facebook, Twitter } from 'lucide-react';
 import logoWide from '../assets/logo-wide.png';
@@ -62,7 +62,7 @@ export default function Footer() {
             <h4>Agency Office</h4>
             <div className="contact-item">
               <Mail size={16} className="gold-icon" />
-              <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>
+              <a href="mailto:contactmarketinginsightpro@gmail.com">contactmarketinginsightpro@gmail.com</a>
             </div>
             <div className="contact-item">
               <Phone size={16} className="gold-icon" />

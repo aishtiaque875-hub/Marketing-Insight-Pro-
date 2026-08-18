@@ -2,18 +2,17 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: transparent;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999999;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
   border: none;
-  filter: drop-shadow(0 6px 16px rgba(37, 211, 102, 0.45));
+  background: transparent;
   text-decoration: none;
+  filter: drop-shadow(0 6px 16px rgba(37, 211, 102, 0.45));
 }
 
 .whatsapp-fab:hover {
@@ -21,11 +20,13 @@
   filter: drop-shadow(0 12px 24px rgba(37, 211, 102, 0.6));
 }
 
-.whatsapp-svg-icon {
+.whatsapp-img-icon {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
+
 
 .whatsapp-tooltip {
   position: absolute;
@@ -73,6 +74,11 @@
     right: 20px;
     width: 50px;
     height: 50px;
+  }
+
+  .whatsapp-svg-icon {
+    width: 26px;
+    height: 26px;
   }
 
   .whatsapp-tooltip {

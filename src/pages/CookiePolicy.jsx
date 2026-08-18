@@ -1,4 +1,4 @@
-﻿import './Legal.css'
+import './Legal.css'
 
 export default function CookiePolicy() {
   return (
@@ -26,7 +26,7 @@ export default function CookiePolicy() {
       <h2>Contact</h2>
       <p>
         Questions about this policy can be sent to{' '}
-        <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>.
+        <a href="mailto:contactmarketinginsightpro@gmail.com">contactmarketinginsightpro@gmail.com</a>.
       </p>
     </div>
   )

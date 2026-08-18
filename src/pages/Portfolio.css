@@ -18,32 +18,39 @@
   line-height: 1.7;
 }
 
+/* Strict 2-column grid on desktop, 1-column on mobile */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 28px;
 }
 
 .portfolio-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+  height: auto;         /* Auto adjust to content */
+  min-height: 0;        /* Allow shrinking */
+  overflow: visible;    /* No content cropping */
   border: 1px solid rgba(219, 183, 98, 0.25);
   background: var(--navy-surface);
+  border-radius: var(--radius-lg);
 }
 
+/* Image container — fixed aspect ratio, no distortion */
 .portfolio-image-wrap {
   position: relative;
-  height: 220px;
   width: 100%;
+  aspect-ratio: 16 / 10;
   overflow: hidden;
+  flex-shrink: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .portfolio-image-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.5s ease;
 }
 
@@ -51,6 +58,7 @@
   transform: scale(1.06);
 }
 
+/* Content section — flex-grow to fill remaining space */
 .portfolio-content {
   padding: 28px;
   display: flex;
@@ -124,8 +132,10 @@
   font-weight: 500;
 }
 
+/* Responsive: 1-column on mobile */
 @media (max-width: 768px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
 }
+

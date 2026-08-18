@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Reveal from '../components/Reveal.jsx';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck, Loader2 } from 'lucide-react';
 import './Contact.css';
 
 export default function Contact() {
@@ -12,18 +12,45 @@ export default function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError('');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/contactmarketinginsightpro@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+          _subject: `New Growth Inquiry from ${formData.name} — ${formData.service}`,
+        }),
+      });
+      if (!res.ok) throw new Error('Request failed');
+      setSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or contact us via WhatsApp.');
+    } finally {
+      setSending(false);
+    }
   };
+
 
   return (
     <>
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+          <div className="hero-badge" style={{ margin: '0 auto 16px', color: '#FFFFFF' }}>
             <Sparkles size={14} className="gold-icon" /> Direct Growth Consultation
           </div>
           <h1>Let's Scale Your Brand To <span className="gold-gradient-text">New Heights</span></h1>
@@ -48,7 +75,7 @@ export default function Contact() {
                   <div className="c-icon-wrap"><Mail size={22} className="gold-icon" /></div>
                   <div>
                     <strong>Email Consultation</strong>
-                    <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>
+                    <a href="mailto:contactmarketinginsightpro@gmail.com">contactmarketinginsightpro@gmail.com</a>
                   </div>
                 </div>
 
@@ -160,13 +187,14 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-gold btn-full">
-                    Send Inquiry & Request Audit <Send size={16} />
+                  <button type="submit" className="btn btn-gold btn-full" disabled={sending}>
+                    {sending ? (<><Loader2 size={16} className="spin-icon" /> Sending...</>) : (<>Send Inquiry & Request Audit <Send size={16} /></>)}
                   </button>
 
                   <div className="form-privacy-note">
                     <ShieldCheck size={14} /> 100% Confidential. We respect your business privacy.
                   </div>
+                  {error && <p className="form-error-msg">{error}</p>}
                 </form>
               ) : (
                 <div className="contact-success-state text-center">

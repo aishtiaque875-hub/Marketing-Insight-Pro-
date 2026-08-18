@@ -1,4 +1,4 @@
-﻿import './Legal.css'
+import './Legal.css'
 
 export default function TermsConditions() {
   return (
@@ -42,7 +42,7 @@ export default function TermsConditions() {
       <h2>Contact</h2>
       <p>
         Questions about these terms can be sent to{' '}
-        <a href="mailto:marketinginsight11@gmail.com">marketinginsight11@gmail.com</a>.
+        <a href="mailto:contactmarketinginsightpro@gmail.com">contactmarketinginsightpro@gmail.com</a>.
       </p>
     </div>
   )

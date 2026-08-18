@@ -1,4 +1,5 @@
 import './WhatsAppButton.css';
+import whatsappIcon from '../assets/whatsapp-icon-clean.png';
 
 export default function WhatsAppButton() {
   return (
@@ -9,10 +10,9 @@ export default function WhatsAppButton() {
       className="whatsapp-fab"
       aria-label="Chat on WhatsApp"
     >
-      <svg viewBox="0 0 32 32" className="whatsapp-svg-icon" aria-hidden="true">
-        <path fill="#25D366" d="M16 0C7.16 0 0 7.16 0 16c0 2.82.73 5.48 2.01 7.79L0 32l8.47-2.18c2.22 1.14 4.74 1.79 7.53 1.79 8.84 0 16-7.16 16-16S24.84 0 16 0zm8.28 22.8c-.34.96-1.98 1.84-2.76 1.95-.69.1-1.58.14-2.54-.17-.58-.19-1.33-.44-2.29-.85-4.03-1.74-6.66-5.8-6.86-6.07-.2-.27-1.65-2.19-1.65-4.19s1.04-2.97 1.41-3.38c.37-.41.81-.51 1.08-.51h.78c.24 0 .58.01.91.69.34.81 1.15 2.8 1.25 3 .1.2.17.44.03.71-.14.27-.2.44-.41.68-.2.24-.44.54-.61.71-.2.2-.41.41-.17.81.24.41 1.05 1.74 2.25 2.81 1.54 1.39 2.84 1.82 3.25 2.02.41.2.65.17.88-.1.24-.27 1.01-1.18 1.28-1.58.27-.41.54-.34.91-.2.37.13 2.36 1.11 2.76 1.31.41.2.68.3.78.47.1.17.1.98-.24 1.94z"/>
-      </svg>
+      <img src={whatsappIcon} alt="WhatsApp" className="whatsapp-img-icon" />
       <span className="whatsapp-tooltip">Chat on WhatsApp</span>
     </a>
   );
 }
+

@@ -10,7 +10,7 @@ export default function Portfolio() {
       {/* PAGE HEADER */}
       <section className="page-header">
         <div className="container page-header-inner">
-          <div className="hero-badge" style={{ margin: '0 auto 16px' }}>
+          <div className="hero-badge" style={{ margin: '0 auto 16px', color: '#FFFFFF' }}>
             <Sparkles size={14} className="gold-icon" /> Our Work
           </div>
           <h1><span className="gold-gradient-text">Portfolio</span></h1>

@@ -1,4 +1,4 @@
-const FORMSUBMIT_AJAX = 'https://formsubmit.co/ajax/marketinginsight11@gmail.com';
+const FORMSUBMIT_AJAX = 'https://formsubmit.co/ajax/contactmarketinginsightpro@gmail.com';
 
 export async function submitLead(data, context) {
   const subject = context === 'strategy'
