@@ -1,4 +1,4 @@
-﻿.services-catalog-grid {
+.services-catalog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 40px;
@@ -202,3 +202,17 @@
 .services-margin-reset {
   padding-top: 0;
 }
+
+/* Custom Card Image Adjustments to prevent cropping of important content/text */
+.service-detail-card-meta-ads .service-detail-image-wrap img,
+.service-detail-card-seo .service-detail-image-wrap img,
+.service-detail-card-video-editing .service-detail-image-wrap img {
+  object-position: center top !important;
+}
+
+.service-detail-card-social-media-managing .service-detail-image-wrap img {
+  object-fit: contain !important;
+  background-color: var(--navy-card);
+  padding: 8px;
+}
+

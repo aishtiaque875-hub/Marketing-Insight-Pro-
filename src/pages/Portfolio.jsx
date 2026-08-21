@@ -32,7 +32,7 @@ export default function Portfolio() {
           <div className="portfolio-grid">
             {caseStudies.map((item, index) => (
               <Reveal key={item.slug} delay={index * 80}>
-                <div className="portfolio-card glass-card">
+                <div className={`portfolio-card portfolio-card-${item.slug} glass-card`}>
                   <div className="portfolio-image-wrap">
                     <img src={item.image} alt={item.title} loading="lazy" />
                   </div>

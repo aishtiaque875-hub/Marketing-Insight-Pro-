@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as Icons from 'lucide-react';
 import { services } from '../data/services.js';
-import { serviceImages } from '../data/serviceImages.js';
+import { servicesDetailImages } from '../data/servicesDetailImages.js';
 import Reveal from '../components/Reveal.jsx';
 import CalendlyModal from '../components/CalendlyModal.jsx';
 import { CheckCircle2, ArrowRight, Sparkles, Calendar, ShieldCheck, Zap } from 'lucide-react';
@@ -31,9 +31,9 @@ export default function Services() {
               const Icon = Icons[s.icon];
               return (
                 <Reveal key={s.slug} delay={index * 90}>
-                  <div className="service-detail-card glass-card">
+                  <div className={`service-detail-card service-detail-card-${s.slug} glass-card`}>
                     <div className="service-detail-image-wrap">
-                      <img src={serviceImages[s.slug]} alt={s.title} loading="lazy" />
+                      <img src={servicesDetailImages[s.slug]} alt={s.title} loading="lazy" />
                       <div className="roi-tag">
                         <Zap size={13} className="gold-icon" /> Expected Outcome: {s.targetRoi}
                       </div>

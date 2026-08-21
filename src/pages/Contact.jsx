@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Reveal from '../components/Reveal.jsx';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle2, Calendar, MessageSquare, Clock, Sparkles, ShieldCheck } from 'lucide-react';
 import './Contact.css';
 
 export default function Contact() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,36 +16,23 @@ export default function Contact() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [error, setError] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSending(true);
-    setError('');
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/contactmarketinginsightpro@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-          _subject: `New Growth Inquiry from ${formData.name} — ${formData.service}`,
-        }),
-      });
-      if (!res.ok) throw new Error('Request failed');
+  useEffect(() => {
+    if (location.search.includes('submitted=true')) {
       setSubmitted(true);
-    } catch (err) {
-      setError('Something went wrong. Please try again or contact us via WhatsApp.');
-    } finally {
-      setSending(false);
     }
+  }, [location]);
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      service: 'Meta Ads',
+      message: ''
+    });
+    navigate('/contact', { replace: true });
   };
 
 
@@ -120,7 +111,12 @@ export default function Contact() {
           <Reveal direction="right">
             <div className="contact-form-card glass-card">
               {!submitted ? (
-                <form onSubmit={handleSubmit}>
+                <form action="https://formsubmit.co/contactmarketinginsightpro@gmail.com" method="POST">
+                  {/* FormSubmit Configuration */}
+                  <input type="hidden" name="_next" value="https://marketing-insight-pro.vercel.app/contact?submitted=true" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_subject" value="New Growth Inquiry from Marketing Insight Pro" />
+
                   <div className="form-head">
                     <h2>Submit Growth Inquiry</h2>
                     <p>Fill out the details below to receive your customized marketing audit.</p>
@@ -131,6 +127,7 @@ export default function Contact() {
                       <label>Full Name *</label>
                       <input
                         type="text"
+                        name="name"
                         required
                         placeholder="John Doe"
                         value={formData.name}
@@ -141,6 +138,7 @@ export default function Contact() {
                       <label>Work Email *</label>
                       <input
                         type="email"
+                        name="email"
                         required
                         placeholder="john@company.com"
                         value={formData.email}
@@ -154,6 +152,7 @@ export default function Contact() {
                       <label>Phone Number *</label>
                       <input
                         type="tel"
+                        name="phone"
                         required
                         placeholder="+1 (555) 000-0000"
                         value={formData.phone}
@@ -163,6 +162,7 @@ export default function Contact() {
                     <div className="form-group">
                       <label>Primary Service Needed</label>
                       <select
+                        name="service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       >
@@ -176,10 +176,10 @@ export default function Contact() {
                     </div>
                   </div>
 
-
                   <div className="form-group">
                     <label>Tell Us About Your Brand & Goals</label>
                     <textarea
+                      name="message"
                       rows={4}
                       placeholder="Share your current website link, monthly sales targets, and main scaling challenges..."
                       value={formData.message}
@@ -187,21 +187,20 @@ export default function Contact() {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-gold btn-full" disabled={sending}>
-                    {sending ? (<><Loader2 size={16} className="spin-icon" /> Sending...</>) : (<>Send Inquiry & Request Audit <Send size={16} /></>)}
+                  <button type="submit" className="btn btn-gold btn-full">
+                    Send Inquiry & Request Audit <Send size={16} />
                   </button>
 
                   <div className="form-privacy-note">
                     <ShieldCheck size={14} /> 100% Confidential. We respect your business privacy.
                   </div>
-                  {error && <p className="form-error-msg">{error}</p>}
                 </form>
               ) : (
                 <div className="contact-success-state text-center">
                   <CheckCircle2 size={64} className="gold-icon" style={{ margin: '0 auto 16px' }} />
                   <h2>Message Received <span className="gold-gradient-text">Successfully!</span></h2>
-                  <p>Thank you <strong>{formData.name}</strong>. Our senior growth officer is reviewing your inquiry and will contact you at <strong>{formData.email}</strong> within 24 hours.</p>
-                  <button className="btn btn-gold" onClick={() => setSubmitted(false)} style={{ marginTop: '20px' }}>
+                  <p>Thank you. Our senior growth officer is reviewing your inquiry and will contact you within 24 hours.</p>
+                  <button className="btn btn-gold" onClick={handleReset} style={{ marginTop: '20px' }}>
                     Send Another Message
                   </button>
                 </div>

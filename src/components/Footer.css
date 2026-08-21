@@ -81,7 +81,7 @@
 .footer-logo {
   height: 42px;
   width: auto;
-  filter: brightness(0) invert(1);  /* Makes logo fully white */
+  filter: brightness(0) saturate(100%) invert(56%) sepia(48%) saturate(1475%) hue-rotate(10deg) brightness(94%) contrast(90%);
 }
 
 .brand-desc {

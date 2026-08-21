@@ -175,7 +175,7 @@ export default function Home() {
               const Icon = Icons[s.icon];
               return (
                 <Reveal key={s.slug} delay={i * 80}>
-                  <div className="glass-card service-card">
+                  <div className={`glass-card service-card service-card-${s.slug}`}>
                     <div className="service-card-art">
                       <img src={serviceImages[s.slug]} alt={s.title} loading="lazy" />
                       <span className="service-card-art-overlay" />
