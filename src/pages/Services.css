@@ -210,9 +210,4 @@
   object-position: center top !important;
 }
 
-.service-detail-card-social-media-managing .service-detail-image-wrap img {
-  object-fit: contain !important;
-  background-color: var(--navy-card);
-  padding: 8px;
-}
 

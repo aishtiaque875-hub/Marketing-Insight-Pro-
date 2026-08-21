@@ -152,8 +152,3 @@
   object-position: center top !important;
 }
 
-.portfolio-card-social-media-managing .portfolio-image-wrap img {
-  object-fit: contain !important;
-  background-color: var(--navy-card);
-  padding: 8px;
-}
