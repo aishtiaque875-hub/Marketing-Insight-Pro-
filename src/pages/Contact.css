@@ -1,4 +1,4 @@
-﻿.contact-grid {
+.contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.25fr;
   gap: 56px;
@@ -220,5 +220,14 @@
   }
   .contact-form-card {
     padding: 28px 20px;
+  }
+  .contact-card {
+    padding: 16px;
+    gap: 12px;
+  }
+  .contact-card a,
+  .contact-card span {
+    font-size: 13px;
+    word-break: break-all;
   }
 }
